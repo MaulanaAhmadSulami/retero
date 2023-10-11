@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: PublicPixel;
+    src: url("fonts/PublicPixel-z84yD.ttf") format(opentype);
+}
