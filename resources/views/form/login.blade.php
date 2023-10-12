@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Retero</title>
     @vite('resources/css/app.css')
 
     <style>
@@ -23,7 +23,7 @@
 
 <body class="flex items-center justify-center h-screen">
     <div class="p-6 rounded-lg shadow-md w-96">
-        <img src="{{ asset('./public/images/retero.png') }}" alt="Retero">
+        <img src="asset/retero.png" alt="Retero">
 
         <h1 class="text-2xl text-center font-publicPixel text-headline font-semibold mb-8">
             <span class="py-2 underline">
