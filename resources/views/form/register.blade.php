@@ -14,8 +14,8 @@
         }
 
         #register-btn:hover{
-            transform: translate3d(-0.25rem, -0.25rem, 0);
-            box-shadow: none;
+            transform: translate3d(-0.25rem,-0.25rem,-0.25rem);
+            box-shadow: 0 0 0 ;
         }
     </style>
 </head>

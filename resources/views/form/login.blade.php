@@ -23,7 +23,7 @@
 
 <body class="flex items-center justify-center h-screen">
     <div class="p-6 rounded-lg shadow-md w-96">
-        <img src="asset/retero.png" alt="Retero">
+        <img src="images/retero.png" alt="Retero">
 
         <h1 class="text-2xl text-center font-publicPixel text-headline font-semibold mb-8">
             <span class="py-2 underline">
