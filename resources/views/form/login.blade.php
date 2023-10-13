@@ -15,7 +15,7 @@
         }
 
         #login-btn:hover {
-            transform: translate3d(-0.25rem, -0.25rem, 0);
+            transform: translate3d(0.25rem, 0.25rem, -0.25rem);
             box-shadow: none;
         }
     </style>
