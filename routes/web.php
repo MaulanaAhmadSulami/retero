@@ -30,3 +30,17 @@ Route::get('/register', function() {
 Route::get('/login', function(){
     return view('form.login');
 })->name('login');
+
+
+Route::get('/dashboard', function(){
+    return view('homepage.dashboard');
+})->name('dashboard');
+
+
+
+
+
+
+
+
+//ACTION ROUTES BELOW

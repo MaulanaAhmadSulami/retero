@@ -25,7 +25,7 @@
     <div class="p-6 rounded-lg shadow-md w-96">
         <img src="images/retero.png" alt="Retero">
 
-        <h1 class="text-2xl text-center font-publicPixel text-headline font-semibold mb-8">
+        <h1 class="text-2xl text-center  font-semibold font-publicPixel text-headline  mb-8">
             <span class="py-2 underline">
                 Login
             </span>
@@ -35,7 +35,7 @@
         <form  method="" action="{{ route('login') }}">
             @csrf
             <div class="mb-8">
-                <input type="text" placeholder="Email" class="bg-form border-b border-b w-full py-2 px-3">
+                <input type="text" placeholder="Email" class="bg-form border-b border-b w-full py-2 px-3" value="{{ old('email') }}">
             </div>
 
             <div class="mb-8">
