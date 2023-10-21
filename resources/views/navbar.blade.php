@@ -43,11 +43,7 @@
         </div>
         
         <div class="relative">
-            <!-- Added padding-left to the input and adjusted other paddings -->
             <input type="text" placeholder="Apa yang kamu cari?" class="pl-12 pr-4 py-2 border border-button rounded-md font-ubuntuoMonoRegular">
-            
-            <!-- Removed the border from the search icon and adjusted its positioning -->
-
             <img src="images/search.png" alt="Search" class="absolute left-3 top-1/2 transform -translate-y-1/2 w-6 h-6">
         </div>
     </nav>
