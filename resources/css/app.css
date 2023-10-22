@@ -3,6 +3,16 @@
 @tailwind utilities;
 
 @font-face {
+    font-family: UbuntuMono-Regular;
+    src: url("fonts/UbuntuMono-Regular.ttf") format(opentype);
+}
+
+@font-face {
     font-family: PublicPixel;
     src: url("fonts/PublicPixel-z84yD.ttf") format(opentype);
+}
+
+@font-face {
+    font-family: UbuntuMono-Bold;
+    src: url("fonts/UbuntuMono-Bold.ttf") format(opentype);
 }

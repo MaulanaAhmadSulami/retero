@@ -9,15 +9,17 @@ module.exports = {
     colors: {
       button : '#FFC800',
       headline : '#384259',
-      form : '#EEEEEE'
+      form : '#EEEEEE',
+      footer: '#FAFAFA',
+      copyright: '#000000',
     },
     extend: {
       fontFamily:{
         publicPixel: ['PublicPixel', 'sans'],
+        ubuntuMonoRegular: ['UbuntuMono-Regular', 'sans'],
         ubuntuMonoBold: ['UbuntuMono-Bold', 'sans'],
         ubuntuMonoBoldItalic: ['UbuntuMono-BoldItalic', 'sans'],
         ubuntuMonoItalic: ['UbuntuMono-Italic', 'sans'],
-        ubuntuMonoRegular: ['UbuntuMono', 'sans'],
       }
     },
   },

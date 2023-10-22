@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ReviewController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,9 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+// Route::get('/', function(){
+//     return view('homepage.dashboard');
+// });
+
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 
 Route::get('/app', function() {
@@ -32,15 +38,16 @@ Route::get('/login', function(){
 })->name('login');
 
 
-Route::get('/dashboard', function(){
-    return view('homepage.dashboard');
-})->name('dashboard');
-
-
-
 
 
 
 
 
 //ACTION ROUTES BELOW
+
+
+
+//RESOURCES
+// Route::get('dashboard', [ReviewController::class, 'index']);
+// Route::resource('reviews', ReviewController::class);
+Route::get('/', [ReviewController::class, 'index'])->name('dashboard');
