@@ -37,6 +37,9 @@ Route::get('/login', function(){
     return view('form.login');
 })->name('login');
 
+Route::get('/morereview', function(){
+    return view('homepage.morereview');
+})->name('morereview');
 
 Route::get('/productDetail', function(){
     return view('homepage.productDetail');
