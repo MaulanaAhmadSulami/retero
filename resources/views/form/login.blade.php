@@ -42,13 +42,18 @@
                 <input type="password" placeholder="Password" class="bg-form border-b border-b w-full py-2 px-3">
             </div>
 
+            <div class="mb-8 flex items-center">
+                <input type="checkbox" value="" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-600 dark:border-gray-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800" required>
+                <label for="remember" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Remember me?</label>
+            </div>
+
             <button id="login-btn" type="submit"
                 class="bg-button border 1px py-2 px-4 rounded w-full font-bold font-publicPixel text-[13px]">
                 <p class="hover:text-[#FFFFFF]">Login</p>
             </button>
             <div class="text-center">
                 <span class="text-xs">Doesn't have an account yet? <a href="{{'register'}}"
-                        class="underline text-button font-bold">Register</a></span>
+                        class="underline text-button font-bold hover:text-[#000000]">Register</a></span>
             </div>
 
         </form>

@@ -56,7 +56,7 @@
 
             <div class="text-center">
                 <span class="text-xs">Already have an account? <a href="{{'login'}}"
-                        class="underline text-button font-bold">Login</a></span>
+                        class="underline text-button font-bold hover:text-[#000000]">Login</a></span>
             </div>
         </form>
     </div>

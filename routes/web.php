@@ -38,7 +38,9 @@ Route::get('/login', function(){
 })->name('login');
 
 
-
+Route::get('/productDetail', function(){
+    return view('homepage.productDetail');
+})->name('productDetail');
 
 
 
