@@ -12,17 +12,16 @@
 <body>
     <div class="container-fluid">
 
-        <footer class="bg-footer dark:bg-gray-900">
-            <hr class="py-2  border-gray-200 bold">    
+        <footer class="bg-footer dark:bg-[#000000] border-t-4"> 
             <div class="mx-auto w-full max-w-screen-xs">
                 <div class="md:flex md:justify-between ">
-                  <div class="mb-6 md:mb-0">
+                  <div class="mb-6 md:mb-0 vgh">
                       <a href="/" class="flex items-center">
-                          <img src="images/retero.png" class="h-32 mr-3 mt-8" alt="Retero logo" /></a>
+                          <img src="images/retero.png" class="w-[250px] mr-3 mt-8" alt="Retero logo" /></a>
                   </div>
-                  <div class="grid grid-cols-2 gap-8 sm:gap-8 sm:grid-cols-3">
+                  <div class="grid grid-cols-2 gap-8 sm:gap-8 sm:grid-cols-3 py-2">
                       <div>
-                          <h2 class="mb-6 text-[25px] font-ubuntuMonoBold text-gray-900 uppercase dark:text-white">Layanan</h2>
+                          <h2 class="mb-6 text-[25px] font-ubuntuMonoBold uppercase dark:text-white">Layanan</h2>
                           <ul class="text-gray-500 dark:text-gray-400 font-medium">
                               <li class="mb-2">
                                   <a href="#" class="hover:underline font-ubuntuMonoRegular">Ulasan Aksesoris Komputer</a>

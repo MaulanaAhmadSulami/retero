@@ -13,12 +13,12 @@
     <style>
         #stroke {
             text-shadow:
-                -2px -2px 0 #ffffff,
-                2px -2px 0 #ffffff,
-                -2px 2px 0 #ffffff,
-                2px 2px 0 #ffffff;
+                -4px -2px 0 #ffffff,
+                4px -2px 0 #ffffff,
+                -6px 2px 0 #ffffff,
+                5px 2px 0 #ffffff;
 
-                /* color:rgb(0, 0, 0); */
+            /* color:rgb(0, 0, 0); */
 
             /* -webkit-text-stroke-width: 3px; */
 
@@ -33,6 +33,7 @@
             transform: translate3d(0.25rem, 0.25rem, -0.25rem);
             box-shadow: none;
         }
+
         #shadow-btn {
             box-shadow: 0.5rem 0.5rem 0;
             transition: transform 0.2s, box-shadow 0.2s;
@@ -55,8 +56,7 @@
 
         <div id="stroke" class="relative">
 
-            <div
-                class="p-4 border-4 border-button bg-button flex justify-center items-center font-bold font-publicPixel">
+            <div class="p-4 border-b-8 bg-button flex justify-center items-center font-bold font-publicPixel">
                 <h2 class="text-[39.06px]">
                     Ulasan Terbaru
                 </h2>
@@ -82,7 +82,7 @@
                                     class="font-bold">full array
                                     LED backlight</span> creating a sharper, brighter, more colorful picture. Read
                                 to the
-                                end of this Hisense A6G review to learn what experts are saying. 
+                                end of this Hisense A6G review to learn what experts are saying.
                             </p>
                         </div>
                         <div class="w-full">
@@ -142,8 +142,8 @@
                                 looking
                                 for an extra device to a second room or a first-time smart TV. This Hisense A6G
                                 offers <span class="font-bold"> 8.3 million pixels,</span> and a <span
-                                class="font-bold">full array
-                                LED backlight</span> creating a sharper, brighter, more colorful picture. Read
+                                    class="font-bold">full array
+                                    LED backlight</span> creating a sharper, brighter, more colorful picture. Read
                                 to the
                                 end of this Hisense A6G review to learn what experts are saying.
                             </p>
@@ -156,16 +156,16 @@
 
             </div>
 
-            
+
         </div>
 
 
         <div class="py-8 flex justify-center">
             <button id="shadow-btn" type="submit" class="bg-button 1px py-2 px-4">
-                <a id="stroke" class="font-publicPixel text-[20px]" href="{{ '/' }}">Lihat Ulasan Lainnya</a>
+                <a id="stroke" class="font-publicPixel text-[20px]" href="{{ 'morereview' }}">Lihat Ulasan Lainnya</a>
             </button>
         </div>
-        
+
         <footer>
 
             @include('footer')

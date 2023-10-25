@@ -22,10 +22,10 @@
 
         #stroke {
             text-shadow:
-                2px -2px 0 #000000,
-                2px -2px 0 #000000,
                 -2px 2px 0 #000000,
-                2px 2px 0 #000000;
+                6px 6px 0 #000000,
+                -2px 2px 0 #000000,
+                4px 2px 0 #000000;
         }
 
         #listProduct{
@@ -42,15 +42,17 @@
     <div>
         <div class="grid place-items-center py-8">
             <div class="grid grid-cols-2 items-center text-center">
-                <img id="shadow" src="images/dummyStock.png" class="h-[400px]" alt="">
+                <a href="https://www.amazon.com/dp/B08Z9WT6PQ?tag=gadgetreviewc-20&th=1&geniuslink=true">
+                    <img id="shadow" src="images/dummyStock.png" class="h-[400px]" alt="Product image">
+                </a>
                 <div class="text-left mr-[120px]">
                     <h1 class="font-publicPixel text-[31.25px]">Hisensa A6G</h1>
                     <span class="font-ubuntuMonoRegular">
                         <iconify-icon icon="subway:refresh-time" class="text-xs"></iconify-icon> 22 Oktober 2023
                     </span>
                 </div>
-                <div class="max-w-[750px] mt-20 text-left">
-                    <h1 id="stroke" class="text-[40px] font-publicPixel text-button">Ringkasan</h1>
+                <div class="max-w-[750px] mt-20 text-left tracking-wide">
+                    <h1 id="stroke" class="text-[40px] font-publicPixel text-button tracking-widest">Ringkasan</h1>
                     <p class="font-ubuntuMonoRegular text-[20px] mt-5">
                         The Hisense A6G is the brand’s budget tier Smart TV released in 2021. This 4K ultra
                         HD TV
@@ -67,7 +69,7 @@
                         end of this Hisense A6G review to learn what experts are saying.
                     </p>
 
-                    <h1 id="stroke" class="text-[40px] font-publicPixel text-button py-10">Kelebihan</h1>
+                    <h1 id="stroke" class="text-[40px] font-publicPixel text-button py-10 tracking-widest">Kelebihan</h1>
                     
                     <ul id="listProduct" class="list-inside text-[20px] mt-5">
                         <li>Minima unde sit aliquid aut omnis nobis. </li>
@@ -76,13 +78,15 @@
                         <li>Minima unde sit aliquid aut omnis nobis. </li>
                     </ul>
                     
-                    <h1 id="stroke" class="text-[40px] font-publicPixel text-button py-10">Kekurangan</h1>
+                    <h1 id="stroke" class="text-[40px] font-publicPixel text-button py-10 tracking-widest">Kekurangan</h1>
                     <ul id="listProduct" class="list-inside text-[20px] mt-5">
                         <li>Minima unde sit aliquid aut omnis nobis. </li>
                         <li>Minima unde sit aliquid aut omnis nobis. </li>
                         <li>Minima unde sit aliquid aut omnis nobis. </li>
                         <li>Minima unde sit aliquid aut omnis nobis. </li>
                     </ul>
+
+                    
                 </div>
             </div>
         </div>
@@ -95,7 +99,7 @@
         </div> --}}
 
     </div>
-    <footer class="">
+    <footer>
         @include('footer')
     </footer>
 
