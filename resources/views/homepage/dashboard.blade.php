@@ -14,9 +14,9 @@
         #stroke {
             text-shadow:
                 -4px -2px 0 #ffffff,
-                4px -2px 0 #ffffff,
+                4px 2px 0 #ffffff,
                 -6px 2px 0 #ffffff,
-                5px 2px 0 #ffffff;
+                6px -2px 0 #ffffff;
 
             /* color:rgb(0, 0, 0); */
 
@@ -56,8 +56,8 @@
 
         <div id="stroke" class="relative">
 
-            <div class="p-4 border-b-8 bg-button flex justify-center items-center font-bold font-publicPixel">
-                <h2 class="text-[39.06px]">
+            <div class="p-4 border-b-4 bg-button flex justify-center items-center font-bold font-publicPixel">
+                <h2 class="text-[20px]">
                     Ulasan Terbaru
                 </h2>
             </div>
@@ -67,9 +67,9 @@
             <div class="p-10">
                 <div class="p-10 flex justify-center">
                     <div class="flex">
-                        <div class="max-w-[750px] mr-20">
-                            <h1 class="font-publicPixel text-[30px] text-left py-4">Hisensa A6G</h1>
-                            <p class="font-ubuntuMonoRegular text-[25px]">
+                        <div class="max-w-[500px] mr-20">
+                            <h1 class="font-publicPixel text-[20px] text-left py-4">Hisensa A6G</h1>
+                            <p class="font-ubuntuMonoRegular text-[17px]">
                                 The Hisense A6G is the brand’s budget tier Smart TV released in 2021. This 4K ultra
                                 HD TV
                                 promises to give you four times the resolution of a regular <span class="font-bold">1080
@@ -85,7 +85,7 @@
                                 end of this Hisense A6G review to learn what experts are saying.
                             </p>
                         </div>
-                        <div class="w-full">
+                        <div class="w-[350px]">
                             <a href="{{ 'productDetail' }}"> <img id="shadow" src="images/dummyStock.png" alt=""></a>
                         </div>
                     </div>
@@ -98,12 +98,12 @@
             <div class="p-10">
                 <div class="flex justify-center">
                     <div class="flex">
-                        <div class="w-full">
+                        <div class="w-[350px]">
                             <a href="{{ 'productDetail' }}"> <img id="shadow" src="images/dummyStock.png" alt=""></a>
                         </div>
-                        <div class="max-w-[750px] mx-20">
-                            <h1 class="font-publicPixel text-[30px] py-4">Hisensa A6G</h1>
-                            <p class="font-ubuntuMonoRegular text-[25px]">
+                        <div class="max-w-[500px] mx-20">
+                            <h1 class="font-publicPixel text-[20px] py-4">Hisensa A6G</h1>
+                            <p class="font-ubuntuMonoRegular text-[17px]">
                                 The Hisense A6G is the brand’s budget tier Smart TV released in 2021. This 4K ultra
                                 HD TV
                                 promises to give you four times the resolution of a regular <span class="font-bold">1080
@@ -130,9 +130,9 @@
             <div class="p-10">
                 <div class="flex justify-center">
                     <div class="flex">
-                        <div class="max-w-[750px] mr-20">
-                            <h1 class="font-publicPixel text-[30px] text-left py-4">Hisensa A6G</h1>
-                            <p class="font-ubuntuMonoRegular text-[25px]">
+                        <div class="max-w-[500px] mr-20">
+                            <h1 class="font-publicPixel text-[20px] text-left py-4">Hisensa A6G</h1>
+                            <p class="font-ubuntuMonoRegular text-[17px]">
                                 The Hisense A6G is the brand’s budget tier Smart TV released in 2021. This 4K ultra
                                 HD TV
                                 promises to give you four times the resolution of a regular <span class="font-bold">1080
@@ -148,7 +148,7 @@
                                 end of this Hisense A6G review to learn what experts are saying.
                             </p>
                         </div>
-                        <div class="w-full">
+                        <div class="w-[350px]">
                             <a href="{{ 'productDetail' }}"> <img id="shadow" src="images/dummyStock.png" alt=""></a>
                         </div>
                     </div>

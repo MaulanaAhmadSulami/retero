@@ -32,18 +32,26 @@
         </h1>
 
 
-        <form  method="" action="{{ route('login') }}">
+        <form  method="POST" action="{{ route('auth.login') }}">
             @csrf
-            <div class="mb-8">
-                <input type="text" placeholder="Email" class="bg-form border-b border-b w-full py-2 px-3" value="{{ old('email') }}">
+           <div class="mb-8">
+                <input type="text" placeholder="Email" class="bg-form border-b border-b w-full py-2 px-3" value="{{ old('email') }}"
+                    @error('email') border-red-500 @else border-setBorder @enderror">
+                @error('email')
+                <div class="text-red-500">{{ $message }}</div>
+                @enderror>
             </div>
 
-            <div class="mb-8">
-                <input type="password" placeholder="Password" class="bg-form border-b border-b w-full py-2 px-3">
+           <div class="mb-8">
+                <input type="password" placeholder="Password"
+                    class="bg-form border-b border-b w-full py-2 px-3 @error('password') border-red-500 @else border-setBorder @enderror">
+                @error('password')
+                <div class="text-red-500">{{ $message }}</div>
+                @enderror">
             </div>
 
             <div class="mb-8 flex items-center">
-                <input type="checkbox" value="" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-600 dark:border-gray-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800" required>
+                <input type="checkbox" class="w-4 h-4 border" name="remember" id="remember">
                 <label for="remember" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Remember me?</label>
             </div>
 
@@ -52,7 +60,7 @@
                 <p class="hover:text-[#FFFFFF]">Login</p>
             </button>
             <div class="text-center">
-                <span class="text-xs">Doesn't have an account yet? <a href="{{'register'}}"
+                <span class="text-xs">Don't have an account yet? <a href="{{ route('register') }}"
                         class="underline text-button font-bold hover:text-[#000000]">Register</a></span>
             </div>
 

@@ -85,20 +85,16 @@
                         <li>Minima unde sit aliquid aut omnis nobis. </li>
                         <li>Minima unde sit aliquid aut omnis nobis. </li>
                     </ul>
-
-                    
                 </div>
             </div>
+            <div class="border rounded-2xl inline-block p-2 flex justify-content-end">
+                <button type="submit">
+                    <iconify-icon icon="basil:plus-solid" class="text-xl transfrom bot-1/2"></iconify-icon> Tambah komentar
+                </button>
+            </div>
         </div>
-
-        {{-- <hr class="py-8" />
-        <div class="border rounded-2xl inline-block p-2">
-            <p class="">
-                <iconify-icon icon="basil:plus-solid" class="text-xl transfrom bot-1/2"></iconify-icon> Tambah Komentar
-            </p>
-        </div> --}}
-
     </div>
+    
     <footer>
         @include('footer')
     </footer>

@@ -34,7 +34,7 @@
         <div id="stroke" class="relative">
 
             <div class="p-4 border-b-8 bg-button flex justify-center items-center font-bold font-publicPixel">
-                <h2 class="text-[39.06px]">
+                <h2 class="text-[20px]">
                     Ulasan Terbaru
                 </h2>
             </div>
@@ -44,14 +44,12 @@
 
 
         <h2 class="mb-8 text-center font-bold text-xl bg-yellow-400">Bluetooth</h2>
-        <div class="container mx-auto flex flex-row gap-4 justify-center">
+        <div class="flex flex-row gap-4 justify-center">
             <!-- Card 1 -->
-            <div class="rounded border shadow-lg overflow-hidden mr-4 p-4 flex-col justify-center items-center">
+            <div class="border mr-4 p-4">
                 <img src="/images/dummyStock.png" alt="GAMBAR GAADA" class="w-32 h-32 object-cover">
-                <div class="mt-2 font-bold text-lg text-center">Image Title 1</div>
-                <button type="button"
-                    class="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:focus:ring-yellow-900">Baca
-                    Ulasan</button>
+                <div class="mt-2 font-bold text-lg text-center border-b">Image Title 1</div>
+                <a href="{{ route('productDetail') }}" class="font-ubuntuMonoRegular text-sm px-5"> Baca ulasan</a>
             </div>
 
             <!-- Card 2 -->
@@ -130,7 +128,7 @@
 
         <div>
             <h2 class="py-10 text-center font-bold text-xl">Mouse</h2>
-            <div class="container mx-auto flex flex-row gap-4 justify-center">
+            <div class=" flex flex-row gap-4 justify-center">
                 <!-- Card 1 -->
                 <div class="rounded border shadow-lg overflow-hidden mr-4 p-4 flex-col justify-center items-center">
                     <img src="/images/dummyStock.png" alt="GAMBAR GAADA" class="w-32 h-32 object-cover">

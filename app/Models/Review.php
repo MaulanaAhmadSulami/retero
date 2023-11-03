@@ -9,14 +9,21 @@ class Review extends Model
 {
     use HasFactory;
 
-    public function user(){
+    public function user()
+    {
         return $this->belongsTo(User::class);
     }
 
 
-    protected $fillable = ['productTitle', 'productDescription', 'rating', 'image'];
+    protected $fillable = [
+        'productTitle', 
+        'productDescription', 
+        'rating', 
+        'image',
+    ];
 
-    public function show(Review $review){
+    public function show(Review $review)
+    {
         return view('reviews.show', compact('review'));
     }
 }
