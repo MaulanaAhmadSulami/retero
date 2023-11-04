@@ -22,7 +22,7 @@
 </head>
 
 <body class="flex items-center justify-center h-screen">
-    <div class="p-6 rounded-lg shadow-md w-96">
+    <div class="p-6 border-b rounded w-[400px]">
         <img src="images/retero.png" alt="Retero">
 
         <h1 class="text-2xl text-center  font-semibold font-publicPixel text-headline  mb-8">

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Laravel\Socialite\Facades\Socialite;
 
 class AuthController extends Controller
 {
@@ -53,4 +54,6 @@ class AuthController extends Controller
         auth()->logout();
         return redirect()->route('homepage.dashboard');
     }
+
+   
 }

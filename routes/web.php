@@ -16,9 +16,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/', function(){
-    return view('homepage.dashboard');
-});
+// Route::get('/', function(){
+//     return view('homepage.dashboard');
+// });
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -62,4 +62,4 @@ Route::get('/productDetail', function(){
 //RESOURCES
 // Route::get('dashboard', [ReviewController::class, 'index']);
 // Route::resource('reviews', ReviewController::class);
-// Route::get('/', [ReviewController::class, 'index'])->name('dashboard');
+Route::get('/', [ReviewController::class, 'index'])->name('dashboard');

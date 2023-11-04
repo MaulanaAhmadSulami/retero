@@ -7,176 +7,180 @@
     <meta http-equiv="X-UA-Compatible" content="ie-edge">
     <title>Reviews</title>
     @vite('resources/css/app.css')
+<style>
+    #stroke {
+        text-shadow:
+            -3px -3px 0 #fff,
+            3px -3px 0 #fff,
+            -3px 3px 0 #fff,
+            3px 3px 0 #fff;
 
-    <style>
-          #stroke {
-            text-shadow:
-                -4px -2px 0 #ffffff,
-                4px -2px 0 #ffffff,
-                -6px 2px 0 #ffffff,
-                5px 2px 0 #ffffff;
+        /* color:rgb(0, 0, 0); */
 
-                /* color:rgb(0, 0, 0); */
+        /* -webkit-text-stroke-width: 3px; */
 
-            /* -webkit-text-stroke-width: 3px; */
+    }
 
-        }
-    </style>
+    #shadow-btn {
+        box-shadow: 0.2rem 0.3rem 0;
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    #shadow-btn:hover {
+        transform: translate3d(0.25rem, 0.25rem, -0.25rem);
+        box-shadow: none;
+    }
+
+    #card-effect {
+        text-shadow:
+            -1px -1px 0 #fff,
+            1px -1px 0 #fff,
+            -1px 1px 0 #fff,
+            1px 1px 0 #fff;
+    }
+</style>
 </head>
 
-<body>
-    <div class="container-fluid">
+<body class="flex flex-col min-h-screen">
 
-        @include('navbar')
+    <div class="flex-grow">
+        <div class="container-fluid">
+    
+            @include('navbar')
+        </div>
+
+        <div>
+            <div id="stroke" class="relative">
+    
+                <div class="p-4 bg-button flex justify-center items-center h-32 font-bold font-publicPixel">
+                    <h2 class="text-[35px]">
+                        Ulasan Lainnya
+                    </h2>
+                </div>
+            </div>
+        </div>
+        
+            <div class="p-10">
+                <h2 class="mb-8 text-center font-ubuntuMonoBold text-xl bg-yellow-400">Bluetooth</h2>
+                <div class="flex flex-row gap-2 justify-center">
+                    <!-- Card 1 -->
+                    <div class="border mr-4 p-4 w-[250px] flex flex-col justify-between">
+                        <img src="/images/dummyStock.png" alt="Image Unavailable" class="w-full h-32 object-cover">
+                        <div class="mt-2 font-ubuntuMonoRegular text-center border-b py-2 mb-4">Product title here</div>
+                        <button id="shadow-btn" type="submit" class="bg-button flex self-end">
+                            <a href="{{ route('productDetail') }}" id="card-effect" class="font-ubuntuMonoBold px-1">Baca Ulasan</a>
+                        </button>
+                    </div>
+        
+                    <div class="border mr-4 p-4 w-[250px] flex flex-col justify-between">
+                        <img src="/images/dummyStock.png" alt="Image Unavailable" class="w-full h-32 object-cover">
+                        <div class="mt-2 font-ubuntuMonoRegular text-center border-b py-2 mb-4">Product title here</div>
+                        <button id="shadow-btn" type="submit" class="bg-button flex self-end">
+                            <a href="{{ route('productDetail') }}" id="card-effect" class="font-ubuntuMonoBold px-1">Baca Ulasan</a>
+                        </button>
+                    </div>
+        
+                    <div class="border mr-4 p-4 w-[250px] flex flex-col justify-between">
+                        <img src="/images/dummyStock.png" alt="Image Unavailable" class="w-full h-32 object-cover">
+                        <div class="mt-2 font-ubuntuMonoRegular text-center border-b py-2 mb-4">Product title here</div>
+                        <button id="shadow-btn" type="submit" class="bg-button flex self-end">
+                            <a href="{{ route('productDetail') }}" id="card-effect" class="font-ubuntuMonoBold px-1">Baca Ulasan</a>
+                        </button>
+                    </div>
+        
+                    <div class="border mr-4 p-4 w-[250px] flex flex-col justify-between">
+                        <img src="/images/dummyStock.png" alt="Image Unavailable" class="w-full h-32 object-cover">
+                        <div class="mt-2 font-ubuntuMonoRegular text-center border-b py-2 mb-4">Product title here</div>
+                        <button id="shadow-btn" type="submit" class="bg-button flex self-end">
+                            <a href="{{ route('productDetail') }}" id="card-effect" class="font-ubuntuMonoBold px-1">Baca Ulasan</a>
+                        </button>
+                    </div>
+        
+        
+        
+                </div>
+        
+                <div>
+                    <h2 class="py-10 text-center font-ubuntuMonoBold  text-xl">Mouse</h2>
+                    <div class="container mx-auto flex flex-row gap-4 justify-center">
+                        <div class="border mr-4 p-4 w-[250px] flex flex-col justify-between">
+                            <img src="/images/dummyStock.png" alt="Image Unavailable" class="w-full h-32 object-cover">
+                            <div class="mt-2 font-ubuntuMonoRegular text-center border-b py-2 mb-4">Product title here</div>
+                            <button id="shadow-btn" type="submit" class="bg-button flex self-end">
+                                <a href="{{ route('productDetail') }}" id="card-effect" class="font-ubuntuMonoBold px-1">Baca Ulasan</a>
+                            </button>
+                        </div>
+        
+                        <div class="border mr-4 p-4 w-[250px] flex flex-col justify-between">
+                            <img src="/images/dummyStock.png" alt="Image Unavailable" class="w-full h-32 object-cover">
+                            <div class="mt-2 font-ubuntuMonoRegular text-center border-b py-2 mb-4">Product title here</div>
+                            <button id="shadow-btn" type="submit" class="bg-button flex self-end">
+                                <a href="{{ route('productDetail') }}" id="card-effect" class="font-ubuntuMonoBold px-1">Baca Ulasan</a>
+                            </button>
+                        </div>
+        
+                        <div class="border mr-4 p-4 w-[250px] flex flex-col justify-between">
+                            <img src="/images/dummyStock.png" alt="Image Unavailable" class="w-full h-32 object-cover">
+                            <div class="mt-2 font-ubuntuMonoRegular text-center border-b py-2 mb-4">Product title here</div>
+                            <button id="shadow-btn" type="submit" class="bg-button flex self-end">
+                                <a href="{{ route('productDetail') }}" id="card-effect" class="font-ubuntuMonoBold px-1">Baca Ulasan</a>
+                            </button>
+                        </div>
+        
+                        <div class="border mr-4 p-4 w-[250px] flex flex-col justify-between">
+                            <img src="/images/dummyStock.png" alt="Image Unavailable" class="w-full h-32 object-cover">
+                            <div class="mt-2 font-ubuntuMonoRegular text-center border-b py-2 mb-4">Product title here</div>
+                            <button id="shadow-btn" type="submit" class="bg-button flex self-end">
+                                <a href="{{ route('productDetail') }}" id="card-effect" class="font-ubuntuMonoBold px-1">Baca Ulasan</a>
+                            </button>
+                        </div>
+        
+                    </div>
+                </div>
+        
+                <div>
+                    <h2 class="py-10 text-center font-ubuntuMonoBold text-xl">Mouse</h2>
+                    <div class=" flex flex-row gap-4 justify-center">
+                        <div class="border mr-4 p-4 w-[250px] flex flex-col justify-between">
+                            <img src="/images/dummyStock.png" alt="Image Unavailable" class="w-full h-32 object-cover">
+                            <div class="mt-2 font-ubuntuMonoRegular text-center border-b py-2 mb-4">Product title here</div>
+                            <button id="shadow-btn" type="submit" class="bg-button flex self-end">
+                                <a href="{{ route('productDetail') }}" id="card-effect" class="font-ubuntuMonoBold px-1">Baca Ulasan</a>
+                            </button>
+                        </div>
+        
+                        <div class="border mr-4 p-4 w-[250px] flex flex-col justify-between">
+                            <img src="/images/dummyStock.png" alt="Image Unavailable" class="w-full h-32 object-cover">
+                            <div class="mt-2 font-ubuntuMonoRegular text-center border-b py-2 mb-4">Product title here</div>
+                            <button id="shadow-btn" type="submit" class="bg-button flex self-end">
+                                <a href="{{ route('productDetail') }}" id="card-effect" class="font-ubuntuMonoBold px-1">Baca Ulasan</a>
+                            </button>
+                        </div>
+        
+                        <div class="border mr-4 p-4 w-[250px] flex flex-col justify-between">
+                            <img src="/images/dummyStock.png" alt="Image Unavailable" class="w-full h-32 object-cover">
+                            <div class="mt-2 font-ubuntuMonoRegular text-center border-b py-2 mb-4">Product title here</div>
+                            <button id="shadow-btn" type="submit" class="bg-button flex self-end">
+                                <a href="{{ route('productDetail') }}" id="card-effect" class="font-ubuntuMonoBold px-1">Baca Ulasan</a>
+                            </button>
+                        </div>
+        
+                        <div class="border mr-4 p-4 w-[250px] flex flex-col justify-between">
+                            <img src="/images/dummyStock.png" alt="Image Unavailable" class="w-full h-32 object-cover">
+                            <div class="mt-2 font-ubuntuMonoRegular text-center border-b py-2 mb-4">Product title here</div>
+                            <button id="shadow-btn" type="submit" class="bg-button flex self-end">
+                                <a href="{{ route('productDetail') }}" id="card-effect" class="font-ubuntuMonoBold px-1">Baca Ulasan</a>
+                            </button>
+                        </div>
+                    </div>
+        
+        
+                </div>
+        
+            </div>
     </div>
 
     <div>
-        <div id="stroke" class="relative">
-
-            <div class="p-4 border-b-8 bg-button flex justify-center items-center font-bold font-publicPixel">
-                <h2 class="text-[20px]">
-                    Ulasan Terbaru
-                </h2>
-            </div>
-        </div>
-    </div>
-    <div class="p-10">
-
-
-        <h2 class="mb-8 text-center font-bold text-xl bg-yellow-400">Bluetooth</h2>
-        <div class="flex flex-row gap-4 justify-center">
-            <!-- Card 1 -->
-            <div class="border mr-4 p-4">
-                <img src="/images/dummyStock.png" alt="GAMBAR GAADA" class="w-32 h-32 object-cover">
-                <div class="mt-2 font-bold text-lg text-center border-b">Image Title 1</div>
-                <a href="{{ route('productDetail') }}" class="font-ubuntuMonoRegular text-sm px-5"> Baca ulasan</a>
-            </div>
-
-            <!-- Card 2 -->
-            <div class="rounded border shadow-lg overflow-hidden mr-4 p-4 flex-col justify-center items-center mx-4">
-                <img src="/images/dummyStock.png" alt="GAMBAR GAADA" class="w-32 h-32 object-cover">
-                <div class="mt-2 font-bold text-lg text-center">Image Title 2</div>
-                <button type="button"
-                    class="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:focus:ring-yellow-900">Baca
-                    Ulasan</button>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="rounded border shadow-lg overflow-hidden mr-4 p-4 flex-col justify-center items-center mx-4">
-                <img src="/images/dummyStock.png" alt="GAMBAR GAADA" class="w-32 h-32 object-cover">
-                <div class="mt-2 font-bold text-lg text-center">Image Title 3</div>
-                <button type="button"
-                    class="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:focus:ring-yellow-900">Baca
-                    Ulasan</button>
-            </div>
-
-            <!-- Card 4 -->
-            <div class="rounded border shadow-lg overflow-hidden mr-4 p-4 flex-col justify-center items-center">
-                <img src="/images/dummyStock.png" alt="GAMBAR GAADA" class="w-32 h-32 object-cover">
-                <div class="mt-2 font-bold text-lg text-center">Image Title 4</div>
-                <button type="button"
-                    class="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:focus:ring-yellow-900">Baca
-                    Ulasan</button>
-            </div>
-
-
-        </div>
-
-        <div>
-            <h2 class="py-10 text-center font-bold text-xl">Mouse</h2>
-            <div class="container mx-auto flex flex-row gap-4 justify-center">
-                <!-- Card 1 -->
-                <div class="rounded border shadow-lg overflow-hidden mr-4 p-4 flex-col justify-center items-center">
-                    <img src="/images/dummyStock.png" alt="GAMBAR GAADA" class="w-32 h-32 object-cover">
-                    <div class="mt-2 font-bold text-lg text-center">Image Title 1</div>
-                    <button type="button"
-                        class="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:focus:ring-yellow-900">Baca
-                        Ulasan</button>
-                </div>
-
-                <!-- Card 2 -->
-                <div
-                    class="rounded border bg-button overflow-hidden mr-4 p-4 flex-col justify-center items-center mx-4">
-                    <img src="/images/dummyStock.png" alt="GAMBAR GAADA" class="w-32 h-32 object-cover">
-                    <div class="mt-2 font-bold text-lg text-center">Image Title 2</div>
-                    <hr / class="">
-                    <button type="button" class="-border-[1px] bg-button mt-2 flex justify-end font-ubuntuMonoBold">Baca
-                        Ulasan</button>
-                </div>
-
-                <!-- Card 3 -->
-                <div
-                    class="rounded border shadow-lg overflow-hidden mr-4 p-4 flex-col justify-center items-center mx-4">
-                    <img src="/images/dummyStock.png" alt="GAMBAR GAADA" class="w-32 h-32 object-cover">
-                    <div class="mt-2 font-bold text-lg text-center">Image Title 3</div>
-                    <button type="button"
-                        class="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:focus:ring-yellow-900">Baca
-                        Ulasan</button>
-                </div>
-
-                <!-- Card 4 -->
-                <div class="rounded border shadow-lg overflow-hidden mr-4 p-4 flex-col justify-center items-center">
-                    <img src="/images/dummyStock.png" alt="GAMBAR GAADA" class="w-32 h-32 object-cover">
-                    <div class="mt-2 font-bold text-lg text-center">Image Title 4</div>
-                    <button type="button"
-                        class="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:focus:ring-yellow-900">Baca
-                        Ulasan</button>
-                </div>
-
-            </div>
-        </div>
-
-        <div>
-            <h2 class="py-10 text-center font-bold text-xl">Mouse</h2>
-            <div class=" flex flex-row gap-4 justify-center">
-                <!-- Card 1 -->
-                <div class="rounded border shadow-lg overflow-hidden mr-4 p-4 flex-col justify-center items-center">
-                    <img src="/images/dummyStock.png" alt="GAMBAR GAADA" class="w-32 h-32 object-cover">
-                    <div class="mt-2 font-bold text-lg text-center">Image Title 1</div>
-                    <button type="button"
-                        class="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:focus:ring-yellow-900">Baca
-                        Ulasan</button>
-                </div>
-
-                <!-- Card 2 -->
-                <div
-                    class="rounded border bg-button overflow-hidden mr-4 p-4 flex-col justify-center items-center mx-4">
-                    <img src="/images/dummyStock.png" alt="GAMBAR GAADA" class="w-32 h-32 object-cover">
-                    <div class="mt-2 font-bold text-lg text-center">Image Title 2</div>
-                    <hr / class="">
-                    <button type="button" class="-border-[1px] bg-button mt-2 flex justify-end font-ubuntuMonoBold">Baca
-                        Ulasan</button>
-                </div>
-
-                <!-- Card 3 -->
-                <div
-                    class="rounded border shadow-lg overflow-hidden mr-4 p-4 flex-col justify-center items-center mx-4">
-                    <img src="/images/dummyStock.png" alt="GAMBAR GAADA" class="w-32 h-32 object-cover">
-                    <div class="mt-2 font-bold text-lg text-center">Image Title 3</div>
-                    <button type="button"
-                        class="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:focus:ring-yellow-900">Baca
-                        Ulasan</button>
-                </div>
-
-                <!-- Card 4 -->
-                <div class="rounded border shadow-lg overflow-hidden mr-4 p-4 flex-col justify-center items-center">
-                    <img src="/images/dummyStock.png" alt="GAMBAR GAADA" class="w-32 h-32 object-cover">
-                    <div class="mt-2 font-bold text-lg text-center">Image Title 4</div>
-                    <button type="button"
-                        class="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:focus:ring-yellow-900">Baca
-                        Ulasan</button>
-                </div>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-
-
-    <div class="inset-x-0 bottom-0 ">
         @include('footer')
     </div>
 </body>

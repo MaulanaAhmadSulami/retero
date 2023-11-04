@@ -26,9 +26,9 @@
                         </button>
                         <div
                             class="absolute left-0 mt-[-0.5rem] w-48 overflow-hidden z-10 invisible group-hover:visible group-hover:duration-200 border bg-[#000000]">
-                            <a href="#" class="block px-4 py-2 mt-2 font-ubuntuMonoBold text-[#FFFFFF] text-[15px] hover:bg-button">Headset</a> <hr / style="color: white">
-                            <a href="#" class="block px-4 py-2 mt-2 font-ubuntuMonoBold text-[#FFFFFF] text-[15px] hover:bg-button">Headset lol</a>
-                            <a href="#" class="block px-4 py-2 mt-2 font-ubuntuMonoBold text-[#FFFFFF] text-[15px] hover:bg-button">Bluetooth</a>
+                            <a href="#" class="block px-4 py-2 mt-2 font-ubuntuMonoBold text-[#FFFFFF] text-[15px] hover:bg-button">Headset</a> <hr style="color: white" />
+                            <a href="#" class="block px-4 py-2 mt-2 font-ubuntuMonoBold text-[#FFFFFF] text-[15px] hover:bg-button">Headset lol</a> <hr style="color: white" />
+                            <a href="#" class="block px-4 py-2 mt-2 font-ubuntuMonoBold text-[#FFFFFF] text-[15px] hover:bg-button">Bluetooth</a> 
                         </div>
                     </div>
 
@@ -38,7 +38,8 @@
                         </button>
                         <div
                             class="absolute left-0 mt-[-0.5rem] w-48 overflow-hidden z-10 invisible group-hover:visible group-hover:duration-200 border bg-[#000000]">
-                            <a href="#" class="block px-4 py-2 mt-2 font-ubuntuMonoBold text-[#FFFFFF] text-[15px] hover:bg-button">Laptop</a> <hr />
+                            <a href="#" class="block px-4 py-2 mt-2 font-ubuntuMonoBold text-[#FFFFFF] text-[15px] hover:bg-button">Laptop</a> <hr /> <hr style="color: white" />
+                            <a href="#" class="block px-4 py-2 mt-2 font-ubuntuMonoBold text-[#FFFFFF] text-[15px] hover:bg-button">PC Accessories</a> <hr style="color: white" />
                             <a href="#" class="block px-4 py-2 mt-2 font-ubuntuMonoBold text-[#FFFFFF] text-[15px] hover:bg-button">PC Accessories</a>
                         </div>
                     </div>
