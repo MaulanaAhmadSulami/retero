@@ -40,7 +40,7 @@ class AuthController extends Controller
 
         if (auth()->attempt($request->only('email', 'password'), $remember)) {
             $request->session()->regenerate();
-            return redirect()->route('homepage.dashboard');
+            return redirect('/');
         } else {
             return back()->withErrors([
                 'email' => 'Email was wrong or doesn\'t exist in our records!'

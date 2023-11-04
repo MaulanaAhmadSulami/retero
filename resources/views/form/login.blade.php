@@ -31,28 +31,27 @@
             </span>
         </h1>
 
-
-        <form  method="POST" action="{{ route('auth.login') }}">
+        <form method="POST" action="{{ route('auth.login') }}">
             @csrf
-           <div class="mb-8">
-                <input type="text" placeholder="Email" class="bg-form border-b border-b w-full py-2 px-3" value="{{ old('email') }}"
-                    @error('email') border-red-500 @else border-setBorder @enderror">
+            <div class="mb-8">
+                <input type="text" name="email" placeholder="Email" class="bg-form border-b border-b w-full py-2 px-3"
+                    value="{{ old('email') }}" @error('email') border-red-500 @else border-setBorder @enderror">
                 @error('email')
                 <div class="text-red-500">{{ $message }}</div>
-                @enderror>
+                @enderror
             </div>
 
-           <div class="mb-8">
-                <input type="password" placeholder="Password"
+            <div class="mb-8">
+                <input type="password" name="password" placeholder="Password"
                     class="bg-form border-b border-b w-full py-2 px-3 @error('password') border-red-500 @else border-setBorder @enderror">
                 @error('password')
                 <div class="text-red-500">{{ $message }}</div>
-                @enderror">
+                @enderror
             </div>
-
             <div class="mb-8 flex items-center">
                 <input type="checkbox" class="w-4 h-4 border" name="remember" id="remember">
-                <label for="remember" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Remember me?</label>
+                <label for="remember" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Remember
+                    me?</label>
             </div>
 
             <button id="login-btn" type="submit"
