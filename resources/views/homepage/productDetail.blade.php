@@ -11,7 +11,7 @@
 
     <style>
         #shadow {
-            box-shadow: 0.7rem 0.7rem 0;
+            box-shadow: 0.5rem 0.5rem 0;
             transition: transform 0.2s, box-shadow 0.2s;
         }
 

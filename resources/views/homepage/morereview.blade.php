@@ -38,6 +38,10 @@
             -1px 1px 0 #fff,
             1px 1px 0 #fff;
     }
+
+    #card-shadow{
+        box-shadow: 0.2rem 0.3rem 0;
+    }
 </style>
 </head>
 
@@ -61,10 +65,10 @@
         </div>
         
             <div class="p-10">
-                <h2 class="mb-8 text-center font-ubuntuMonoBold text-xl bg-yellow-400">Bluetooth</h2>
+                <h2 class="mb-8 text-center font-ubuntuMonoBold text-xl">Bluetooth</h2>
                 <div class="flex flex-row gap-2 justify-center">
                     <!-- Card 1 -->
-                    <div class="border mr-4 p-4 w-[250px] flex flex-col justify-between">
+                    <div id=card-shadow class="border-l border-b shadow-md mr-4 p-4 w-[250px] flex flex-col justify-between">
                         <img src="/images/dummyStock.png" alt="Image Unavailable" class="w-full h-32 object-cover">
                         <div class="mt-2 font-ubuntuMonoRegular text-center border-b py-2 mb-4">Product title here</div>
                         <button id="shadow-btn" type="submit" class="bg-button flex self-end">
@@ -72,7 +76,7 @@
                         </button>
                     </div>
         
-                    <div class="border mr-4 p-4 w-[250px] flex flex-col justify-between">
+                    <div id=card-shadow class="border mr-4 p-4 w-[250px] flex flex-col justify-between">
                         <img src="/images/dummyStock.png" alt="Image Unavailable" class="w-full h-32 object-cover">
                         <div class="mt-2 font-ubuntuMonoRegular text-center border-b py-2 mb-4">Product title here</div>
                         <button id="shadow-btn" type="submit" class="bg-button flex self-end">
@@ -80,7 +84,7 @@
                         </button>
                     </div>
         
-                    <div class="border mr-4 p-4 w-[250px] flex flex-col justify-between">
+                    <div id=card-shadow class="border mr-4 p-4 w-[250px] flex flex-col justify-between">
                         <img src="/images/dummyStock.png" alt="Image Unavailable" class="w-full h-32 object-cover">
                         <div class="mt-2 font-ubuntuMonoRegular text-center border-b py-2 mb-4">Product title here</div>
                         <button id="shadow-btn" type="submit" class="bg-button flex self-end">
@@ -88,7 +92,7 @@
                         </button>
                     </div>
         
-                    <div class="border mr-4 p-4 w-[250px] flex flex-col justify-between">
+                    <div id=card-shadow class="border mr-4 p-4 w-[250px] flex flex-col justify-between">
                         <img src="/images/dummyStock.png" alt="Image Unavailable" class="w-full h-32 object-cover">
                         <div class="mt-2 font-ubuntuMonoRegular text-center border-b py-2 mb-4">Product title here</div>
                         <button id="shadow-btn" type="submit" class="bg-button flex self-end">
@@ -98,50 +102,12 @@
         
         
         
-                </div>
-        
-                <div>
-                    <h2 class="py-10 text-center font-ubuntuMonoBold  text-xl">Mouse</h2>
-                    <div class="container mx-auto flex flex-row gap-4 justify-center">
-                        <div class="border mr-4 p-4 w-[250px] flex flex-col justify-between">
-                            <img src="/images/dummyStock.png" alt="Image Unavailable" class="w-full h-32 object-cover">
-                            <div class="mt-2 font-ubuntuMonoRegular text-center border-b py-2 mb-4">Product title here</div>
-                            <button id="shadow-btn" type="submit" class="bg-button flex self-end">
-                                <a href="{{ route('productDetail') }}" id="card-effect" class="font-ubuntuMonoBold px-1">Baca Ulasan</a>
-                            </button>
-                        </div>
-        
-                        <div class="border mr-4 p-4 w-[250px] flex flex-col justify-between">
-                            <img src="/images/dummyStock.png" alt="Image Unavailable" class="w-full h-32 object-cover">
-                            <div class="mt-2 font-ubuntuMonoRegular text-center border-b py-2 mb-4">Product title here</div>
-                            <button id="shadow-btn" type="submit" class="bg-button flex self-end">
-                                <a href="{{ route('productDetail') }}" id="card-effect" class="font-ubuntuMonoBold px-1">Baca Ulasan</a>
-                            </button>
-                        </div>
-        
-                        <div class="border mr-4 p-4 w-[250px] flex flex-col justify-between">
-                            <img src="/images/dummyStock.png" alt="Image Unavailable" class="w-full h-32 object-cover">
-                            <div class="mt-2 font-ubuntuMonoRegular text-center border-b py-2 mb-4">Product title here</div>
-                            <button id="shadow-btn" type="submit" class="bg-button flex self-end">
-                                <a href="{{ route('productDetail') }}" id="card-effect" class="font-ubuntuMonoBold px-1">Baca Ulasan</a>
-                            </button>
-                        </div>
-        
-                        <div class="border mr-4 p-4 w-[250px] flex flex-col justify-between">
-                            <img src="/images/dummyStock.png" alt="Image Unavailable" class="w-full h-32 object-cover">
-                            <div class="mt-2 font-ubuntuMonoRegular text-center border-b py-2 mb-4">Product title here</div>
-                            <button id="shadow-btn" type="submit" class="bg-button flex self-end">
-                                <a href="{{ route('productDetail') }}" id="card-effect" class="font-ubuntuMonoBold px-1">Baca Ulasan</a>
-                            </button>
-                        </div>
-        
-                    </div>
                 </div>
         
                 <div>
                     <h2 class="py-10 text-center font-ubuntuMonoBold text-xl">Mouse</h2>
-                    <div class=" flex flex-row gap-4 justify-center">
-                        <div class="border mr-4 p-4 w-[250px] flex flex-col justify-between">
+                    <div class="flex flex-row gap-2 justify-center">
+                        <div id=card-shadow class="border mr-4 p-4 w-[250px] flex flex-col justify-between">
                             <img src="/images/dummyStock.png" alt="Image Unavailable" class="w-full h-32 object-cover">
                             <div class="mt-2 font-ubuntuMonoRegular text-center border-b py-2 mb-4">Product title here</div>
                             <button id="shadow-btn" type="submit" class="bg-button flex self-end">
@@ -149,7 +115,7 @@
                             </button>
                         </div>
         
-                        <div class="border mr-4 p-4 w-[250px] flex flex-col justify-between">
+                        <div id=card-shadow class="border mr-4 p-4 w-[250px] flex flex-col justify-between">
                             <img src="/images/dummyStock.png" alt="Image Unavailable" class="w-full h-32 object-cover">
                             <div class="mt-2 font-ubuntuMonoRegular text-center border-b py-2 mb-4">Product title here</div>
                             <button id="shadow-btn" type="submit" class="bg-button flex self-end">
@@ -157,7 +123,7 @@
                             </button>
                         </div>
         
-                        <div class="border mr-4 p-4 w-[250px] flex flex-col justify-between">
+                        <div id=card-shadow class="border mr-4 p-4 w-[250px] flex flex-col justify-between">
                             <img src="/images/dummyStock.png" alt="Image Unavailable" class="w-full h-32 object-cover">
                             <div class="mt-2 font-ubuntuMonoRegular text-center border-b py-2 mb-4">Product title here</div>
                             <button id="shadow-btn" type="submit" class="bg-button flex self-end">
@@ -165,7 +131,45 @@
                             </button>
                         </div>
         
-                        <div class="border mr-4 p-4 w-[250px] flex flex-col justify-between">
+                        <div id=card-shadow class="border mr-4 p-4 w-[250px] flex flex-col justify-between">
+                            <img src="/images/dummyStock.png" alt="Image Unavailable" class="w-full h-32 object-cover">
+                            <div class="mt-2 font-ubuntuMonoRegular text-center border-b py-2 mb-4">Product title here</div>
+                            <button id="shadow-btn" type="submit" class="bg-button flex self-end">
+                                <a href="{{ route('productDetail') }}" id="card-effect" class="font-ubuntuMonoBold px-1">Baca Ulasan</a>
+                            </button>
+                        </div>
+        
+                    </div>
+                </div>
+        
+                <div>
+                    <h2 class="py-10 text-center font-ubuntuMonoBold text-xl">idk lol</h2>
+                    <div class="flex flex-row gap-2 justify-center">
+                        <div id=card-shadow class="border mr-4 p-4 w-[250px] flex flex-col justify-between">
+                            <img src="/images/dummyStock.png" alt="Image Unavailable" class="w-full h-32 object-cover">
+                            <div class="mt-2 font-ubuntuMonoRegular text-center border-b py-2 mb-4">Product title here</div>
+                            <button id="shadow-btn" type="submit" class="bg-button flex self-end">
+                                <a href="{{ route('productDetail') }}" id="card-effect" class="font-ubuntuMonoBold px-1">Baca Ulasan</a>
+                            </button>
+                        </div>
+        
+                        <div id=card-shadow class="border mr-4 p-4 w-[250px] flex flex-col justify-between">
+                            <img src="/images/dummyStock.png" alt="Image Unavailable" class="w-full h-32 object-cover">
+                            <div class="mt-2 font-ubuntuMonoRegular text-center border-b py-2 mb-4">Product title here</div>
+                            <button id="shadow-btn" type="submit" class="bg-button flex self-end">
+                                <a href="{{ route('productDetail') }}" id="card-effect" class="font-ubuntuMonoBold px-1">Baca Ulasan</a>
+                            </button>
+                        </div>
+        
+                        <div id=card-shadow class="border mr-4 p-4 w-[250px] flex flex-col justify-between">
+                            <img src="/images/dummyStock.png" alt="Image Unavailable" class="w-full h-32 object-cover">
+                            <div class="mt-2 font-ubuntuMonoRegular text-center border-b py-2 mb-4">Product title here</div>
+                            <button id="shadow-btn" type="submit" class="bg-button flex self-end">
+                                <a href="{{ route('productDetail') }}" id="card-effect" class="font-ubuntuMonoBold px-1">Baca Ulasan</a>
+                            </button>
+                        </div>
+        
+                        <div id=card-shadow class="border mr-4 p-4 w-[250px] flex flex-col justify-between">
                             <img src="/images/dummyStock.png" alt="Image Unavailable" class="w-full h-32 object-cover">
                             <div class="mt-2 font-ubuntuMonoRegular text-center border-b py-2 mb-4">Product title here</div>
                             <button id="shadow-btn" type="submit" class="bg-button flex self-end">

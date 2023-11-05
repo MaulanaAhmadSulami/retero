@@ -41,7 +41,11 @@ class AuthController extends Controller
 
         if (auth()->attempt($request->only('email', 'password'), $remember)) {
             $request->session()->regenerate();
-            return redirect('/');
+
+            if(auth()->user()->is_admin){
+                return redirect('adminMenu');
+            }
+            return redirect('productDetail');
         } else {
             return back()->withErrors([
                 'email' => 'Email was wrong or doesn\'t exist in our records!'

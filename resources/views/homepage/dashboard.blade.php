@@ -25,7 +25,7 @@
         }
     
         #shadow {
-            box-shadow: 1rem 1rem 0;
+            box-shadow: 0.6rem 0.6rem 0;
             transition: transform 0.2s, box-shadow 0.2s;
         }
     
@@ -88,6 +88,7 @@
                                     end of this Hisense A6G review to learn what experts are saying.
                                 </p>
                             </div>
+                            
                             <div class="w-[350px]">
                                 <a href="{{ 'productDetail' }}"> <img id="shadow" src="images/dummyStock.png"
                                         alt=""></a>
