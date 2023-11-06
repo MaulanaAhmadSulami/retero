@@ -35,62 +35,66 @@
     </style>
 </head>
 
-<body>
-    <div class="container-fluid">
-        @include('navbar')
-    </div>
-    <div>
-        <div class="grid place-items-center py-8">
-            <div class="grid grid-cols-2 items-center text-center">
-                <a href="https://www.amazon.com/dp/B08Z9WT6PQ?tag=gadgetreviewc-20&th=1&geniuslink=true">
-                    <img id="shadow" src="images/dummyStock.png" class="h-[400px]" alt="Product image">
-                </a>
-                <div class="text-left mr-[120px]">
-                    <h1 class="font-publicPixel text-[31.25px]">Hisensa A6G</h1>
-                    <span class="font-ubuntuMonoRegular">
-                        <iconify-icon icon="subway:refresh-time" class="text-xs"></iconify-icon> 22 Oktober 2023
-                    </span>
-                </div>
-                <div class="max-w-[750px] mt-20 text-left tracking-wide">
-                    <h1 id="stroke" class="text-[40px] font-publicPixel text-button tracking-widest">Ringkasan</h1>
-                    <p class="font-ubuntuMonoRegular text-[20px] mt-5">
-                        The Hisense A6G is the brand’s budget tier Smart TV released in 2021. This 4K ultra
-                        HD TV
-                        promises to give you four times the resolution of a regular <span class="font-bold">1080
-                            P
-                            HD screen, Dolby Vision HDR plus, HDR 10 sound</span>, as well as <span
-                            class="font-bold">voice-activated commands.</span> The TV is perfect for those
-                        looking
-                        for an extra device to a second room or a first-time smart TV. This Hisense A6G
-                        offers <span class="font-bold"> 8.3 million pixels,</span> and a <span class="font-bold">full
-                            array
-                            LED backlight</span> creating a sharper, brighter, more colorful picture. Read
-                        to the
-                        end of this Hisense A6G review to learn what experts are saying.
-                    </p>
+<body class="flex flex-col min-h-screen">
 
-                    <h1 id="stroke" class="text-[40px] font-publicPixel text-button py-10 tracking-widest">Kelebihan</h1>
-                    
-                    <ul id="listProduct" class="list-inside text-[20px] mt-5">
-                        <li>Minima unde sit aliquid aut omnis nobis. </li>
-                        <li>Minima unde sit aliquid aut omnis nobis. </li>
-                        <li>Minima unde sit aliquid aut omnis nobis. </li>
-                        <li>Minima unde sit aliquid aut omnis nobis. </li>
-                    </ul>
-                    
-                    <h1 id="stroke" class="text-[40px] font-publicPixel text-button py-10 tracking-widest">Kekurangan</h1>
-                    <ul id="listProduct" class="list-inside text-[20px] mt-5">
-                        <li>Minima unde sit aliquid aut omnis nobis. </li>
-                        <li>Minima unde sit aliquid aut omnis nobis. </li>
-                        <li>Minima unde sit aliquid aut omnis nobis. </li>
-                        <li>Minima unde sit aliquid aut omnis nobis. </li>
-                    </ul>
+    <div class="flex-grow">
+        <div class="container-fluid">
+            @include('navbar')
+        </div>
+        
+        <div>
+            <div class="grid place-items-center py-8">
+                <div class="grid grid-cols-2 items-center text-center">
+                    <a href="https://www.amazon.com/dp/B08Z9WT6PQ?tag=gadgetreviewc-20&th=1&geniuslink=true">
+                        <img id="shadow" src="images/dummyStock.png" class="h-[400px]" alt="Product image">
+                    </a>
+                    <div class="text-left mr-[120px]">
+                        <h1 class="font-publicPixel text-[31.25px]">Hisensa A6G</h1>
+                        <span class="font-ubuntuMonoRegular">
+                            <iconify-icon icon="subway:refresh-time" class="text-xs"></iconify-icon> 22 Oktober 2023
+                        </span>
+                    </div>
+                    <div class="max-w-[750px] mt-20 text-left tracking-wide">
+                        <h1 id="stroke" class="text-[40px] font-publicPixel text-button tracking-widest">Ringkasan</h1>
+                        <p class="font-ubuntuMonoRegular text-[20px] mt-5">
+                            The Hisense A6G is the brand’s budget tier Smart TV released in 2021. This 4K ultra
+                            HD TV
+                            promises to give you four times the resolution of a regular <span class="font-bold">1080
+                                P
+                                HD screen, Dolby Vision HDR plus, HDR 10 sound</span>, as well as <span
+                                class="font-bold">voice-activated commands.</span> The TV is perfect for those
+                            looking
+                            for an extra device to a second room or a first-time smart TV. This Hisense A6G
+                            offers <span class="font-bold"> 8.3 million pixels,</span> and a <span class="font-bold">full
+                                array
+                                LED backlight</span> creating a sharper, brighter, more colorful picture. Read
+                            to the
+                            end of this Hisense A6G review to learn what experts are saying.
+                        </p>
+    
+                        <h1 id="stroke" class="text-[40px] font-publicPixel text-button py-10 tracking-widest">Kelebihan</h1>
+                        
+                        <ul id="listProduct" class="list-inside text-[20px] mt-5">
+                            <li>Minima unde sit aliquid aut omnis nobis. </li>
+                            <li>Minima unde sit aliquid aut omnis nobis. </li>
+                            <li>Minima unde sit aliquid aut omnis nobis. </li>
+                            <li>Minima unde sit aliquid aut omnis nobis. </li>
+                        </ul>
+                        
+                        <h1 id="stroke" class="text-[40px] font-publicPixel text-button py-10 tracking-widest">Kekurangan</h1>
+                        <ul id="listProduct" class="list-inside text-[20px] mt-5">
+                            <li>Minima unde sit aliquid aut omnis nobis. </li>
+                            <li>Minima unde sit aliquid aut omnis nobis. </li>
+                            <li>Minima unde sit aliquid aut omnis nobis. </li>
+                            <li>Minima unde sit aliquid aut omnis nobis. </li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-            <div class="border rounded-2xl inline-block p-2 flex justify-content-end">
-                <button type="submit">
-                    <iconify-icon icon="basil:plus-solid" class="text-xl transfrom bot-1/2"></iconify-icon> Tambah komentar
-                </button>
+                <div class="border rounded-2xl inline-block p-2 flex justify-content-end">
+                    <button type="submit">
+                        <iconify-icon icon="basil:plus-solid" class="text-xl transfrom bot-1/2"></iconify-icon> Tambah komentar
+                    </button>
+                </div>
             </div>
         </div>
     </div>
