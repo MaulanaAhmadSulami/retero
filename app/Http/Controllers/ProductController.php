@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Review;
 use Illuminate\Http\Request;
+use App\Models\Product;
 
-class ReviewController extends Controller
+class ProductController extends Controller
 {
+    //
+
     /**
      * Display a listing of the resource.
      *
@@ -14,8 +16,8 @@ class ReviewController extends Controller
      */
     public function index()
     {
-        //
-        $reviews = Review::all();
+        
+        $reviews = Product::all();
         return view('homepage.dashboard', compact('reviews'));
 
     }

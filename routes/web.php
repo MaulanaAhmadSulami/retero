@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\ReviewController;
+use App\HTTP\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -63,4 +63,4 @@ Route::get('/productDetail', function(){
 //RESOURCES
 // Route::get('dashboard', [ReviewController::class, 'index']);
 // Route::resource('reviews', ReviewController::class);
-Route::get('/', [ReviewController::class, 'index'])->name('dashboard');
+Route::get('/', [ProductController::class, 'index'])->name('homepage.dashboard');

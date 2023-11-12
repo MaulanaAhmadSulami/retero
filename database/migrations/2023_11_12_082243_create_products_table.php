@@ -13,8 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->boolean('is_admin')->default(false)->after('password');
+        Schema::create('products', function (Blueprint $table) {
+            $table->id();
+            $table->string('productTitle');
+            $table->binary('image')->nullable();
+            $table->string('productType');
+            $table->longText('productDescription');
+            $table->float('productRating', 3, 2);
+            $table->timestamps();
         });
     }
 
@@ -25,8 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('is_admin');
-        });
+        Schema::dropIfExists('products');
     }
 };
