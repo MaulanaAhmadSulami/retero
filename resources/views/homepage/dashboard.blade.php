@@ -1,16 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=
-    , initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Retero Homepage</title>
-    <link rel="icon" type="image/svg+xml" href="image/retero.png" />
-    @vite('resources/css/app.css')
-
-   <style>
+@extends('layouts.app')
+@section('title', 'Dashboard')
+@push('styles')
+    <style>
         #stroke {
             text-shadow:
                 -3px -3px 0 #fff,
@@ -44,147 +35,132 @@
             box-shadow: none;
         }
     </style>
-</head>
+@endpush 
 
-<body class="flex flex-col min-h-screen">
-
-    <div class="flex-grow">
-        <div class="container-fluid">
-
-            @include('navbar')
-        </div>
-
-        <div>
-
-            <div id="stroke" class="relative">
-
-                <div class="p-4 border-b-4 bg-button flex justify-center items-center font-bold font-publicPixel">
-                    <h2 class="text-[20px]">
-                        Ulasan Terbaru
-                    </h2>
+@section('content')
+            <div>
+                <div id="stroke" class="relative">
+    
+                    <div class="p-4 border-b-4 bg-button flex justify-center items-center font-bold font-publicPixel">
+                        <h2 class="text-[20px]">
+                            Ulasan Terbaru
+                        </h2>
+                    </div>
                 </div>
-            </div>
-
-            <div class="p-10">
+    
                 <div class="p-10">
-                    <div class="p-10 flex justify-center">
-                        <div class="flex">
-                            <div class="max-w-[500px] mr-20">
-                                <h1 class="font-publicPixel text-[20px] text-left py-4">Hisensa A6G</h1>
-                                <p class="font-ubuntuMonoRegular text-[17px]">
-                                    The Hisense A6G is the brand’s budget tier Smart TV released in 2021. This 4K ultra
-                                    HD TV
-                                    promises to give you four times the resolution of a regular <span
-                                        class="font-bold">1080
-                                        P
-                                        HD screen, Dolby Vision HDR plus, HDR 10 sound</span>, as well as <span
-                                        class="font-bold">voice-activated commands.</span> The TV is perfect for those
-                                    looking
-                                    for an extra device to a second room or a first-time smart TV. This Hisense A6G
-                                    offers <span class="font-bold"> 8.3 million pixels,</span> and a <span
-                                        class="font-bold">full array
-                                        LED backlight</span> creating a sharper, brighter, more colorful picture. Read
-                                    to the
-                                    end of this Hisense A6G review to learn what experts are saying.
-                                </p>
-                            </div>
-                            
-                            <div class="w-[350px]">
-                                <a href="{{ 'productDetail' }}"> <img id="shadow" src="images/dummyStock.png"
-                                        alt=""></a>
+                    <div class="p-10">
+                        <div class="p-10 flex justify-center">
+                            <div class="flex">
+                                <div class="max-w-[500px] mr-20">
+                                    <h1 class="font-publicPixel text-[20px] text-left py-4">Hisensa A6G</h1>
+                                    <p class="font-ubuntuMonoRegular text-[17px]">
+                                        The Hisense A6G is the brand’s budget tier Smart TV released in 2021. This 4K ultra
+                                        HD TV
+                                        promises to give you four times the resolution of a regular <span
+                                            class="font-bold">1080
+                                            P
+                                            HD screen, Dolby Vision HDR plus, HDR 10 sound</span>, as well as <span
+                                            class="font-bold">voice-activated commands.</span> The TV is perfect for those
+                                        looking
+                                        for an extra device to a second room or a first-time smart TV. This Hisense A6G
+                                        offers <span class="font-bold"> 8.3 million pixels,</span> and a <span
+                                            class="font-bold">full array
+                                            LED backlight</span> creating a sharper, brighter, more colorful picture. Read
+                                        to the
+                                        end of this Hisense A6G review to learn what experts are saying.
+                                    </p>
+                                </div>
+                                
+                                <div class="w-[350px]">
+                                    <a href="{{ 'productDetail' }}"> <img id="shadow" src="images/dummyStock.png"
+                                            alt=""></a>
+                                </div>
                             </div>
                         </div>
+    
                     </div>
-
                 </div>
-            </div>
-
-            <div class="p-10">
+    
                 <div class="p-10">
-                    <div class="flex justify-center">
-                        <div class="flex">
-                            <div class="w-[350px]">
-                                <a href="{{ 'productDetail' }}"> <img id="shadow" src="images/dummyStock.png"
-                                        alt=""></a>
-                            </div>
-                            <div class="max-w-[500px] mx-20">
-                                <h1 class="font-publicPixel text-[20px] py-4">Hisensa A6G</h1>
-                                <p class="font-ubuntuMonoRegular text-[17px]">
-                                    The Hisense A6G is the brand’s budget tier Smart TV released in 2021. This 4K ultra
-                                    HD TV
-                                    promises to give you four times the resolution of a regular <span
-                                        class="font-bold">1080
-                                        P
-                                        HD screen, Dolby Vision HDR plus, HDR 10 sound</span>, as well as <span
-                                        class="font-bold">voice-activated commands.</span> The TV is perfect for those
-                                    looking
-                                    for an extra device to a second room or a first-time smart TV. This Hisense A6G
-                                    offers <span class="font-bold"> 8.3 million pixels,</span> and a <span
-                                        class="font-bold">full array
-                                        LED backlight</span> creating a sharper, brighter, more colorful picture. Read
-                                    to the
-                                    end of this Hisense A6G review to learn what experts are saying.
-                                </p>
+                    <div class="p-10">
+                        <div class="flex justify-center">
+                            <div class="flex">
+                                <div class="w-[350px]">
+                                    <a href="{{ 'productDetail' }}"> <img id="shadow" src="images/dummyStock.png"
+                                            alt=""></a>
+                                </div>
+                                <div class="max-w-[500px] mx-20">
+                                    <h1 class="font-publicPixel text-[20px] py-4">Hisensa A6G</h1>
+                                    <p class="font-ubuntuMonoRegular text-[17px]">
+                                        The Hisense A6G is the brand’s budget tier Smart TV released in 2021. This 4K ultra
+                                        HD TV
+                                        promises to give you four times the resolution of a regular <span
+                                            class="font-bold">1080
+                                            P
+                                            HD screen, Dolby Vision HDR plus, HDR 10 sound</span>, as well as <span
+                                            class="font-bold">voice-activated commands.</span> The TV is perfect for those
+                                        looking
+                                        for an extra device to a second room or a first-time smart TV. This Hisense A6G
+                                        offers <span class="font-bold"> 8.3 million pixels,</span> and a <span
+                                            class="font-bold">full array
+                                            LED backlight</span> creating a sharper, brighter, more colorful picture. Read
+                                        to the
+                                        end of this Hisense A6G review to learn what experts are saying.
+                                    </p>
+                                </div>
                             </div>
                         </div>
+    
                     </div>
-
                 </div>
-            </div>
-
-
-            <div class="p-10">
+    
+    
                 <div class="p-10">
-                    <div class="flex justify-center">
-                        <div class="flex">
-                            <div class="max-w-[500px] mr-20">
-                                <h1 class="font-publicPixel text-[20px] text-left py-4">Hisensa A6G</h1>
-                                <p class="font-ubuntuMonoRegular text-[17px]">
-                                    The Hisense A6G is the brand’s budget tier Smart TV released in 2021. This 4K ultra
-                                    HD TV
-                                    promises to give you four times the resolution of a regular <span
-                                        class="font-bold">1080
-                                        P
-                                        HD screen, Dolby Vision HDR plus, HDR 10 sound</span>, as well as <span
-                                        class="font-bold">voice-activated commands.</span> The TV is perfect for those
-                                    looking
-                                    for an extra device to a second room or a first-time smart TV. This Hisense A6G
-                                    offers <span class="font-bold"> 8.3 million pixels,</span> and a <span
-                                        class="font-bold">full array
-                                        LED backlight</span> creating a sharper, brighter, more colorful picture. Read
-                                    to the
-                                    end of this Hisense A6G review to learn what experts are saying.
-                                </p>
-                            </div>
-                            <div class="w-[350px]">
-                                <a href="{{ 'productDetail' }}"> <img id="shadow" src="images/dummyStock.png"
-                                        alt=""></a>
+                    <div class="p-10">
+                        <div class="flex justify-center">
+                            <div class="flex">
+                                <div class="max-w-[500px] mr-20">
+                                    <h1 class="font-publicPixel text-[20px] text-left py-4">Hisensa A6G</h1>
+                                    <p class="font-ubuntuMonoRegular text-[17px]">
+                                        The Hisense A6G is the brand’s budget tier Smart TV released in 2021. This 4K ultra
+                                        HD TV
+                                        promises to give you four times the resolution of a regular <span
+                                            class="font-bold">1080
+                                            P
+                                            HD screen, Dolby Vision HDR plus, HDR 10 sound</span>, as well as <span
+                                            class="font-bold">voice-activated commands.</span> The TV is perfect for those
+                                        looking
+                                        for an extra device to a second room or a first-time smart TV. This Hisense A6G
+                                        offers <span class="font-bold"> 8.3 million pixels,</span> and a <span
+                                            class="font-bold">full array
+                                            LED backlight</span> creating a sharper, brighter, more colorful picture. Read
+                                        to the
+                                        end of this Hisense A6G review to learn what experts are saying.
+                                    </p>
+                                </div>
+                                <div class="w-[350px]">
+                                    <a href="{{ 'productDetail' }}"> <img id="shadow" src="images/dummyStock.png"
+                                            alt=""></a>
+                                </div>
                             </div>
                         </div>
+    
                     </div>
-
+    
+    
                 </div>
-
-
+    
+    
+                <div class="py-8 flex justify-center">
+                    <button id="shadow-btn" type="submit" class="bg-button 1px py-2 px-4">
+                        <a id="stroke" class="font-publicPixel text-[20px]" href="{{ 'morereview' }}">Lihat Ulasan
+                            Lainnya</a>
+                    </button>
+                </div>
+    
             </div>
-
-
-            <div class="py-8 flex justify-center">
-                <button id="shadow-btn" type="submit" class="bg-button 1px py-2 px-4">
-                    <a id="stroke" class="font-publicPixel text-[20px]" href="{{ 'morereview' }}">Lihat Ulasan
-                        Lainnya</a>
-                </button>
-            </div>
-
-        </div>
-    </div>
-    <footer>
-
-        @include('footer')
-    </footer>
-
-</body>
-
+@endsection
 
 {{-- @if($reviews->isEmpty())
 <p>No Reviews available as of now.</p>
