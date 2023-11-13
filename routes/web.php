@@ -45,7 +45,7 @@ Route::get('/adminMenu', function(){
 })->name('auth.adminHome')->middleware('is_admin');
 
 //for user to logout later (not implemented yet lol)
-// Route::get('/logout', [AuthController::class, 'logout'])->name('auth.logout');
+Route::get('/logout', [AuthController::class, 'logout'])->name('auth.logout');
 
 Route::get('/morereview', function(){
     return view('homepage.morereview');

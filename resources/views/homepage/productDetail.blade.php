@@ -28,10 +28,10 @@
 
 @section('content')
 <div>
-    <div class="grid place-items-center py-8">
+    <div class="grid place-items-center">
         <div class="grid grid-cols-2 items-center text-center">
             <a href="https://www.amazon.com/dp/B08Z9WT6PQ?tag=gadgetreviewc-20&th=1&geniuslink=true">
-                <img id="shadow" src="images/dummyStock.png" class="h-[400px]" alt="Product image">
+                <img id="shadow" src="images/dummyStock.png" class="" alt="Product image">
             </a>
             <div class="text-left mr-[120px]">
                 <h1 class="font-publicPixel text-[31.25px]">Hisensa A6G</h1>
