@@ -14,6 +14,6 @@ class UserReviewSeeder extends Seeder
      */
     public function run()
     {
-        //
+        //mungkin ga butuh ini
     }
 }

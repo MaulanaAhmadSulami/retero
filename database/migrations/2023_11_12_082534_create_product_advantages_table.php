@@ -15,7 +15,6 @@ return new class extends Migration
     {
         Schema::create('product_advantages', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
             $table->foreignId('product_id')->constrained('products')->cascadeOnDelete();
             $table->longText('advantageDescription');
             $table->timestamps();

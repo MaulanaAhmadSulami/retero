@@ -64,8 +64,8 @@
                     <img src="/images/dummyStock.png" alt="Image Unavailable" class="w-full h-32 object-cover">
                     <div class="mt-2 font-ubuntuMonoRegular text-center border-b py-2 mb-4">Product title here</div>
                     <button id="shadow-btn" type="submit" class="bg-button flex self-end">
-                        <a href="{{ route('productDetail') }}" id="card-effect" class="font-ubuntuMonoBold px-1">Baca
-                            Ulasan</a>
+                        {{-- <a href="{{ route('productDetail') }}" id="card-effect" class="font-ubuntuMonoBold px-1">Baca
+                            Ulasan</a> --}}
                     </button>
                 </div>
 
@@ -73,8 +73,8 @@
                     <img src="/images/dummyStock.png" alt="Image Unavailable" class="w-full h-32 object-cover">
                     <div class="mt-2 font-ubuntuMonoRegular text-center border-b py-2 mb-4">Product title here</div>
                     <button id="shadow-btn" type="submit" class="bg-button flex self-end">
-                        <a href="{{ route('productDetail') }}" id="card-effect" class="font-ubuntuMonoBold px-1">Baca
-                            Ulasan</a>
+                        {{-- <a href="{{ route('productDetail') }}" id="card-effect" class="font-ubuntuMonoBold px-1">Baca
+                            Ulasan</a> --}}
                     </button>
                 </div>
 
@@ -82,8 +82,8 @@
                     <img src="/images/dummyStock.png" alt="Image Unavailable" class="w-full h-32 object-cover">
                     <div class="mt-2 font-ubuntuMonoRegular text-center border-b py-2 mb-4">Product title here</div>
                     <button id="shadow-btn" type="submit" class="bg-button flex self-end">
-                        <a href="{{ route('productDetail') }}" id="card-effect" class="font-ubuntuMonoBold px-1">Baca
-                            Ulasan</a>
+                        {{-- <a href="{{ route('productDetail') }}" id="card-effect" class="font-ubuntuMonoBold px-1">Baca
+                            Ulasan</a> --}}
                     </button>
                 </div>
 
@@ -91,8 +91,8 @@
                     <img src="/images/dummyStock.png" alt="Image Unavailable" class="w-full h-32 object-cover">
                     <div class="mt-2 font-ubuntuMonoRegular text-center border-b py-2 mb-4">Product title here</div>
                     <button id="shadow-btn" type="submit" class="bg-button flex self-end">
-                        <a href="{{ route('productDetail') }}" id="card-effect" class="font-ubuntuMonoBold px-1">Baca
-                            Ulasan</a>
+                        {{-- <a href="{{ route('productDetail') }}" id="card-effect" class="font-ubuntuMonoBold px-1">Baca
+                            Ulasan</a> --}}
                     </button>
                 </div>
             </div>
@@ -109,8 +109,8 @@
                     <img src="/images/dummyStock.png" alt="Image Unavailable" class="w-full h-32 object-cover">
                     <div class="mt-2 font-ubuntuMonoRegular text-center border-b py-2 mb-4">Product title here</div>
                     <button id="shadow-btn" type="submit" class="bg-button flex self-end">
-                        <a href="{{ route('productDetail') }}" id="card-effect" class="font-ubuntuMonoBold px-1">Baca
-                            Ulasan</a>
+                        {{-- <a href="{{ route('productDetail') }}" id="card-effect" class="font-ubuntuMonoBold px-1">Baca
+                            Ulasan</a> --}}
                     </button>
                 </div>
 
@@ -118,8 +118,8 @@
                     <img src="/images/dummyStock.png" alt="Image Unavailable" class="w-full h-32 object-cover">
                     <div class="mt-2 font-ubuntuMonoRegular text-center border-b py-2 mb-4">Product title here</div>
                     <button id="shadow-btn" type="submit" class="bg-button flex self-end">
-                        <a href="{{ route('productDetail') }}" id="card-effect" class="font-ubuntuMonoBold px-1">Baca
-                            Ulasan</a>
+                        {{-- <a href="{{ route('productDetail') }}" id="card-effect" class="font-ubuntuMonoBold px-1">Baca
+                            Ulasan</a> --}}
                     </button>
                 </div>
 
@@ -127,8 +127,8 @@
                     <img src="/images/dummyStock.png" alt="Image Unavailable" class="w-full h-32 object-cover">
                     <div class="mt-2 font-ubuntuMonoRegular text-center border-b py-2 mb-4">Product title here</div>
                     <button id="shadow-btn" type="submit" class="bg-button flex self-end">
-                        <a href="{{ route('productDetail') }}" id="card-effect" class="font-ubuntuMonoBold px-1">Baca
-                            Ulasan</a>
+                        {{-- <a href="{{ route('productDetail') }}" id="card-effect" class="font-ubuntuMonoBold px-1">Baca
+                            Ulasan</a> --}}
                     </button>
                 </div>
 
@@ -136,8 +136,8 @@
                     <img src="/images/dummyStock.png" alt="Image Unavailable" class="w-full h-32 object-cover">
                     <div class="mt-2 font-ubuntuMonoRegular text-center border-b py-2 mb-4">Product title here</div>
                     <button id="shadow-btn" type="submit" class="bg-button flex self-end">
-                        <a href="{{ route('productDetail') }}" id="card-effect" class="font-ubuntuMonoBold px-1">Baca
-                            Ulasan</a>
+                        {{-- <a href="{{ route('productDetail') }}" id="card-effect" class="font-ubuntuMonoBold px-1">Baca
+                            Ulasan</a> --}}
                     </button>
                 </div>
 
@@ -154,8 +154,8 @@
                     <img src="/images/dummyStock.png" alt="Image Unavailable" class="w-full h-32 object-cover">
                     <div class="mt-2 font-ubuntuMonoRegular text-center border-b py-2 mb-4">Product title here</div>
                     <button id="shadow-btn" type="submit" class="bg-button flex self-end">
-                        <a href="{{ route('productDetail') }}" id="card-effect" class="font-ubuntuMonoBold px-1">Baca
-                            Ulasan</a>
+                        {{-- <a href="{{ route('productDetail') }}" id="card-effect" class="font-ubuntuMonoBold px-1">Baca
+                            Ulasan</a> --}}
                     </button>
                 </div>
 
@@ -163,8 +163,8 @@
                     <img src="/images/dummyStock.png" alt="Image Unavailable" class="w-full h-32 object-cover">
                     <div class="mt-2 font-ubuntuMonoRegular text-center border-b py-2 mb-4">Product title here</div>
                     <button id="shadow-btn" type="submit" class="bg-button flex self-end">
-                        <a href="{{ route('productDetail') }}" id="card-effect" class="font-ubuntuMonoBold px-1">Baca
-                            Ulasan</a>
+                        {{-- <a href="{{ route('productDetail') }}" id="card-effect" class="font-ubuntuMonoBold px-1">Baca
+                            Ulasan</a> --}}
                     </button>
                 </div>
 
@@ -172,8 +172,8 @@
                     <img src="/images/dummyStock.png" alt="Image Unavailable" class="w-full h-32 object-cover">
                     <div class="mt-2 font-ubuntuMonoRegular text-center border-b py-2 mb-4">Product title here</div>
                     <button id="shadow-btn" type="submit" class="bg-button flex self-end">
-                        <a href="{{ route('productDetail') }}" id="card-effect" class="font-ubuntuMonoBold px-1">Baca
-                            Ulasan</a>
+                        {{-- <a href="{{ route('productDetail') }}" id="card-effect" class="font-ubuntuMonoBold px-1">Baca
+                            Ulasan</a> --}}
                     </button>
                 </div>
 
@@ -181,8 +181,8 @@
                     <img src="/images/dummyStock.png" alt="Image Unavailable" class="w-full h-32 object-cover">
                     <div class="mt-2 font-ubuntuMonoRegular text-center border-b py-2 mb-4">Product title here</div>
                     <button id="shadow-btn" type="submit" class="bg-button flex self-end">
-                        <a href="{{ route('productDetail') }}" id="card-effect" class="font-ubuntuMonoBold px-1">Baca
-                            Ulasan</a>
+                        {{-- <a href="{{ route('productDetail') }}" id="card-effect" class="font-ubuntuMonoBold px-1">Baca
+                            Ulasan</a> --}}
                     </button>
                 </div>
             </div>

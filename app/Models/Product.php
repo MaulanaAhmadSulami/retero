@@ -19,6 +19,6 @@ class Product extends Model
     }
 
     public function disadvantages(){
-        return $this->hasMany(ProductDisadvantages::class);
+        return $this->hasMany(Productdisadvantages::class);
     }
 }

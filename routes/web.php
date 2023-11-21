@@ -51,9 +51,9 @@ Route::get('/morereview', function(){
     return view('homepage.morereview');
 })->name('morereview');
 
-Route::get('/productDetail', function(){
-    return view('homepage.productDetail');
-})->name('productDetail');
+// Route::get('/productDetail', function(){
+//     return view('homepage.productDetail');
+// })->name('productDetail');
 
 
 //ACTION ROUTES BELOW
@@ -64,3 +64,4 @@ Route::get('/productDetail', function(){
 // Route::get('dashboard', [ReviewController::class, 'index']);
 // Route::resource('reviews', ReviewController::class);
 Route::get('/', [ProductController::class, 'index'])->name('homepage.dashboard');
+Route::get('/productDetail/{id}', [ProductController::class, 'showProduct'])->name('homepage.productDetail');

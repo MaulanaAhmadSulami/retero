@@ -2,7 +2,7 @@
     <nav class="bg-white p-4 flex justify-between items-center ">
         <div class="flex items-center">
             <a href="login">
-                <img src="images/retero.png" alt="Logo" class="mr-4 w-[150px]"></img>
+                <img src="{{ asset('images/retero.png') }}" alt="Logo" class="mr-4 w-[150px]"></img>
             </a>
 
             <div class="relative group font-ubuntuMonoRegular">

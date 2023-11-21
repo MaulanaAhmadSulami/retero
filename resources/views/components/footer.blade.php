@@ -4,7 +4,7 @@
             <div class="md:flex md:justify-between ">
                 <div>
                     <a href="/">
-                        <img src="images/retero.png" class="w-[250px] mr-3 mt-8" alt="Retero logo" /></a>
+                        <img src="{{ asset('images/retero.png') }}" class="w-[250px] mr-3 mt-8" alt="Retero logo" /></a>
                 </div>
                 <div class="grid grid-cols-2 gap-8 sm:gap-8 sm:grid-cols-3 py-2">
                     <div>

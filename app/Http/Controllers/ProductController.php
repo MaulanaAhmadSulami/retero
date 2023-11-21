@@ -17,10 +17,32 @@ class ProductController extends Controller
     public function index()
     {
         
-        $reviews = Product::all();
-        return view('homepage.dashboard', compact('reviews'));
+        $products = Product::all();
+        return view('homepage.dashboard', compact('products'));
 
     }
+
+    public function showProduct($id){
+        $product = Product::with(['advantages' , 'disadvantages'])->find($id);
+        return view('homepage.productDetail', compact('product'));
+    }
+
+    // public function getAdvantage($id){
+    //     $product = Product::find($id);
+    //     $advantageArray = explode('||', $product->advantage);
+    // }
+
+    // public function storeAdvantage(Request $request){
+    //     $advantageArray = [];
+    //     foreach($request->advantage as $advantage){
+    //         array_push($advantageArray, $advantage);
+    //     }
+    //     $advantageString = implode('||', $advantageArray);
+    //     $product = Product::find($request->id);
+    //     $product->advantage = $advantageString;
+    //     $product->save();
+
+    // }
 
     /**
      * Show the form for creating a new resource.

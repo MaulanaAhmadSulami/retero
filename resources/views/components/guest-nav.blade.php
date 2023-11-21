@@ -2,7 +2,7 @@
     <nav class="bg-white p-4 flex justify-between items-center ">
         <div class="flex items-center">
             <a href="login">
-                <img src="images/retero.png" alt="Logo" class="mr-4 w-[150px]"></img>
+                <img src="{{ asset('images/retero.png') }}" alt="Logo" class="mr-4 w-[150px]"></img>
             </a>
 
             <div class="relative group font-ubuntuMonoRegular">
@@ -33,7 +33,7 @@
      <div class="px-1 ml-auto relative">
         
             <div
-                class="absolute left-1 top-1/2 transform -translate-y-1/2 bg-button w-10 h-10 flex items-center justify-center">
+                class="absolute left-1 top-1/2 transform -translate-y-1/2 w-10 h-10 flex items-center justify-center">
                 <img src="images/search.png" alt="Search" class="w-6 h-6">
             </div>
         
