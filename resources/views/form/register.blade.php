@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -13,46 +13,47 @@
             transition: transform 0.2s, box-shadow 0.2s;
         }
 
-        #register-btn:hover{
+        #register-btn:hover {
             transform: translate3d(0.25rem, 0.25rem, -0.25rem);
-            box-shadow: 0 0 0 ;
+            box-shadow: 0 0 0;
         }
     </style>
 </head>
 
 <body class="flex items-center justify-center h-screen">
     <div class="p-6 rounded-lg shadow-md w-96">
-      <div>
+        <div>
             <img src="images/retero.png" alt="Retero">
         </div>
-        <h1 class="text-2xl text-center font-publicPixel text-headline font-semibold mb-8"><span class="py-2 underline">Sign
+        <h1 class="text-2xl text-center font-publicPixel text-headline font-semibold mb-8"><span
+                class="py-2 underline">Sign
                 Up</span>
         </h1>
         <form method="POST" action="{{ route('auth.register') }}">
-          @csrf
+            @csrf
             <div class="mb-8">
                 <input type="text" placeholder="Username" name="name" id="name" value="{{ old('username') }}"
                     class="bg-form border-b w-full py-2 px-3 @error('name') border-red-500 @else border-setBorder @enderror">
                 @error('name')
-                    <div class="text-red-500">{{ $message }}</div>
+                <div class="text-red-500">{{ $message }}</div>
                 @enderror
             </div>
 
-       <div class="mb-8">
-            <input type="email" placeholder="Email" name="email" id="email" value="{{ old('email') }}"
-                class="bg-form border-b w-full py-2 px-3 @error('email') border-red-500 @else border-setBorder @enderror">
-            @error('email')
-            <div class="text-red-500">{{ $message }}</div>
-            @enderror
-        </div>
-        
-        <div class="mb-8">
-            <input type="password" placeholder="Password" name="password" id="password"
-                class="bg-form border-b  w-full py-2 px-3 @error('password') border-red-500 @else border-setBorder @enderror">
-            @error('password')
-            <div class="text-red-500">{{ $message }}</div>
-            @enderror
-        </div>
+            <div class="mb-8">
+                <input type="email" placeholder="Email" name="email" id="email" value="{{ old('email') }}"
+                    class="bg-form border-b w-full py-2 px-3 @error('email') border-red-500 @else border-setBorder @enderror">
+                @error('email')
+                <div class="text-red-500">{{ $message }}</div>
+                @enderror
+            </div>
+
+            <div class="mb-8">
+                <input type="password" placeholder="Password" name="password" id="password"
+                    class="bg-form border-b  w-full py-2 px-3 @error('password') border-red-500 @else border-setBorder @enderror">
+                @error('password')
+                <div class="text-red-500">{{ $message }}</div>
+                @enderror
+            </div>
             <div class="mb-8">
                 <input type="password" placeholder="Confirm Password" name="password_confirmation"
                     id="password_confirmation" class="bg-form border-b  w-full py-2 px-3">
@@ -71,4 +72,4 @@
     </div>
 </body>
 
-</html>
+</html> --}}

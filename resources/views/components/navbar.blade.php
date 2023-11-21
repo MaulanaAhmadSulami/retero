@@ -1,10 +1,7 @@
 <div class="container-fluid">
     <nav class="bg-white p-4 flex justify-between items-center ">
         <div class="flex items-center">
-            <a href="login">
-                <img src="{{ asset('images/retero.png') }}" alt="Logo" class="mr-4 w-[150px]"></img>
-            </a>
-
+            <img src="{{ asset('images/retero.png') }}" alt="Logo" class="mr-4 w-[150px]"></img>
             <div class="relative group font-ubuntuMonoRegular">
                 <button class="px-2 py-1 text-[20px]">Aksesoris Komputer
                     <iconify-icon icon="ep:arrow-down-bold" class="text-sm"></iconify-icon>
@@ -41,8 +38,7 @@
 
         <div class="px-1 ml-auto relative">
 
-            <div
-                class="absolute left-1 top-1/2 transform -translate-y-1/2 w-10 h-10 flex items-center justify-center">
+            <div class="absolute left-1 top-1/2 transform -translate-y-1/2 w-10 h-10 flex items-center justify-center">
                 <img src="images/search.png" alt="Search" class="w-6 h-6">
             </div>
 
@@ -66,20 +62,21 @@
             </button>
 
             <!-- Dropdown menu -->
-            <div id="dropdownAvatarName"
-                class="z-10 hidden bg-[#000000] shadow w-44">
-                <ul class="py-2"
-                    aria-labelledby="dropdownInformdropdownAvatarNameButtonationButton">
-                    <div class="block px-4 py-2 mt-2 font-ubuntuMonoBold text-[#FFFFFF] text-[15px] hover:bg-button border-b">
-                        {{ Auth::user()->email  }}
+            <div id="dropdownAvatarName" class="z-10 hidden bg-[#000000] shadow w-44">
+                <ul class="py-2" aria-labelledby="dropdownInformdropdownAvatarNameButtonationButton">
+                    <div
+                        class="block px-4 py-2 mt-2 font-ubuntuMonoBold text-[#FFFFFF] text-[15px] hover:bg-button border-b">
+                        {{ Auth::user()->email }}
                     </div>
                     {{-- <li>
-                        <a href="#" class="block px-4 py-2 mt-2 font-ubuntuMonoBold text-[#FFFFFF] text-[15px] hover:bg-button border-b">Profile</a>
+                        <a href="#"
+                            class="block px-4 py-2 mt-2 font-ubuntuMonoBold text-[#FFFFFF] text-[15px] hover:bg-button border-b">Profile</a>
                     </li> --}}
                 </ul>
                 <div>
                     <a href="{{ route('auth.logout')  }}"
-                        class="block px-4 py-2 mt-2 font-ubuntuMonoBold text-[#FFFFFF] text-[15px] hover:bg-button">Sign out</a>
+                        class="block px-4 py-2 mt-2 font-ubuntuMonoBold text-[#FFFFFF] text-[15px] hover:bg-button">Sign
+                        out</a>
                 </div>
             </div>
 
