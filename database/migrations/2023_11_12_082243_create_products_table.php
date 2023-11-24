@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('productTitle');
             $table->string('image');
+            $table->string('categories');
             $table->string('productType');
             $table->longText('productDescription');
             $table->float('productRating', 3, 2);

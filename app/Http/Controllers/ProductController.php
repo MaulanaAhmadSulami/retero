@@ -23,8 +23,10 @@ class ProductController extends Controller
     }
 
     public function showProduct($id){
+
         $product = Product::with(['advantages' , 'disadvantages'])->find($id);
         return view('homepage.productDetail', compact('product'));
+
     }
 
     // public function getAdvantage($id){

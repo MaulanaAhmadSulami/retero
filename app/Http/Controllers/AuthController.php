@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -11,7 +12,8 @@ class AuthController extends Controller
 {
     //
 
-    public function register(Request $request)
+    
+    public function register(Request $request, Product $product)
     { 
         $data = $request->validate([
             'name' => 'required|min:4|max:255',
@@ -21,12 +23,17 @@ class AuthController extends Controller
 
         $data['password'] = Hash::make($data['password']);
 
-        User::factory()->create([
+        $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => $data['password'],
         ]);
-        return redirect()->route('login');
+        
+      
+
+        auth()->login($user);
+
+        return redirect()->back();
     }
 
 
@@ -41,11 +48,10 @@ class AuthController extends Controller
 
         if (auth()->attempt($request->only('email', 'password'), $remember)) {
             $request->session()->regenerate();
-
             if(auth()->user()->is_admin){
                 return redirect('adminMenu');
             }
-            return redirect('productDetail');
+            return redirect()->back();
         } else {
             return back()->withErrors([
                 'email' => 'Email was wrong or doesn\'t exist in our records!'
