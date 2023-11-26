@@ -56,6 +56,16 @@
                         <p class="font-ubuntuMonoRegular text-[17px]">
                             {{ $product->productDescription }}
                         </p>
+                        <div class="flex justify-between my-2">
+                            <div class="ml-8">
+                                <p class="font-ubuntuMonoRegular font-bold text-[25px] text-[#344A69]">{{ $product->productRating }}</p>
+                            </div>
+                            <div class="w-[250px]">
+                                <button id="shadow-btn" type="submit" class="bg-button border-1 border-gray-300 py-1 px-2">
+                                    <a id="stroke" class="font-publicPixel text-[8px]" href="{{ route('homepage.productDetail', ['id' => $product->id]) }}">Lihat ulasan lebih lanjut</a>
+                                </button>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="w-[350px]">
@@ -64,7 +74,7 @@
                     </div>
                 </div>
             </div>
-            @if($index < count($products) - 1) 
+            @if($index < count($products) - 1)
             <div class="my-10">
             @endif
         </div>
