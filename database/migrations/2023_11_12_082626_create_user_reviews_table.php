@@ -15,10 +15,13 @@ return new class extends Migration
     {
         Schema::create('user_reviews', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
-            $table->foreignId('product_id')->constrained('products')->cascadeOnDelete();
+            $table->uuid('user_id');
+            $table->uuid('product_id');
             $table->longText('reviewComment');
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('product_id')->references('id')->on('products');
         });
     }
 

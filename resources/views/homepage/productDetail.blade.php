@@ -40,16 +40,18 @@
 <div>
     <div class="grid place-items-center">
         <div class="grid grid-cols-2 items-center text-center">
-            <a href="https://www.amazon.com/dp/B08Z9WT6PQ?tag=gadgetreviewc-20&th=1&geniuslink=true">
-                <img id="shadow" src="{{ asset('images/' . $product->image) }}" class="w-[500px]" alt="Product image">
-            </a>
-            <div class="text-left mr-[120px]">
+            <div id="image-container" class="max-w-md w-full mx-auto">
+                <a href="https://www.amazon.com/dp/B08Z9WT6PQ?tag=gadgetreviewc-20&th=1&geniuslink=true" class="block">
+                    <img id="shadow" src="{{ asset('images/' . $product->image) }}" alt="Product image">
+                </a>
+            </div>
+            <div class="text-left ml-4">
                 <h1 class="font-publicPixel text-[31.25px]">{{ $product->productTitle }}</h1>
                 <span class="font-ubuntuMonoRegular">
                     <iconify-icon icon="subway:refresh-time" class="text-xs"></iconify-icon> 22 Oktober 2023
                 </span>
             </div>
-            <div class="max-w-[750px] mt-20 text-left tracking-wide">
+            <div class="max-w-[750px] mt-20 text-left ml-4 tracking-wide">
                 <h1 id="stroke" class="text-[40px] font-publicPixel text-button tracking-widest">Ringkasan</h1>
                 <p class="font-ubuntuMonoRegular text-[20px] mt-5">
                     {{ $product->productDescription }}
@@ -92,23 +94,19 @@
                     </div>
                     <!-- Modal body -->
                     <div class="p-6">
-                        <form method="POST" action="{{ route('auth.login') }}">
+                        <form method="POST" action="{{ route('auth.login') }}" id="loginForm">
                             @csrf
                             <div class="mb-8">
-                                <input type="text" name="email" placeholder="Email"
+                                <input type="text" name="email" placeholder="Email" id="email"
                                     class="bg-form border-b border-b w-full py-2 px-3" value="{{ old('email') }}"
-                                    @error('email') border-red-500 @else border-setBorder @enderror">
-                                @error('email')
-                                <div class="text-red-500">{{ $message }}</div>
-                                @enderror
+                                    autocomplete="email" autofocus>
+                                <div id="emailLoginError" class="font-ubuntuMonoBold"></div>
                             </div>
 
                             <div class="mb-8">
-                                <input type="password" name="password" placeholder="Password"
-                                    class="bg-form border-b border-b w-full py-2 px-3 @error('password') border-red-500 @else border-setBorder @enderror">
-                                @error('password')
-                                <div class="text-red-500">{{ $message }}</div>
-                                @enderror
+                                <input type="password" name="password" placeholder="Password" id="password"
+                                    class="bg-form border-b border-b w-full py-2 px-3">
+                                <div id="passwordLoginError" class="font-ubuntuMonoBold"></div>
                             </div>
                             <div class="mb-8 flex items-center">
                                 <input type="checkbox" class="w-4 h-4 border" name="remember" id="remember">
@@ -154,36 +152,31 @@
                     </div>
                     <!-- Modal body -->
                     <div class="p-6">
-                        <form method="POST" action="{{ route('auth.register') }}">
+                        <form method="POST" action="{{ route('auth.register') }}" id="registerForm">
                             @csrf
                             <div class="mb-8">
                                 <input type="text" placeholder="Username" name="name" id="name"
                                     value="{{ old('name') }}"
-                                    class="bg-form border-b w-full py-2 px-3 @error('name') border-red-500 @else border-setBorder @enderror">
-                                @error('name')
-                                <div class="text-red-500">{{ $message }}</div>
-                                @enderror
+                                    class="bg-form border-b w-full py-2 px-3">
+                                <div id="nameError" class="font-ubuntuMonoBold text-red-500"></div>
                             </div>
 
                             <div class="mb-8">
                                 <input type="email" placeholder="Email" name="email" id="email"
                                     value="{{ old('email') }}"
-                                    class="bg-form border-b w-full py-2 px-3 @error('email') border-red-500 @else border-setBorder @enderror">
-                                @error('email')
-                                <div class="text-red-500">{{ $message }}</div>
-                                @enderror
+                                    class="bg-form border-b w-full py-2 px-3">
+                                <div id="emailError" class="font-ubuntuMonoBold text-red-500"></div>
                             </div>
 
                             <div class="mb-8">
-                                <input type="password" placeholder="Password" name="password" id="password"
-                                    class="bg-form border-b  w-full py-2 px-3 @error('password') border-red-500 @else border-setBorder @enderror">
-                                @error('password')
-                                <div class="text-red-500">{{ $message }}</div>
-                                @enderror
+                                <input type="password" placeholder="Password" name="password" id="password" required
+                                    class="bg-form border-b  w-full py-2 px-3">
+                                <div id="passwordError" class="font-ubuntuMonoBold text-red-500"></div>
                             </div>
                             <div class="mb-8">
                                 <input type="password" placeholder="Confirm Password" name="password_confirmation"
-                                    id="password_confirmation" class="bg-form border-b  w-full py-2 px-3">
+                                    id="password_confirmation" required class="bg-form border-b  w-full py-2 px-3">
+                                    <div id="passwordConfirmationError" class="font-ubuntuMonoBold text-red-500"></div>
                             </div>
 
                             <button id="modal-btn" type="submit"

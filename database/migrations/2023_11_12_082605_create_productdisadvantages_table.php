@@ -15,9 +15,11 @@ return new class extends Migration
     {
         Schema::create('productdisadvantages', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('product_id')->constrained('products')->cascadeOnDelete();
+            $table->uuid('product_id');
             $table->longText('disadvantageDescription');
             $table->timestamps();
+
+            $table->foreign('product_id')->references('id')->on('products');
         });
     }
 

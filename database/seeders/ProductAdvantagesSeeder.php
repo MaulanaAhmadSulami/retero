@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\ProductAdvantages;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Product;
 
 class ProductAdvantagesSeeder extends Seeder
 {
@@ -16,24 +17,36 @@ class ProductAdvantagesSeeder extends Seeder
     public function run()
     {
         //
-        $advantages = [
+        
+
+        $products = Product::all();
+
+        if($products->isEmpty()){
+            $this->command->info('No products found!');
+            return;
+        }
+
+        $advantagesArray = [
             [
-                'product_id' => 1,
                 'advantageDescription' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit.  Quisquam, voluptatum., lorem ipsum dolor sit amet consectetur  adipisicing elit. Quisquam, voluptatum.',
             ],
             [
-                'product_id' => 2,
                 'advantageDescription' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit.  Quisquam, voluptatum., lorem ipsum dolor sit amet consectetur  adipisicing elit. Quisquam, voluptatum. yang kedua nih',
             ],
             [
-                'product_id' => 3,
                 'advantageDescription' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit.  Quisquam, voluptatum., lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. yang ketiga nih',
+            ],
+            [
+                'advantageDescription' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit.  Quisquam, voluptatum., lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. yang keempat nih',
             ]
-
         ];
 
-        foreach($advantages as $advantage){
-            ProductAdvantages::create($advantage);
+        foreach($products as $index => $product){
+            if(isset($advantagesArray[$index])){
+                $product->advantages()->create([
+                    'advantageDescription' => $advantagesArray[$index]['advantageDescription']
+                ]);
+            }
         }
     }
 }

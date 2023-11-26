@@ -31,11 +31,13 @@ Route::get('/login', function(){
 })->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('auth.login');
 
+
+//use group routing later
 Route::get('/adminMenu', function(){
     return view('adminMenu');
 })->name('auth.adminHome')->middleware('is_admin');
 
-//for user to logout later (not implemented yet lol)
+
 Route::get('/logout', [AuthController::class, 'logout'])->name('auth.logout');
 
 Route::get('/morereview', function(){

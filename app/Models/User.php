@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use illuminate\Support\Str;
 
 class User extends Authenticatable
 {
@@ -21,7 +22,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'is_admin',
+        'isAdmin',
     ];
 
     /**
@@ -46,5 +47,18 @@ class User extends Authenticatable
     public function reviews()
     {
         return $this->hasMany(UserReview::class);
+    }
+
+    public $incrementing = false;
+    
+    public $keyType = 'string';
+
+    protected static function boot(){
+        parent::boot();
+        static::creating(function ($model){
+            if(empty($model->{$model->getKeyName()})){
+                $model->{$model->getKeyName()} = Str::uuid()->toString();
+            }
+        });
     }
 }

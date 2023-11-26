@@ -44,7 +44,7 @@
         <div class="px-1 ml-auto relative">
 
             <div class="absolute left-1 top-1/2 transform -translate-y-1/2 w-10 h-10 flex items-center justify-center">
-                <img src="images/search.png" alt="Search" class="w-6 h-6">
+                <img src="{{ asset('images/search.png') }}" alt="Search" class="w-6 h-6">
             </div>
 
             <input type="text" placeholder="Apa yang kamu cari?"

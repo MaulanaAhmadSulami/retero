@@ -166,6 +166,23 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
+
+        'email' =>[
+            'required' => 'Email is required!',
+            'unique' => 'Email already been used!',
+            'email' => 'Please enter a valid email address!',
+        ],
+
+        'password' => [
+            'required' => 'Password is required!',
+            'min' => 'Password must be at least 8 characters!',
+            'confirmed' => 'Password doesn\'t match!',
+        ],
+        'name' => [
+            'required' => 'Name is required!',
+            'min' => 'Username must be at least 4 characters!',
+            'max' => 'Username cannot exceed 20 characters!',
+        ]
     ],
 
     /*

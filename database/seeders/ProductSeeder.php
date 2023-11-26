@@ -44,7 +44,16 @@ class ProductSeeder extends Seeder
                 'productType' => 'Keyboard',
                 'productDescription' => 'Ini keyboard, Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus necessitatibus eos ipsum provident molestiae possimus ea. Eaque dignissimos vitae, eius autem ducimus perspiciatis id, excepturi nisi totam in praesentium odio.',
                 'productRating' => 8.0,
-            ]
+            ],
+            [
+                'productTitle' => 'Headset HyperX Cloud Stinger',
+                'image' => 'hyperXheadset.png',
+                'categories' => 'Aksesoris',
+                'productType' => 'Headset',
+                'productDescription' => 'Ini headset cuy, Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus necessitatibus eos ipsum provident molestiae possimus ea. Eaque dignissimos vitae, eius autem ducimus perspiciatis id, excepturi nisi totam in praesentium odio.',
+                'productRating' => 6.0,
+            ],
+
         ];
 
         foreach($products as $product){

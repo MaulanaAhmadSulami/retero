@@ -1,13 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    @vite('resources/css/app.css')
-</head>
-<body>
-    <h1>WELCOME ADMIN</h1>
-</body>
-</html>
+@extends('layouts.app')
+@section('title', 'Admin Dashboard')
+@push('styles')
+    
+@endpush
+
+
+@section('content')
+    <div>
+        <h1>ADMIN MENU BOS</h1>
+    </div>
+@endsection

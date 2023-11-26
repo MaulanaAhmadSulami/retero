@@ -39,7 +39,7 @@
         <div class="px-1 ml-auto relative">
 
             <div class="absolute left-1 top-1/2 transform -translate-y-1/2 w-10 h-10 flex items-center justify-center">
-                <img src="images/search.png" alt="Search" class="w-6 h-6">
+                <img src="{{ asset('images/search.png') }}" alt="Search" class="w-6 h-6">
             </div>
 
             <input type="text" placeholder="Apa yang kamu cari?"
@@ -68,6 +68,11 @@
                         class="block px-4 py-2 mt-2 font-ubuntuMonoBold text-[#FFFFFF] text-[15px] hover:bg-button border-b">
                         {{ Auth::user()->email }}
                     </div>
+                    @if(Auth::check() && Auth::user()->isAdmin == 1)
+                        <a href="{{ route('auth.adminHome') }}"
+                            class="block px-4 py-2 mt-2 font-ubuntuMonoBold text-[#FFFFFF] text-[15px] hover:bg-button border-b">Admin
+                            Dashboard</a>
+                    @endif
                     {{-- <li>
                         <a href="#"
                             class="block px-4 py-2 mt-2 font-ubuntuMonoBold text-[#FFFFFF] text-[15px] hover:bg-button border-b">Profile</a>
