@@ -23,6 +23,15 @@ class Product extends Model
         return $this->hasMany(Productdisadvantages::class);
     }
 
+    // public function userreview(){
+    //     return $this->hasMany(UserReview::class);
+    // }
+
+    public function category(){
+        return $this->belongsTo(Category::class);
+    }
+
+
 
     public $incrementing = false;
     

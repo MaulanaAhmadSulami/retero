@@ -17,11 +17,13 @@ return new class extends Migration
             $table->uuid('id')->primary();
             $table->string('productTitle');
             $table->string('image');
-            $table->string('categories');
+            $table->unsignedBigInteger('category_id');
             $table->string('productType');
             $table->longText('productDescription');
             $table->float('productRating', 3, 2);
             $table->timestamps();
+
+            $table->foreign('category_id')->references('id')->on('categories');
         });
     }
 

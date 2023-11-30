@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Models\Product;
 
@@ -25,9 +26,26 @@ class ProductController extends Controller
     public function showProduct($id){
 
         $product = Product::with(['advantages' , 'disadvantages'])->find($id);
-        return view('homepage.productDetail', compact('product'));
+
+     
+
+        return view('homepage.productDetail', ['product' => $product]);
 
     }
+
+    public function moreReview(){
+
+        $products = Product::with('category')->get()->groupBy('productType');
+
+        return view('homepage.morereview', ['products' => $products]);
+    }
+
+    //randomize
+    public function randomProduct($categoryId) {
+        $randomProduct = Product::where('category_id', $categoryId)->inRandomOrder()->firstOrFail();
+        return redirect()->route('homepage.productDetail', ['id' => $randomProduct->id]);
+    }
+    
 
     // public function getAdvantage($id){
     //     $product = Product::find($id);

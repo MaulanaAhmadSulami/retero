@@ -31,6 +31,7 @@ Route::get('/login', function(){
 })->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('auth.login');
 
+Route::get('/logout', [AuthController::class, 'logout'])->name('auth.logout');
 
 //use group routing later
 Route::get('/adminMenu', function(){
@@ -38,11 +39,10 @@ Route::get('/adminMenu', function(){
 })->name('auth.adminHome')->middleware('is_admin');
 
 
-Route::get('/logout', [AuthController::class, 'logout'])->name('auth.logout');
 
-Route::get('/morereview', function(){
-    return view('homepage.morereview');
-})->name('morereview');
+// Route::get('/morereview', function(){
+//     return view('homepage.morereview');
+// })->name('morereview');
 
 //ACTION ROUTES BELOW
 
@@ -51,3 +51,7 @@ Route::get('/morereview', function(){
 //RESOURCES
 Route::get('/', [ProductController::class, 'index'])->name('homepage.dashboard');
 Route::get('/productDetail/{id}', [ProductController::class, 'showProduct'])->name('homepage.productDetail');
+
+Route::get('/morereview', [ProductController::class, 'moreReview'])->name('homepage.morereview');
+Route::get('/random-product/{categoryId}', [ProductController::class, 'randomProduct'])->name('randomProduct');
+
