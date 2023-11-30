@@ -12,11 +12,10 @@
                         class="block px-4 py-2 mt-2 font-ubuntuMonoBold text-[#FFFFFF] text-[15px] hover:bg-button">Headset</a>
                     <hr style="color: white" />
                     <a href="#"
-                        class="block px-4 py-2 mt-2 font-ubuntuMonoBold text-[#FFFFFF] text-[15px] hover:bg-button">Headset
-                        lol</a>
+                        class="block px-4 py-2 mt-2 font-ubuntuMonoBold text-[#FFFFFF] text-[15px] hover:bg-button">Keyboard</a>
                     <hr style="color: white" />
                     <a href="#"
-                        class="block px-4 py-2 mt-2 font-ubuntuMonoBold text-[#FFFFFF] text-[15px] hover:bg-button">Bluetooth</a>
+                        class="block px-4 py-2 mt-2 font-ubuntuMonoBold text-[#FFFFFF] text-[15px] hover:bg-button">Mouse</a>
                 </div>
             </div>
 
@@ -31,12 +30,10 @@
                     <hr />
                     <hr style="color: white" />
                     <a href="#"
-                        class="block px-4 py-2 mt-2 font-ubuntuMonoBold text-[#FFFFFF] text-[15px] hover:bg-button">PC
-                        Accessories</a>
+                        class="block px-4 py-2 mt-2 font-ubuntuMonoBold text-[#FFFFFF] text-[15px] hover:bg-button">VGA</a>
                     <hr style="color: white" />
                     <a href="#"
-                        class="block px-4 py-2 mt-2 font-ubuntuMonoBold text-[#FFFFFF] text-[15px] hover:bg-button">PC
-                        Accessories</a>
+                        class="block px-4 py-2 mt-2 font-ubuntuMonoBold text-[#FFFFFF] text-[15px] hover:bg-button">Monitor</a>
                 </div>
             </div>
         </div>
@@ -46,10 +43,8 @@
             <div class="absolute left-1 top-1/2 transform -translate-y-1/2 w-10 h-10 flex items-center justify-center">
                 <img src="{{ asset('images/search.png') }}" alt="Search" class="w-6 h-6">
             </div>
-
             <input type="text" placeholder="Apa yang kamu cari?"
                 class="pl-12 pr-4 py-2 border border-button font-ubuntuoMonoRegular">
-
         </div>
     </nav>
 </div>

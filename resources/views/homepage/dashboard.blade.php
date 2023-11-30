@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Dashboard')
+@section('title', 'Retero the review website you can trust!')
 @push('styles')
 <style>
   #stroke {
@@ -87,10 +87,10 @@
         </div>
         @endif
         @empty
-        <div class="p-10 flex justify-center">
+        <div class="p-10 flex justify-center items-center text-center h-screen">
             <div class="flex">
-                <div class="max-w-[500px]">
-                    <h1 class="font-publicPixel text-[20px] text-left py-4">Tidak ada ulasan terbaru!</h1>
+                <div>
+                    <h1 class="font-publicPixel text-[50px] py-4">Belum ada ulasan terbaru!</h1>
                 </div>
             </div>
         </div>

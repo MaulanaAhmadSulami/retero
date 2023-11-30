@@ -49,10 +49,7 @@ class AuthController extends Controller
 
     public function login(Request $request)
     {
-        // $request->validate([
-        //     'email' => 'required|email',
-        //     'password' => 'required',
-        // ]);
+    
 
         $validator = Validator::make($request->all(), [
             'email' => 'required|email',
@@ -74,8 +71,9 @@ class AuthController extends Controller
             return response()->json([
                 'success' => true,
                 'isAdmin' => Auth::user()->isAdmin,
-                'adminHomeUrl' => Auth::user()->isAdmin ? route('auth.adminHome') : route('homepage.dashboard'),
+                'adminHomeUrl' => Auth::user()->isAdmin ? route('auth.adminHome') : null,
             ]);
+
         }else{
             return response()->json([
                 'success' => false,

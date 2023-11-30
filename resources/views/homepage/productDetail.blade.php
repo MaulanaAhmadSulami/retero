@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Detail')
+@section('title', 'Detail - Retero')
 @push('styles')
 <style>
     #shadow {
@@ -48,7 +48,7 @@
             <div class="text-left ml-4">
                 <h1 class="font-publicPixel text-[31.25px]">{{ $product->productTitle }}</h1>
                 <span class="font-ubuntuMonoRegular">
-                    <iconify-icon icon="subway:refresh-time" class="text-xs"></iconify-icon> 22 Oktober 2023
+                    <iconify-icon icon="subway:refresh-time" class="text-lg"></iconify-icon> <span class="text-lg">{{ $product->created_at->diffForHumans() }}</span>
                 </span>
             </div>
             <div class="max-w-[750px] mt-20 text-left ml-4 tracking-wide">
@@ -75,7 +75,7 @@
         </div>
 
         <div id="login-modal" tabindex="-1" aria-hidden="true"
-            class="hidden overflow-y-auto overflow-x-hidden fixed  justify-center items-center md:inset-0">
+            class="hidden overflow-y-auto overflow-x-hidden fixed justify-center items-center md:inset-0">
             <div class="relative p-4 w-full max-w-2xl h-full">
                 <!-- Modal content -->
                 <div class="relative border bg-[#fff] rounded-lg justify-flex items-center">
@@ -133,7 +133,7 @@
         </div>
 
         <div id="regist-modal" tabindex="-1" aria-hidden="true"
-            class="hidden overflow-y-auto overflow-x-hidden fixed  justify-center items-center md:inset-0">
+            class="hidden overflow-y-auto overflow-x-hidden fixed justify-center items-center md:inset-0">
             <div class="relative p-4 w-full max-w-2xl h-full">
                 <!-- Modal content -->
                 <div class="relative border bg-[#fff] rounded-lg justify-flex items-center">
