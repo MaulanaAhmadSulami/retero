@@ -73,10 +73,10 @@
                             class="block px-4 py-2 mt-2 font-ubuntuMonoBold text-[#FFFFFF] text-[15px] hover:bg-button border-b">Admin
                             Dashboard</a>
                     @endif
-                    {{-- <li>
-                        <a href="#"
+                    <li>
+                        <a href="/profile"
                             class="block px-4 py-2 mt-2 font-ubuntuMonoBold text-[#FFFFFF] text-[15px] hover:bg-button border-b">Profile</a>
-                    </li> --}}
+                    </li>
                 </ul>
                 <div>
                     <a href="{{ route('auth.logout')  }}"

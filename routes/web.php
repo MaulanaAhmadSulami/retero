@@ -44,6 +44,10 @@ Route::get('/morereview', function(){
     return view('homepage.morereview');
 })->name('morereview');
 
+Route::get('/profile', function(){
+    return view('homepage.profile');
+})->name('profile');
+
 //ACTION ROUTES BELOW
 
 
