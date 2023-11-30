@@ -44,6 +44,10 @@ Route::get('/adminMenu', function(){
 //     return view('homepage.morereview');
 // })->name('morereview');
 
+Route::get('/profile', function(){
+    return view('homepage.profile');
+})->name('profile');
+
 //ACTION ROUTES BELOW
 
 
@@ -51,6 +55,7 @@ Route::get('/adminMenu', function(){
 //RESOURCES
 Route::get('/', [ProductController::class, 'index'])->name('homepage.dashboard');
 Route::get('/productDetail/{id}', [ProductController::class, 'showProduct'])->name('homepage.productDetail');
+
 
 Route::get('/morereview', [ProductController::class, 'moreReview'])->name('homepage.morereview');
 Route::get('/random-product/{categoryId}', [ProductController::class, 'randomProduct'])->name('randomProduct');
