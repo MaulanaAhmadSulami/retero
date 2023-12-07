@@ -30,12 +30,15 @@ class ProductAdvantagesSeeder extends Seeder
             [
                 'advantageDescription' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit.  Quisquam, voluptatum., lorem ipsum dolor sit amet consectetur  adipisicing elit. Quisquam, voluptatum.',
             ],
+
             [
                 'advantageDescription' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit.  Quisquam, voluptatum., lorem ipsum dolor sit amet consectetur  adipisicing elit. Quisquam, voluptatum. yang kedua nih',
             ],
+
             [
                 'advantageDescription' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit.  Quisquam, voluptatum., lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. yang ketiga nih',
             ],
+            
             [
                 'advantageDescription' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit.  Quisquam, voluptatum., lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. yang keempat nih',
             ]

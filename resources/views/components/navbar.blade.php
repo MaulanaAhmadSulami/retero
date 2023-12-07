@@ -11,10 +11,9 @@
                     <a href="#"
                         class="block px-4 py-2 mt-2 font-ubuntuMonoBold text-[#FFFFFF] text-[15px] hover:bg-button border-b">Headset</a>
                     <a href="#"
-                        class="block px-4 py-2 mt-2 font-ubuntuMonoBold text-[#FFFFFF] text-[15px] hover:bg-button border-b">Headset
-                        lol</a>
+                        class="block px-4 py-2 mt-2 font-ubuntuMonoBold text-[#FFFFFF] text-[15px] hover:bg-button border-b">Keyboard</a>
                     <a href="#"
-                        class="block px-4 py-2 mt-2 font-ubuntuMonoBold text-[#FFFFFF] text-[15px] hover:bg-button">Bluetooth</a>
+                        class="block px-4 py-2 mt-2 font-ubuntuMonoBold text-[#FFFFFF] text-[15px] hover:bg-button">Mouse</a>
                 </div>
             </div>
 
@@ -27,11 +26,9 @@
                     <a href="#"
                         class="block px-4 py-2 mt-2 font-ubuntuMonoBold text-[#FFFFFF] text-[15px] hover:bg-button border-b">Laptop</a>
                     <a href="#"
-                        class="block px-4 py-2 mt-2 font-ubuntuMonoBold text-[#FFFFFF] text-[15px] hover:bg-button border-b">PC
-                        Accessories</a>
+                        class="block px-4 py-2 mt-2 font-ubuntuMonoBold text-[#FFFFFF] text-[15px] hover:bg-button border-b">VGA</a>
                     <a href="#"
-                        class="block px-4 py-2 mt-2 font-ubuntuMonoBold text-[#FFFFFF] text-[15px] hover:bg-button">PC
-                        Accessories</a>
+                        class="block px-4 py-2 mt-2 font-ubuntuMonoBold text-[#FFFFFF] text-[15px] hover:bg-button">Monitor</a>
                 </div>
             </div>
         </div>
@@ -51,6 +48,8 @@
             <button id="dropdownAvatarNameButton" data-dropdown-toggle="dropdownAvatarName"
                 class="flex items-center text-gray-white hover:text-gray-00 md:mr-0 " type="button">
                 <span class="sr-only">Open user menu</span>
+                <span class="gap-4 mr-3">
+                    <img src="{{ asset('storage/' . Auth::user()->avatar) . '?=' . time() }}" alt="User Avatar" class="rounded-full h-10 w-10">                </span>
                 <span class="gap-4">
                     <p class="text-xl font-semibold">{{ Auth::user()->name }}</p>
                 </span>
@@ -64,25 +63,29 @@
             <!-- Dropdown menu -->
             <div id="dropdownAvatarName" class="z-10 hidden bg-[#000000] shadow w-44">
                 <ul class="py-2" aria-labelledby="dropdownInformdropdownAvatarNameButtonationButton">
-                    <div
-                        class="block px-4 py-2 mt-2 font-ubuntuMonoBold text-[#FFFFFF] text-[15px] hover:bg-button border-b">
+                    <li class="block px-4 py-2 mt-2 font-ubuntuMonoBold text-[#FFFFFF] text-[15px] hover:bg-button border-b">
+
                         {{ Auth::user()->email }}
-                    </div>
+                    </li>
+                    
                     @if(Auth::check() && Auth::user()->isAdmin == 1)
                         <a href="{{ route('auth.adminHome') }}"
                             class="block px-4 py-2 mt-2 font-ubuntuMonoBold text-[#FFFFFF] text-[15px] hover:bg-button border-b">Admin
                             Dashboard</a>
                     @endif
                     <li>
-                        <a href="/profile"
+                        <a href="/users"
                             class="block px-4 py-2 mt-2 font-ubuntuMonoBold text-[#FFFFFF] text-[15px] hover:bg-button border-b">Profile</a>
                     </li>
-                </ul>
-                <div>
+
+                    {{-- @if (Auth::check())
+                        <a href="#" class="block px-4 py-2 mt-2 font-ubuntuMonoBold text-[#FFFFFF] text-[15px] hover:bg-button border-b">Settings</a>
+                    @endif --}}
+
                     <a href="{{ route('auth.logout')  }}"
                         class="block px-4 py-2 mt-2 font-ubuntuMonoBold text-[#FFFFFF] text-[15px] hover:bg-button">Sign
                         out</a>
-                </div>
+                </ul>
             </div>
 
         </li>

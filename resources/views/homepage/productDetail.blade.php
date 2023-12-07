@@ -136,7 +136,7 @@
             class="hidden overflow-y-auto overflow-x-hidden fixed justify-center items-center md:inset-0">
             <div class="relative p-4 w-full max-w-2xl h-full">
                 <!-- Modal content -->
-                <div class="relative border bg-[#fff] rounded-lg justify-flex items-center">
+                <div class="relative border bg-[#fff] rounded-[25px] justify-flex items-center">
                     <!-- Modal header -->
                     <div class="flex justify-between items-start p-4 rounded-t dark:border-gray-600">
                         <img src="{{ asset('images/retero.png') }}" alt="Retero">

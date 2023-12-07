@@ -60,7 +60,7 @@
             <div class="flex flex-row gap-2 justify-center">
                 @foreach ($productGroup as $product )
                 <div id=card-shadow
-                    class="border shadow-md mr-4 p-4 w-[250px] flex flex-col justify-between">
+                    class="border  shadow-md mr-4 p-4 w-[250px] flex flex-col justify-between">
                     <img src="images/{{ $product->image }}" alt="Image Unavailable" class="w-full h-32 object-cover">
                     <div class="mt-2 font-ubuntuMonoBold text-center border-b py-2 mb-4">{{ $product->productTitle }}</div>
                     <button id="shadow-btn" type="button" class="bg-button flex self-end">

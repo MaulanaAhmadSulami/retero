@@ -68,7 +68,7 @@
                         </p>
                         <div class="flex items-center justify-between my-2">
                             <div class="flex items-center ml-8">
-                                <p class="font-ubuntuMonoRegular font-ubuntuMono text-[25px]">{{ $product->productRating }}</p>
+                                <p class="font-ubuntuMonoRegular font-ubuntuMono text-[25px]"> Rating {{ $product->productRating }}</p>
                             </div>
                             <div>
                                 <button id="shadow-btn" type="button" class="bg-button border-1 border-gray-300 py-1 px-2">

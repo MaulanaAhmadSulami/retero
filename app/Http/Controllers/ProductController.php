@@ -46,7 +46,7 @@ class ProductController extends Controller
         return redirect()->route('homepage.productDetail', ['id' => $randomProduct->id]);
     }
     
-
+    //one to many - one product has many advantages
     // public function getAdvantage($id){
     //     $product = Product::find($id);
     //     $advantageArray = explode('||', $product->advantage);

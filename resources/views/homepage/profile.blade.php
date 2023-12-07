@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Profile')
+@section('title', 'Profile - ' . Auth::user()->name)
 @push('styles')
 <style>
     #sizeComment{
@@ -16,19 +16,26 @@
 
 @section('content')
 <div class="mb-2">
-    <div class="flex justify-center items-center">
-        <div class="container border max-w-[500px]">
+    <div class="flex justify-center items-start">
+        <div class="container border max-w-6xl">
             <div class="p-6">
-                <div class="flex items-center justify-center flex-col">
-                    <img src="{{ asset('images/dummyStock.png') }}" alt="ProfilePicture" class="w-32 h-32 object-cover rounded-lg">
-                    <h1 class="text-xl mt-4 font-bold">Freya Jayawardana</h1>
-                    <h1 class="text-xs"><b>Joined: </b>1 year, 11 months ago</h1>
+                <div class="flex items-center justify-start">
+                    <img src="{{ asset('images/dummyStock.png') }}" alt="ProfilePicture" class="w-32 h-32 object-cover rounded-lg mr-4">
+                    <div>
+                        <h1 class="text-xl font-bold">{{ Auth::user()->name }}</h1>
+                        <h1 class="text-xs"><b>Joined: </b>{{ Auth::user()->created_at->diffForHumans()}}</h1>
+                        <a href="{{ route('user.edit') }}" class="bg-button text-white py-1 px-4 rounded-lg flex items-center gap-2 mt-2">
+                            <i class="fa-solid fa-gear"></i> 
+                            <span>Settings</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    
     <div class="flex justify-center items-center">
-        <div class="container border mt-5 p-10 my-10 max-w-[500px]">
+        <div class="container border mt-5 p-10 my-10 max-w-6xl">
             <h3 class="text-[25px] font-ubuntuMonoBold text-center">
                 <i class="fa-solid fa-comments mr-2"></i> Recent comment
             </h3>

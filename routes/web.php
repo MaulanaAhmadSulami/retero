@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\HTTP\Controllers\ProductController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -44,10 +45,12 @@ Route::get('/adminMenu', function(){
 //     return view('homepage.morereview');
 // })->name('morereview');
 
-Route::get('/profile', function(){
+Route::get('/users', function(){
     return view('homepage.profile');
-})->name('profile');
+})->name('users');
 
+Route::get('/profile', [UserController::class, 'edit'])->name('user.edit');
+Route::post('/profile', [UserController::class, 'updateUser'])->name('user.update');
 //ACTION ROUTES BELOW
 
 
@@ -59,4 +62,9 @@ Route::get('/productDetail/{id}', [ProductController::class, 'showProduct'])->na
 
 Route::get('/morereview', [ProductController::class, 'moreReview'])->name('homepage.morereview');
 Route::get('/random-product/{categoryId}', [ProductController::class, 'randomProduct'])->name('randomProduct');
+
+
+Route::get('/edit', function(){
+    return view('homepage.profileEdit');
+})->name('edit');
 
