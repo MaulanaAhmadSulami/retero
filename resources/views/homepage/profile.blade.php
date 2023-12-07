@@ -20,7 +20,7 @@
         <div class="container border max-w-6xl">
             <div class="p-6">
                 <div class="flex items-center justify-start">
-                    <img src="{{ asset('images/dummyStock.png') }}" alt="ProfilePicture" class="w-32 h-32 object-cover rounded-lg mr-4">
+                    <img class="w-[15%] mr-5" src="{{ asset('storage/' . Auth::user()->avatar) . '?=' . time() }}" alt="ProfilePicture" class="w-32 h-32 object-cover rounded-lg mr-4">
                     <div>
                         <h1 class="text-xl font-bold">{{ Auth::user()->name }}</h1>
                         <h1 class="text-xs"><b>Joined: </b>{{ Auth::user()->created_at->diffForHumans()}}</h1>
