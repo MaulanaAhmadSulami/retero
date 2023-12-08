@@ -57,7 +57,7 @@
             @enderror
         </div>
 
-        <div class="flex items-center justify-between">
+        <div class="flex items-center justify-between mb-10">
             <button class="bg-button text-[#000] py-1 px-2 rounded-lg flex items-center gap-2 mt-2" type="submit">
                 Save changes
             </button>

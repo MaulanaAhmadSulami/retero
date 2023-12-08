@@ -45,6 +45,12 @@ class ProductController extends Controller
         $randomProduct = Product::where('category_id', $categoryId)->inRandomOrder()->firstOrFail();
         return redirect()->route('homepage.productDetail', ['id' => $randomProduct->id]);
     }
+
+    public function showProductByCategory($category){
+        $category = strtolower($category);
+        $products = Product::where('productType', 'LIKE', "%{$category}%")->get();
+        return view('homepage.filteredProduct', ['products' => $products]);
+    }
     
     //one to many - one product has many advantages
     // public function getAdvantage($id){
