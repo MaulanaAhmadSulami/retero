@@ -7,15 +7,21 @@
 @section('content')
 <div class="py-10 bg-[#FAFAFA]">
     <div class="container mx-auto px-4">
-        <h1 class="text-center text-2xl mb-6">Search results for: "{{ $query }}"</h1>
-        <form id="search-form" method="GET" action="{{ route('homepage.searchProduct') }}"
-            class="w-full flex flex-col items-center">
-            <input type="text" name="query" class="pl-4 pr-4 py-2 border border-gray-300 rounded-lg w-1/3 mb-4"
-                placeholder="Type your search here...">
-            <button class="bg-black text-white border rounded-lg px-4" type="submit">Search</button>
-        </form>
+        <h1 class="text-center text-[56px] font-ubuntuMonoRegular mb-6">Search results for : "{{ $query }}"</h1>
+        <div class="flex justify-center items-center">
+            <form id="search-form" method="GET" action="{{ route('homepage.searchProduct') }}"
+                class="w-full flex flex-row items-center justify-center">
+                <input type="text" name="query" placeholder="Retero is looking for it...!"
+                    class="pl-4 pr-4 py-8 px-8 shadow-lg rounded-lg w-2/5" />
+                <button type="submit"
+                    class="bg-button font-ubuntuMonoBold text-[#000000] text-[25px] ml-12 rounded-lg border py-6 px-6">
+                    Search
+                </button>
+            </form>
+        </div>
     </div>
 </div>
+
 <div class="flex items-center justify-center py-10">
     <div class="container px-4 py-10">
         <div id="products-container" class="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -46,9 +52,9 @@
                     <a href="{{ $products->previousPageUrl() }}"
                         class="px-3 py-1 bg-white border rounded-md hover:bg-gray-100">&laquo; Previous</a>
                     @endif
-    
+
                     <span class="px-3 py-1 bg-white border rounded-md">Page {{ $products->currentPage() }}</span>
-    
+
                     @if ($products->hasMorePages())
                     <a href="{{ $products->nextPageUrl() }}"
                         class="px-3 py-1 bg-white border rounded-md hover:bg-gray-100">Next &raquo;</a>

@@ -55,7 +55,7 @@ class ProductController extends Controller
     }
 
 
-    // public function searchView
+
 
     //one to many - one product has many advantages
     // public function getAdvantage($id){

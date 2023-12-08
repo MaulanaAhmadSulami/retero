@@ -40,10 +40,6 @@
                 <i class="fa-solid fa-magnifying-glass"></i>
                 </a>
             </div>
-            {{-- <form id="search-form">
-                <div id="search-results" class="absolute z-10 bg-white w-full border mt-1 rounded-md shadow-lg overflow-y-auto max-h-60 hidden">
-                </div>
-            </form> --}}
         </div>
 
         <li class="flex group mr-4 px-4 font-ubuntuMonoRegular">

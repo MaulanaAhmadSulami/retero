@@ -101,13 +101,11 @@
 
 @if($products -> isNotEmpty())
 <div class="py-8 flex justify-center mt-auto">
-    <button id="shadow-btn" type="button" class="bg-button 1px py-2 px-4">
+    <button id="shadow-btn" type="button" class="bg-button py-2 px-4">
         <a id="stroke" class="font-publicPixel text-[20px]" href="{{ 'morereview' }}">Lihat Ulasan
             Lainnya</a>
     </button>
 </div>
 @endif
 </div>
-
-
 @endsection
