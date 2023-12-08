@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\HTTP\Controllers\ProductController;
+use App\Http\Controllers\SearchController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -62,7 +63,7 @@ Route::get('/edit', function(){
 
 //RESOURCES
 Route::get('/', [ProductController::class, 'index'])->name('homepage.dashboard');
-Route::get('/productDetail/{id}', [ProductController::class, 'showProduct'])->name('homepage.productDetail');
+Route::get('/detail/{id}', [ProductController::class, 'showProduct'])->name('homepage.productDetail');
 
 
 Route::get('/morereview', [ProductController::class, 'moreReview'])->name('homepage.morereview');
@@ -71,6 +72,15 @@ Route::get('/random-product/{categoryId}', [ProductController::class, 'randomPro
 Route::get('/products/{category}', [ProductController::class, 'showProductByCategory'])->name('homepage.filteredProduct');
 
 
+
+// Route::get('/search', function(){
+//     return view('homepage.searchProduct');
+// })->name('search');
+// // In your routes/web.php
+
+Route::get('/search', [SearchController::class, 'searchProduct'])->name('homepage.searchProduct');
+
+//Search
 
 
 
