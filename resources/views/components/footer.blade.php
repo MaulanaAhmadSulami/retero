@@ -20,7 +20,7 @@
                             Perusahaan</h2>
                         <ul class="text-gray-500  font-medium">
                             <li class="mb-2">
-                                <a href="#" class="hover:underline font-ubuntuMonoRegular ">Tentang Kami</a>
+                                <a href="/aboutUs" class="hover:underline font-ubuntuMonoRegular ">Tentang Kami</a>
                             </li>
                             <li class="mb-2">
                                 <a href="#" class="hover:underline font-ubuntuMonoRegular">Bagaimana Kami Menilai</a>

@@ -58,6 +58,10 @@ Route::get('/edit', function(){
     return view('homepage.profileEdit');
 })->name('edit');
 
+Route::get('/aboutUs', function(){
+    return view ('homepage.aboutUs');
+})->name('about');
+
 
 //ACTION ROUTES BELOW
 
@@ -70,13 +74,6 @@ Route::get('/morereview', [ProductController::class, 'moreReview'])->name('homep
 Route::get('/random-product/{categoryId}', [ProductController::class, 'randomProduct'])->name('randomProduct');
 
 Route::get('/products/{category}', [ProductController::class, 'showProductByCategory'])->name('homepage.filteredProduct');
-
-
-
-// Route::get('/search', function(){
-//     return view('homepage.searchProduct');
-// })->name('search');
-// // In your routes/web.php
 
 Route::get('/search', [SearchController::class, 'searchProduct'])->name('homepage.searchProduct');
 
