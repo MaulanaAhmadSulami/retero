@@ -49,7 +49,7 @@
                 class="flex items-center text-gray-white hover:text-gray-00 md:mr-0 " type="button">
                 <span class="sr-only">Open user menu</span>
                 <span class="gap-4 mr-3">
-                    <img src="{{ asset('storage/' . Auth::user()->avatar) . '?=' . time() }}" alt="User Avatar" class="rounded-full h-10 w-10">                </span>
+                    <img src="{{ Auth::user()->avatar ? asset('storage/' . Auth::user()->avatar) : asset('images/dummyStock.png') }}" alt="User Avatar" class="rounded-full h-10 w-10">                </span>
                 <span class="gap-4">
                     <p class="text-xl font-semibold">{{ Auth::user()->name }}</p>
                 </span>
@@ -67,7 +67,7 @@
 
                         {{ Auth::user()->email }}
                     </li>
-                    
+
                     @if(Auth::check() && Auth::user()->isAdmin == 1)
                         <a href="{{ route('auth.adminHome') }}"
                             class="block px-4 py-2 mt-2 font-ubuntuMonoBold text-[#FFFFFF] text-[15px] hover:bg-button border-b">Admin
