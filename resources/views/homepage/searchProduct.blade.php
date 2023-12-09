@@ -35,7 +35,7 @@
             </div>
             @empty
             <div class="col-span-3 flex justify-center items-center h-64">
-                <p class="font-publicPixel text-[25px] text-center">No products found with that name!</p>
+                <p class="font-publicPixel text-[25px] text-center">Retero doesn't have that!</p>
             </div>
             @endforelse
 
@@ -53,7 +53,7 @@
                         class="px-3 py-1 bg-white border rounded-md hover:bg-gray-100">&laquo; Previous</a>
                     @endif
 
-                    <span class="px-3 py-1 bg-white border rounded-md">Page {{ $products->currentPage() }}</span>
+                    <span class="px-3 py-1 bg-white border rounded-md">{{ $products->currentPage() }}</span>
 
                     @if ($products->hasMorePages())
                     <a href="{{ $products->nextPageUrl() }}"

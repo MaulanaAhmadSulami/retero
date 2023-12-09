@@ -22,6 +22,8 @@ Route::get('/app', function() {
     return view('form.app');
 })->name('app');
 
+//-------------------------------------------------------------------------------------------
+//Auth Routes
 Route::get('/register', function() {
     return view('form.register');
 })->name('register');
@@ -34,19 +36,18 @@ Route::get('/login', function(){
 Route::post('/login', [AuthController::class, 'login'])->name('auth.login');
 
 Route::get('/logout', [AuthController::class, 'logout'])->name('auth.logout');
+//-------------------------------------------------------------------------------------------
 
+//-------------------------------------------------------------------------------------------
+//Admin Routes
 //use group routing later
 Route::get('/adminMenu', function(){
     return view('adminMenu');
 })->name('auth.adminHome')->middleware('is_admin');
+//-------------------------------------------------------------------------------------------
 
 
-
-// Route::get('/morereview', function(){
-//     return view('homepage.morereview');
-// })->name('morereview');
-
-
+//-------------------------------------------------------------------------------------------
 //Profile Routes
 Route::get('/users', function(){
     return view('homepage.profile');
@@ -57,14 +58,26 @@ Route::post('/profile', [UserController::class, 'updateUser'])->name('user.updat
 Route::get('/edit', function(){
     return view('homepage.profileEdit');
 })->name('edit');
+//-------------------------------------------------------------------------------------------
 
+
+//-------------------------------------------------------------------------------------------
+//Footer Routes
 Route::get('/aboutUs', function(){
     return view ('homepage.aboutUs');
 })->name('about');
 
+Route::get('/contact', function(){
+    return view('homepage.contactForm');
+})->name('contact');
+
+//-------------------------------------------------------------------------------------------
+
+
 
 //ACTION ROUTES BELOW
 
+//-------------------------------------------------------------------------------------------
 //RESOURCES
 Route::get('/', [ProductController::class, 'index'])->name('homepage.dashboard');
 Route::get('/detail/{id}', [ProductController::class, 'showProduct'])->name('homepage.productDetail');
@@ -75,9 +88,9 @@ Route::get('/random-product/{categoryId}', [ProductController::class, 'randomPro
 
 Route::get('/products/{category}', [ProductController::class, 'showProductByCategory'])->name('homepage.filteredProduct');
 
-Route::get('/search', [SearchController::class, 'searchProduct'])->name('homepage.searchProduct');
-
 //Search
+Route::get('/search', [SearchController::class, 'searchProduct'])->name('homepage.searchProduct');
+//-------------------------------------------------------------------------------------------
 
 
 

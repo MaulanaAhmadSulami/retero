@@ -135,9 +135,7 @@
                 </div>
 
                 <div class="content-text text-left">
-                    {{-- <p class="text-[16px] mb-2">
-                        Terakhir diperbaharui :
-                    </p> --}}
+
 
                     <h4 class="text-[20px] mb-2">
                         Kenapa kami mengumpulkan data pribadi Anda?
@@ -166,12 +164,11 @@
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
-                    <!-- Team member cards go here -->
                     <div class="p-4 rounded-md mx-auto flex flex-col items-center">
-                        <img src="/images/favicon.jpg" alt="Team Member 1"
+                        <img src="images/furina2.jpg" alt="Team Member 1"
                             class="w-auto h-40 object-cover rounded-md mb-2">
-                        <h3 class="text-lg font-bold mb-1">lorem</h3>
-                        <p>Developer</p>
+                        <h3 class="text-lg font-bold mb-1">Kaede</h3>
+                        <p>Jungler</p>
                         <div class="socmed flex gap-2">
                             <a href="#" class="mt-2">
                                 <i class="fa-brands fa-linkedin w-[100%] h-6"></i>
@@ -185,7 +182,7 @@
                     <div class="p-4 rounded-md mx-auto flex flex-col items-center">
                         <img src="/images/favicon.jpg" alt="Team Member 2"
                             class="w-auto h-40 object-cover rounded-md mb-2">
-                        <h3 class="text-lg font-bold mb-1">lorem</h3>
+                        <h3 class="text-lg font-bold mb-1">Kornelia</h3>
                         <p>Developer</p>
                         <div class="socmed flex gap-2">
                             <a href="#" class="mt-2">
@@ -199,7 +196,7 @@
                     <div class="p-4 rounded-md mx-auto flex flex-col items-center">
                         <img src="/images/favicon.jpg" alt="Team Member 3"
                             class="w-auto h-40 object-cover rounded-md mb-2">
-                        <h3 class="text-lg font-bold mb-1">lorem</h3>
+                        <h3 class="text-lg font-bold mb-1">Ilyas</h3>
                         <p>Developer</p>
                         <div class="socmed flex gap-2">
                             <a href="#" class="mt-2">

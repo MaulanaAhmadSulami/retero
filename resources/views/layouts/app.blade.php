@@ -6,8 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="icon" type="image/x-icon" href="/images/favicon.jpg">
     <title>@yield('title')</title>
+    {{-- Section for javascript logics --}}
     @vite('resources/css/app.css')
     @vite('resources/js/auth.js')
+    {{-- Section for javascript logics --}}
     @stack('styles')
     @stack('scripts')
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
