@@ -2,10 +2,7 @@
     <footer class="bg-footer border-t-2 dark:bg-button dark:text-[#000] border-t-2">
         <div>
             <div class="md:flex md:justify-between ">
-                <div>
-                    <a href="/">
-                        <img src="{{ asset('images/retero.png') }}" class="w-[250px] mr-3 mt-8" alt="Retero logo" /></a>
-                </div>
+                <img src="{{ asset('images/retero.png') }}" class="w-[250px] mr-3 mt-8" alt="Retero logo" />
                 <div class="grid grid-cols-2 gap-8 sm:gap-8 sm:grid-cols-3 py-2">
                     <div>
                         <h2 class="mb-6 text-[25px] font-ubuntuMonoBold uppercase dark:text-white">Layanan</h2>
@@ -23,14 +20,14 @@
                             Perusahaan</h2>
                         <ul class="text-gray-500  font-medium">
                             <li class="mb-2">
-                                <a href="#" class="hover:underline font-ubuntuMonoRegular ">Tentang Kami</a>
+                                <a href="/aboutUs" class="hover:underline font-ubuntuMonoRegular ">Tentang Kami</a>
                             </li>
-                            <li class="mb-2">
+                            {{-- <li class="mb-2">
                                 <a href="#" class="hover:underline font-ubuntuMonoRegular">Bagaimana Kami Menilai</a>
                             </li>
                             <li class="mb-2">
                                 <a href="#" class="hover:underline font-ubuntuMonoRegular">Kebijakan Privasi</a>
-                            </li>
+                            </li> --}}
                             <li>
                                 <a href="#" class="hover:underline font-ubuntuMonoRegular">Ketentuan Penggunaan</a>
                             </li>
@@ -40,13 +37,13 @@
                         <h2 class="mb-6 text-[25px] font-ubuntuMonoBold dark:text-white">Kontak Kami</h2>
                         <ul class="list-none dark:text-gray-400">
                             <li class="mb-2">
-                                <span class="font-ubuntuMonoRegular">078 Dedric Locks</span>
+                                <span class="font-ubuntuMonoRegular">reteroreview@gmail.com</span>
                             </li>
                             <li class="mb-2">
-                                <span class="font-ubuntuMonoRegular">(+62) 447-745-6059</span>
+                                <span class="font-ubuntuMonoRegular">(+62) 878-9573-2862</span>
                             </li>
                             <li>
-                                <span class="font-ubuntuMonoRegular">Sean.Hauck@gmail.com</span>
+                                <a href="/contact">Reach out to us</a>
                             </li>
                         </ul>
                     </div>

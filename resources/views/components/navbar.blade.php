@@ -1,18 +1,19 @@
 <div class="container-fluid">
     <nav class="bg-white p-4 flex justify-between items-center ">
         <div class="flex items-center">
-            <img src="{{ asset('images/retero.png') }}" alt="Logo" class="mr-4 w-[150px]"></img>
+            <a href="/">
+                <img src="{{ asset('images/retero.png') }}" alt="Logo" class="mr-4 w-[150px]"></img></a>
             <div class="relative group font-ubuntuMonoRegular">
                 <button class="px-2 py-1 text-[20px]">Aksesoris Komputer
                     <iconify-icon icon="ep:arrow-down-bold" class="text-sm"></iconify-icon>
                 </button>
                 <div
                     class="absolute left-0 mt-[-0.5rem] w-48 overflow-hidden z-10 invisible group-hover:visible group-hover:duration-200 border bg-[#000000]">
-                    <a href="#"
+                    <a href="{{ route('homepage.filteredProduct', ['category' => 'headset']) }}"
                         class="block px-4 py-2 mt-2 font-ubuntuMonoBold text-[#FFFFFF] text-[15px] hover:bg-button border-b">Headset</a>
-                    <a href="#"
+                    <a href="{{ route('homepage.filteredProduct', ['category' => 'keyboard']) }}"
                         class="block px-4 py-2 mt-2 font-ubuntuMonoBold text-[#FFFFFF] text-[15px] hover:bg-button border-b">Keyboard</a>
-                    <a href="#"
+                    <a href="{{ route('homepage.filteredProduct', ['category' => 'mouse']) }}"
                         class="block px-4 py-2 mt-2 font-ubuntuMonoBold text-[#FFFFFF] text-[15px] hover:bg-button">Mouse</a>
                 </div>
             </div>
@@ -23,25 +24,22 @@
                 </button>
                 <div
                     class="absolute left-0 mt-[-0.5rem] w-48 overflow-hidden z-10 invisible group-hover:visible group-hover:duration-200 border bg-[#000000]">
-                    <a href="#"
+                    <a href="{{ route('homepage.filteredProduct', ['category' => 'laptop']) }}"
                         class="block px-4 py-2 mt-2 font-ubuntuMonoBold text-[#FFFFFF] text-[15px] hover:bg-button border-b">Laptop</a>
-                    <a href="#"
+                    <a href="{{ route('homepage.filteredProduct', ['category' => 'vga']) }}"
                         class="block px-4 py-2 mt-2 font-ubuntuMonoBold text-[#FFFFFF] text-[15px] hover:bg-button border-b">VGA</a>
-                    <a href="#"
+                    <a href="{{ route('homepage.filteredProduct', ['category' => 'monitor']) }}"
                         class="block px-4 py-2 mt-2 font-ubuntuMonoBold text-[#FFFFFF] text-[15px] hover:bg-button">Monitor</a>
                 </div>
             </div>
         </div>
 
-        <div class="px-1 ml-auto relative">
-
+        <div class="px-1 ml-auto relative mr-10">
             <div class="absolute left-1 top-1/2 transform -translate-y-1/2 w-10 h-10 flex items-center justify-center">
-                <img src="{{ asset('images/search.png') }}" alt="Search" class="w-6 h-6">
+             <a href="/search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                </a>
             </div>
-
-            <input type="text" placeholder="Apa yang kamu cari?"
-                class="pl-12 pr-4 py-2 border border-button font-ubuntuoMonoRegular">
-
         </div>
 
         <li class="flex group mr-4 px-4 font-ubuntuMonoRegular">
@@ -77,10 +75,6 @@
                         <a href="/users"
                             class="block px-4 py-2 mt-2 font-ubuntuMonoBold text-[#FFFFFF] text-[15px] hover:bg-button border-b">Profile</a>
                     </li>
-
-                    {{-- @if (Auth::check())
-                        <a href="#" class="block px-4 py-2 mt-2 font-ubuntuMonoBold text-[#FFFFFF] text-[15px] hover:bg-button border-b">Settings</a>
-                    @endif --}}
 
                     <a href="{{ route('auth.logout')  }}"
                         class="block px-4 py-2 mt-2 font-ubuntuMonoBold text-[#FFFFFF] text-[15px] hover:bg-button">Sign

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\HTTP\Controllers\ProductController;
+use App\Http\Controllers\SearchController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,6 +22,8 @@ Route::get('/app', function() {
     return view('form.app');
 })->name('app');
 
+//-------------------------------------------------------------------------------------------
+//Auth Routes
 Route::get('/register', function() {
     return view('form.register');
 })->name('register');
@@ -33,38 +36,61 @@ Route::get('/login', function(){
 Route::post('/login', [AuthController::class, 'login'])->name('auth.login');
 
 Route::get('/logout', [AuthController::class, 'logout'])->name('auth.logout');
+//-------------------------------------------------------------------------------------------
 
+//-------------------------------------------------------------------------------------------
+//Admin Routes
 //use group routing later
 Route::get('/adminMenu', function(){
     return view('adminMenu');
 })->name('auth.adminHome')->middleware('is_admin');
+//-------------------------------------------------------------------------------------------
 
 
-
-// Route::get('/morereview', function(){
-//     return view('homepage.morereview');
-// })->name('morereview');
-
+//-------------------------------------------------------------------------------------------
+//Profile Routes
 Route::get('/users', function(){
     return view('homepage.profile');
 })->name('users');
 
 Route::get('/profile', [UserController::class, 'edit'])->name('user.edit');
 Route::post('/profile', [UserController::class, 'updateUser'])->name('user.update');
+Route::get('/edit', function(){
+    return view('homepage.profileEdit');
+})->name('edit');
+//-------------------------------------------------------------------------------------------
+
+
+//-------------------------------------------------------------------------------------------
+//Footer Routes
+Route::get('/aboutUs', function(){
+    return view ('homepage.aboutUs');
+})->name('about');
+
+Route::get('/contact', function(){
+    return view('homepage.contactForm');
+})->name('contact');
+
+//-------------------------------------------------------------------------------------------
+
+
+
 //ACTION ROUTES BELOW
 
-
-
+//-------------------------------------------------------------------------------------------
 //RESOURCES
 Route::get('/', [ProductController::class, 'index'])->name('homepage.dashboard');
-Route::get('/productDetail/{id}', [ProductController::class, 'showProduct'])->name('homepage.productDetail');
+Route::get('/detail/{id}', [ProductController::class, 'showProduct'])->name('homepage.productDetail');
 
 
 Route::get('/morereview', [ProductController::class, 'moreReview'])->name('homepage.morereview');
 Route::get('/random-product/{categoryId}', [ProductController::class, 'randomProduct'])->name('randomProduct');
 
+Route::get('/products/{category}', [ProductController::class, 'showProductByCategory'])->name('homepage.filteredProduct');
 
-Route::get('/edit', function(){
-    return view('homepage.profileEdit');
-})->name('edit');
+//Search
+Route::get('/search', [SearchController::class, 'searchProduct'])->name('homepage.searchProduct');
+//-------------------------------------------------------------------------------------------
+
+
 

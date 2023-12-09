@@ -17,23 +17,23 @@ class ProductController extends Controller
      */
     public function index()
     {
-        
+
         $products = Product::orderBy('created_at', 'desc')->take(3)->get();
         return view('homepage.dashboard', compact('products'));
-
     }
 
-    public function showProduct($id){
+    public function showProduct($id)
+    {
 
-        $product = Product::with(['advantages' , 'disadvantages'])->find($id);
+        $product = Product::with(['advantages', 'disadvantages'])->find($id);
 
-     
+
 
         return view('homepage.productDetail', ['product' => $product]);
-
     }
 
-    public function moreReview(){
+    public function moreReview()
+    {
 
         $products = Product::with('category')->get()->groupBy('productType');
 
@@ -41,11 +41,22 @@ class ProductController extends Controller
     }
 
     //randomize
-    public function randomProduct($categoryId) {
+    public function randomProduct($categoryId)
+    {
         $randomProduct = Product::where('category_id', $categoryId)->inRandomOrder()->firstOrFail();
         return redirect()->route('homepage.productDetail', ['id' => $randomProduct->id]);
     }
-    
+
+    public function showProductByCategory($category)
+    {
+        $category = strtolower($category);
+        $products = Product::where('productType', 'LIKE', "%{$category}%")->get();
+        return view('homepage.filteredProduct', ['products' => $products]);
+    }
+
+
+
+
     //one to many - one product has many advantages
     // public function getAdvantage($id){
     //     $product = Product::find($id);
