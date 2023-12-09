@@ -36,7 +36,7 @@ class UserController extends Controller
 
         $user->name = $data['name'];
 
-        $message = 'Successfully updated profile!';
+        $message = 'Successfully Updated Profile!';
 
 
         if ($request->filled('old_password') && $request->filled('new_password')) {
@@ -68,16 +68,6 @@ class UserController extends Controller
 
             $path = $request->file('avatar')->store('avatars', 'public');
             $user->avatar = $path;
-            // $file = $request->file('avatar');
-            // $extension = uniqid() . '.' . $file->getClientOriginalName();
-
-            // if($user->avatar){
-            //     Storage::delete('public/images/' . $user->avatar);
-            // }
-
-            // $path = $file->storeAs('public/images', $extension);
-            // $user->avatar = $path;
-
           
         }
         

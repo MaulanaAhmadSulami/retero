@@ -47,7 +47,7 @@
             <nav role="navigation" aria-label="{{ __('Pagination Navigation') }}" class="flex justify-center">
                 <div class="flex items-center space-x-1">
                     @if ($products->onFirstPage())
-                    <span class="px-3 py-1 text-gray-500 bg-gray-300 rounded-md">&laquo; Previous</span>
+                    <span class="px-3 py-1 rounded-md">&laquo; Previous</span>
                     @else
                     <a href="{{ $products->previousPageUrl() }}"
                         class="px-3 py-1 bg-white border rounded-md hover:bg-gray-100">&laquo; Previous</a>
@@ -59,7 +59,7 @@
                     <a href="{{ $products->nextPageUrl() }}"
                         class="px-3 py-1 bg-white border rounded-md hover:bg-gray-100">Next &raquo;</a>
                     @else
-                    <span class="px-3 py-1 text-gray-500 bg-gray-300 rounded-md">Next &raquo;</span>
+                    <span class="px-3 py-1 rounded-md">Next &raquo;</span>
                     @endif
                 </div>
             </nav>

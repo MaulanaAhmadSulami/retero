@@ -23,10 +23,10 @@
                     <img class="w-[15%] mr-5" src="{{ Auth::user()->avatar ? asset('storage/' . Auth::user()->avatar) : asset('images/dummyStock.png') }}" alt="ProfilePicture" class="w-32 h-32 object-cover rounded-lg mr-4">
                     <div>
                         <h1 class="text-xl font-bold">{{ Auth::user()->name }}</h1>
-                        <h1 class="text-xs"><b>Joined: </b>{{ Auth::user()->created_at->diffForHumans()}}</h1>
-                        <a href="{{ route('user.edit') }}" class="bg-button text-white py-1 px-4 rounded-lg flex items-center gap-2 mt-2">
+                        <h1 class="text-sm mb-10"><b>Joined: </b>{{ Auth::user()->created_at->diffForHumans()}}</h1>
+                        <a href="{{ route('user.edit') }}" class="bg-button text-white py-2 px-4 rounded-lg flex items-center gap-2 mt-2">
                             <i class="fa-solid fa-gear"></i>
-                            <span>Settings</span>
+                            <span class="">Settings</span>
                         </a>
                     </div>
                 </div>
@@ -37,20 +37,20 @@
     <div class="flex justify-center items-center">
         <div class="container border mt-5 p-10 my-10 max-w-6xl">
             <h3 class="text-[25px] font-ubuntuMonoBold text-center">
-                <i class="fa-solid fa-comments mr-2"></i> Recent comment
+                <i class="fa-solid fa-comments mr-2"></i> Recent comments
             </h3>
             <div class="mt-5">
                 <div class="flex justify-center items-center gap-4 mb-4">
-                    <img id="rounded-image" src="{{ asset('images/dummyStock.png') }}" class="rounded-full h-10 w-10" alt="">
+                    <img id="rounded-image" src="{{ Auth::user()->avatar ? asset('storage/' . Auth::user()->avatar) : asset('images/dummyStock.png') }}" class="rounded-full h-10 w-10" alt="">
                     <div class="flex-none max-w-full">
-                        <h1 id="sizeName" class="font-bold">Freya Jayawardana</h1>
+                        <h1 id="sizeName" class="font-bold">{{ Auth::user()->name }}</h1>
                         <p id="sizeComment">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium inventore mollitia odio totam quisquam cumque vero doloremque aut, numquam eveniet, reiciendis consequuntur necessitatibus itaque?</p>
                     </div>
                 </div>
                 <div class="flex justify-center items-center gap-4 mb-4">
-                    <img id="rounded-image" src="{{ asset('images/dummyStock.png') }}" class="rounded-full h-10 w-10" alt="">
+                    <img id="rounded-image" src="{{ Auth::user()->avatar ? asset('storage/' . Auth::user()->avatar) : asset('images/dummyStock.png') }}" class="rounded-full h-10 w-10" alt="">
                     <div class="flex-none max-w-full">
-                        <h1 id="sizeName" class="font-bold">Freya Jayawardana</h1>
+                        <h1 id="sizeName" class="font-bold">{{ Auth::user()->name }}</h1>
                         <p id="sizeComment">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium inventore mollitia odio totam quisquam cumque vero doloremque aut, numquam eveniet, reiciendis consequuntur necessitatibus itaque?</p>
                     </div>
                 </div>
