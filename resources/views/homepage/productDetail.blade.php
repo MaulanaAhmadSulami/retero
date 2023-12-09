@@ -48,7 +48,8 @@
             <div class="text-left ml-4">
                 <h1 class="font-publicPixel text-[31.25px]">{{ $product->productTitle }}</h1>
                 <span class="font-ubuntuMonoRegular">
-                    <iconify-icon icon="subway:refresh-time" class="text-lg"></iconify-icon> <span class="text-lg">{{ $product->created_at->diffForHumans() }}</span>
+                    <iconify-icon icon="subway:refresh-time" class="text-lg"></iconify-icon> <span class="text-lg">{{
+                        $product->created_at->diffForHumans() }}</span>
                 </span>
             </div>
             <div class="max-w-[750px] mt-20 text-left ml-4 tracking-wide">
@@ -156,15 +157,13 @@
                             @csrf
                             <div class="mb-8">
                                 <input type="text" placeholder="Username" name="name" id="name"
-                                    value="{{ old('name') }}"
-                                    class="bg-form border-b w-full py-2 px-3">
+                                    value="{{ old('name') }}" class="bg-form border-b w-full py-2 px-3">
                                 <div id="nameError" class="font-ubuntuMonoBold text-red-500"></div>
                             </div>
 
                             <div class="mb-8">
                                 <input type="email" placeholder="Email" name="email" id="email"
-                                    value="{{ old('email') }}"
-                                    class="bg-form border-b w-full py-2 px-3">
+                                    value="{{ old('email') }}" class="bg-form border-b w-full py-2 px-3">
                                 <div id="emailError" class="font-ubuntuMonoBold text-red-500"></div>
                             </div>
 
@@ -176,7 +175,7 @@
                             <div class="mb-8">
                                 <input type="password" placeholder="Confirm Password" name="password_confirmation"
                                     id="password_confirmation" required class="bg-form border-b  w-full py-2 px-3">
-                                    <div id="passwordConfirmationError" class="font-ubuntuMonoBold text-red-500"></div>
+                                <div id="passwordConfirmationError" class="font-ubuntuMonoBold text-red-500"></div>
                             </div>
 
                             <button id="modal-btn" type="submit"
@@ -197,25 +196,58 @@
             </div>
         </div>
 
-        <div class="container border text-center mt-10 p-10 my-10" id="comment-post-container">
+        <div class="container text-center p-10 my-10 bg-[#fbbf24] rounded-md" id="comment-post-container">
             <h3 class="text-[25px] font-ubuntuMonoBold">
                 <i class="fa-solid fa-comments mr-2"></i> Post a comment
             </h3>
 
-            <div class="text-[20px] mt-6"> 
-                <p>
-
+            <div class="text-[20px]" id="comment-container">
+                @if(Auth::user())
+                <div id="comment-form" class="container mx-auto p-4">
+                    <textarea name="comment" id="comment_id" cols="40" rows="4" minlength="10" maxlength="1000"
+                        placeholder="You can comment here!"
+                        class="w-full max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl rounded-md p-4 text-black mb-4"></textarea>
+                </div>
+                <div class="text-center">
+                    <button type="submit"
+                        class="bg-[#fff] text-black font-semibold py-2 px-4 rounded-md items-center justify-center hover:bg-[#f3f4f6]">
+                        <i class="fa-solid fa-comment"></i> Comment
+                    </button>
+                </div>
+                @else
+                <p class="p-2">
                     <button data-modal-target="login-modal" data-modal-toggle="login-modal" type="button"> <span
                             class="underline font-ubuntuMonoBold">Login</span></button> or <button
                         data-modal-target="regist-modal" data-modal-toggle="regist-modal" type="button"><span
                             class="underline font-ubuntuMonoBold">Register</span></button> to post a comment.
                 </p>
+                @endif
             </div>
+        </div>
 
-
-            <div id="comment-container">
-
-                {{-- COMMENT CONTAINER HERE LATER --}}
+        <div id=all-comments>
+            <div class="justify-center items-center">
+                <div class="container border mt-5 p-10 my-10">
+                    <div class="mt-5">
+                        <div class="flex justify-center items-center gap-4 mb-4">
+                            <img id="rounded-image" src="{{ asset('images/dummyStock.png') }}" class="rounded-full h-10 w-10" alt="Profile picture">
+                            <div class="flex-none max-w-full">
+                                <h1 id="sizeName" class="font-bold">lol</h1>
+                                <p id="sizeComment">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium inventore mollitia odio totam quisquam cumque vero doloremque aut, numquam eveniet, reiciendis consequuntur necessitatibus itaque?</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-center items-center gap-4 mb-4">
+                            <img id="rounded-image" src="{{ asset('images/dummyStock.png') }}" class="rounded-full h-10 w-10" alt="Profile picture">
+                            <div class="flex-none max-w-full">
+                                <h1 id="sizeName" class="font-bold">lol</h1>
+                                <p id="sizeComment">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium inventore mollitia odio totam quisquam cumque vero doloremque aut, numquam eveniet, reiciendis consequuntur necessitatibus itaque?</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="comment-container">
+                        {{-- KONTAINER KOMENTAR DISINI NANTI --}}
+                    </div>
+                </div>
             </div>
         </div>
     </div>

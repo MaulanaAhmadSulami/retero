@@ -22,9 +22,11 @@
         <x-guest-nav />
     @endif
     <div class="flex-grow">
-
         @yield('content')
     </div>
-    <x-footer/>
+
+    <div class="mt-auto">
+        <x-footer/>
+    </div>
 </body>
 </html>
