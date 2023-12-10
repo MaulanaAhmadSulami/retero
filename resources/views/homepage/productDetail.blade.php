@@ -77,14 +77,14 @@
 
         <div id="login-modal" tabindex="-1" aria-hidden="true"
             class="hidden overflow-y-auto overflow-x-hidden fixed justify-center items-center md:inset-0">
-            <div class="relative p-4 w-full max-w-lg h-full">
+            <div class="relative p-4 w-full max-w-2xl h-full">
                 <!-- Modal content -->
-                <div class="relative border bg-[#fff] rounded-lg justify-flex items-center px-8">
+                <div class="relative border bg-[#fff] rounded-lg justify-flex items-center">
                     <!-- Modal header -->
-                    <div class="flex justify-between items-start py-6 rounded-t dark:border-gray-600 h-48">
-                        <img class="mx-auto w-72 h-auto" src="{{ asset('images/retero.png') }}" alt="Retero">
+                    <div class="flex justify-between items-start p-4 rounded-t dark:border-gray-600">
+                        <img src="{{ asset('images/retero.png') }}" alt="Retero">
                         <button type="button" data-modal-hide="login-modal">
-                            <svg class="w-4 h-4 " fill="currentColor" viewBox="0 0 20 20"
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd"
                                     d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
@@ -94,59 +94,39 @@
                         </button>
                     </div>
                     <!-- Modal body -->
-                    <div class=" p-6">
+                    <div class="p-6">
                         <form method="POST" action="{{ route('auth.login') }}" id="loginForm">
                             @csrf
-                            <h4 class="flex items-center justify-center font-ubuntuMonoBold text-[24px] mb-6">
-                                Account Log In
-                            </h4>
-                            <div class="mb-4">
+                            <div class="mb-8">
                                 <input type="text" name="email" placeholder="Email" id="email"
-                                    class="bg-[#f5f5f5] border border-[#c6c6c6] w-full py-2 px-3 rounded-lg h-12" value="{{ old('email') }}"
+                                    class="bg-form border-b border-b w-full py-2 px-3" value="{{ old('email') }}"
                                     autocomplete="email" autofocus>
                                 <div id="emailLoginError" class="font-ubuntuMonoBold"></div>
                             </div>
 
                             <div class="mb-8">
                                 <input type="password" name="password" placeholder="Password" id="password"
-                                    class="bg-[#f5f5f5] border border-[#c6c6c6] w-full py-2 px-3 rounded-lg h-12">
+                                    class="bg-form border-b border-b w-full py-2 px-3">
                                 <div id="passwordLoginError" class="font-ubuntuMonoBold"></div>
                             </div>
-
-                            {{-- <div class="mb-8 flex items-center">
+                            <div class="mb-8 flex items-center">
                                 <input type="checkbox" class="w-4 h-4 border" name="remember" id="remember">
                                 <label for="remember"
-                                    class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Remember me?</label>
-                            </div> --}}
+                                    class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Remember
+                                    me?</label>
+                            </div>
 
-                            <button id="modal-btn" type="submit" class="bg-button border 1px py-2 px-4 rounded w-full font-bold font-publicPixel text-[13px] h-12">
+                            <button id="modal-btn" type="submit"
+                                class="bg-button border 1px py-2 px-4 rounded w-full font-bold font-publicPixel text-[13px]">
                                 <p class="hover:text-[#FFFFFF]">Login</p>
                             </button>
-
-                            <div class="flex mt-4 justify-between">
-                                <p >
-                                    <button type="button" data-modal-target="regist-modal"
-                                        data-modal-toggle="regist-modal" data-modal-hide="login-modal"> <span
-                                            class="text-button hover:text-[#000000]">Having Problems?</span>
-                                    </button>
-                                </p>
+                            <div class="text-center p-6">
                                 <p>
-                                    <button type="button" data-modal-target="regist-modal"
+                                    Don't have an account yet? <button type="button" data-modal-target="regist-modal"
                                         data-modal-toggle="regist-modal" data-modal-hide="login-modal"> <span
-                                            class="text-button hover:text-[#000000]">Register</span>
-                                    </button>
+                                            class="underline text-button font-bold hover:text-[#000000]">Register</span></button>
                                 </p>
                             </div>
-
-                            <div class="divider flex py-4 items-center font-ubuntuMonoBold">
-                                <p class="flex-grow border-b border-[#a5a3a3] mx-2"></p>
-                                <p class="text-sm text-[#a5a3a3] mx-2">More Login Methods</p>
-                                <p class="flex-grow border-b border-[#a5a3a3] mx-2"></p>
-                            </div>
-
-                            <a href="#" class="flex items-center mb-6">
-                                <img class="mx-auto w-12 h-12" src="/images/favicon.jpg" alt="logo google">
-                            </a>
                         </form>
                     </div>
                 </div>
@@ -155,14 +135,14 @@
 
         <div id="regist-modal" tabindex="-1" aria-hidden="true"
             class="hidden overflow-y-auto overflow-x-hidden fixed justify-center items-center md:inset-0">
-            <div class="relative p-4 w-full max-w-lg h-full">
+            <div class="relative p-4 w-full max-w-2xl h-full">
                 <!-- Modal content -->
-                <div class="relative border bg-[#fff] rounded-lg justify-flex items-center px-8">
+                <div class="relative border bg-[#fff] rounded-[25px] justify-flex items-center">
                     <!-- Modal header -->
-                    <div class="flex justify-between items-start py-6 rounded-t dark:border-gray-600 h-48">
-                        <img class="mx-auto w-72 h-auto" src="{{ asset('images/retero.png') }}" alt="Retero">
+                    <div class="flex justify-between items-start p-4 rounded-t dark:border-gray-600">
+                        <img src="{{ asset('images/retero.png') }}" alt="Retero">
                         <button type="button" data-modal-hide="regist-modal">
-                            <svg class="w-4 h-4 " fill="currentColor" viewBox="0 0 20 20"
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd"
                                     d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
@@ -175,60 +155,41 @@
                     <div class="p-6">
                         <form method="POST" action="{{ route('auth.register') }}" id="registerForm">
                             @csrf
-                            <div class="mb-4">
+                            <div class="mb-8">
                                 <input type="text" placeholder="Username" name="name" id="name"
-                                    value="{{ old('name') }}" class=" bg-[#f5f5f5] border border-[#c6c6c6] w-full py-2 px-3 rounded-lg h-12">
+                                    value="{{ old('name') }}" class="bg-form border-b w-full py-2 px-3">
                                 <div id="nameError" class="font-ubuntuMonoBold text-red-500"></div>
                             </div>
 
-                            <div class="mb-4">
+                            <div class="mb-8">
                                 <input type="email" placeholder="Email" name="email" id="email"
-                                    value="{{ old('email') }}" class="bg-[#f5f5f5] border border-[#c6c6c6] w-full py-2 px-3 rounded-lg h-12">
+                                    value="{{ old('email') }}" class="bg-form border-b w-full py-2 px-3">
                                 <div id="emailError" class="font-ubuntuMonoBold text-red-500"></div>
                             </div>
 
-                            <div class="mb-4">
+                            <div class="mb-8">
                                 <input type="password" placeholder="Password" name="password" id="password" required
-                                    class="bg-[#f5f5f5] border border-[#c6c6c6] w-full py-2 px-3 rounded-lg h-12">
+                                    class="bg-form border-b  w-full py-2 px-3">
                                 <div id="passwordError" class="font-ubuntuMonoBold text-red-500"></div>
                             </div>
                             <div class="mb-8">
                                 <input type="password" placeholder="Confirm Password" name="password_confirmation"
-                                    id="password_confirmation" required class="bg-[#f5f5f5] border border-[#c6c6c6] w-full py-2 px-3 rounded-lg h-12">
+                                    id="password_confirmation" required class="bg-form border-b  w-full py-2 px-3">
                                 <div id="passwordConfirmationError" class="font-ubuntuMonoBold text-red-500"></div>
                             </div>
 
-                            <div class="mb-4 flex">
-                                <input type="checkbox" class="w-4 h-4 border" name="privacy" id="privacy">
-                                <label for="privacy"
-                                    class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
-                                    I have read and agree to the Terms of Service and Privacy Policy
-                                </label>
-                            </div>
-
                             <button id="modal-btn" type="submit"
-                                class="bg-button border 1px py-2 px-4 rounded w-full font-bold font-publicPixel text-[13px] h-12">
+                                class="bg-button border 1px py-2 px-4 rounded w-full font-bold font-publicPixel text-[13px]">
                                 <p class="hover:text-[#FFFFFF]">Register</p>
                             </button>
-                            
-                            <div class="text-center p-4">
+
+                            <div class="text-center p-6">
                                 <p>
                                     Already have an account? <button type="button" data-modal-target="login-modal"
                                         data-modal-toggle="login-modal" data-modal-hide="regist-modal"> <span
-                                            class="text-button font-bold hover:text-[#000000]">Login</span></button>
+                                            class="underline text-button font-bold hover:text-[#000000]">Login</span></button>
                                 </p>
                             </div>
-
-                            <div class="divider flex py-4 items-center font-ubuntuMonoBold">
-                                <p class="flex-grow border-b border-[#a5a3a3] mx-2"></p>
-                                <p class="text-sm text-[#a5a3a3] mx-2">More Login Methods</p>
-                                <p class="flex-grow border-b border-[#a5a3a3] mx-2"></p>
-                            </div>
-
-                            <a href="#" class="flex items-center mb-6">
-                                <img class="mx-auto w-12 h-12" src="/images/favicon.jpg" alt="logo google">
-                            </a>
-
                         </form>
                     </div>
                 </div>
@@ -268,19 +229,6 @@
         </div>
 
 
-        <div id=all-comments>
-            <div class="justify-center items-center">
-                <div class="container border mt-5 p-10 my-10">
-                    <div class="mt-5">
-                        @forelse ($comments as $comment )
-                        <div class="flex items-center gap-4 mb-4">
-                            <img src="{{ $comment->user->avatar ? asset('storage/'.$comment->user->avatar) : asset('images/dummyStock.png') }}"
-                                class="rounded-full h-10 w-10 flex-shrink-0" alt="Profile picture">
-                            <div class="flex-grow min-w-0">
-                                <h1 class="font-bold">{{ $comment->user->name }}</h1>
-                                <p id="comment-body-{{ $comment->id }}" class="whitespace-normal break-words">
-
-
         <div class="container mx-auto p-10 my-10 border rounded-md"" id=" all-comments">
             <div>
                 <div class="mt-5">
@@ -297,7 +245,6 @@
                                     <p class="text-sm ml-2 font-ubuntuMonoBold" data-timestamp="{{ $comment->created_at->timestamp }}">{{ $comment->created_at->diffForHumans() }}</p>
                                 </div>
                                 <p id="comment-body-{{ $comment->id }}" class="break-words overflow-hidden">
-
                                     {{ $comment->reviewComment }}
                                 </p>
                             </div>
