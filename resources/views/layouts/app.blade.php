@@ -9,6 +9,7 @@
     {{-- Section for javascript logics --}}
     @vite('resources/css/app.css')
     @vite('resources/js/auth.js')
+    @vite('resources/js/editComment.js')
     {{-- Section for javascript logics --}}
     @stack('styles')
     @stack('scripts')

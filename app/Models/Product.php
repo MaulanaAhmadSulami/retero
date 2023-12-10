@@ -31,6 +31,10 @@ class Product extends Model
         return $this->belongsTo(Category::class);
     }
 
+    public function user_review(){
+        return $this->hasMany(UserReview::class);
+    }
+
 
 
     public $incrementing = false;

@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('user_reviews', function (Blueprint $table) {
-            $table->id();
+            $table->uuid('id')->primary();
             $table->uuid('user_id');
             $table->uuid('product_id');
             $table->longText('reviewComment');

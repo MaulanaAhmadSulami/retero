@@ -203,17 +203,20 @@
 
             <div class="text-[20px]" id="comment-container">
                 @if(Auth::user())
-                <div id="comment-form" class="container mx-auto p-4">
-                    <textarea name="comment" id="comment_id" cols="40" rows="4" minlength="10" maxlength="1000"
-                        placeholder="You can comment here!"
-                        class="w-full max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl rounded-md p-4 text-black mb-4"></textarea>
-                </div>
-                <div class="text-center">
-                    <button type="submit"
-                        class="bg-[#fff] text-black font-semibold py-2 px-4 rounded-md items-center justify-center hover:bg-[#f3f4f6]">
-                        <i class="fa-solid fa-comment"></i> Comment
-                    </button>
-                </div>
+                <form action="{{ route('comment.store', $product->id) }}" method="POST">
+                    @csrf
+                    <div id="comment-form" class="container mx-auto p-4">
+                        <textarea name="comment" id="comment_id" cols="40" rows="4" minlength="10" maxlength="1000"
+                            placeholder="You can comment here!"
+                            class="w-full max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl rounded-md p-4 mb-4"></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit"
+                            class="bg-[#fff] text-black font-semibold py-2 px-4 rounded-md items-center justify-center hover:bg-[#f3f4f6]">
+                            <i class="fa-solid fa-comment"></i> Comment
+                        </button>
+                    </div>
+                </form>
                 @else
                 <p class="p-2">
                     <button data-modal-target="login-modal" data-modal-toggle="login-modal" type="button"> <span
@@ -229,24 +232,35 @@
             <div class="justify-center items-center">
                 <div class="container border mt-5 p-10 my-10">
                     <div class="mt-5">
-                        <div class="flex justify-center items-center gap-4 mb-4">
-                            <img id="rounded-image" src="{{ asset('images/dummyStock.png') }}" class="rounded-full h-10 w-10" alt="Profile picture">
-                            <div class="flex-none max-w-full">
-                                <h1 id="sizeName" class="font-bold">lol</h1>
-                                <p id="sizeComment">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium inventore mollitia odio totam quisquam cumque vero doloremque aut, numquam eveniet, reiciendis consequuntur necessitatibus itaque?</p>
+                        @forelse ($comments as $comment )
+                        <div class="flex items-center gap-4 mb-4">
+                            <img src="{{ $comment->user->avatar ? asset('storage/'.$comment->user->avatar) : asset('images/dummyStock.png') }}"
+                                class="rounded-full h-10 w-10 flex-shrink-0" alt="Profile picture">
+                            <div class="flex-grow min-w-0">
+                                <h1 class="font-bold truncate">{{ $comment->user->name }}</h1>
+                                <p id="comment-body-{{ $comment->id }}" class="whitespace-normal break-words">
+                                    {{ $comment->reviewComment }}
+                                </p>
                             </div>
-                        </div>
-                        <div class="flex justify-center items-center gap-4 mb-4">
-                            <img id="rounded-image" src="{{ asset('images/dummyStock.png') }}" class="rounded-full h-10 w-10" alt="Profile picture">
-                            <div class="flex-none max-w-full">
-                                <h1 id="sizeName" class="font-bold">lol</h1>
-                                <p id="sizeComment">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium inventore mollitia odio totam quisquam cumque vero doloremque aut, numquam eveniet, reiciendis consequuntur necessitatibus itaque?</p>
+
+                            @if (Auth::id() == $comment->user_id)
+                            <div class="flex space-x-2">
+                                <button class="update-comment-btn">Edit</button>
+                                <a href="{{ route('comment.edit', $comment->id) }}" class="">Edit</a>
+                                <form method="POST" action="{{ route('comment.destory', $comment->id) }}">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="">Delete</button>
+                                </form>
                             </div>
+                            @endif
+
                         </div>
+                        @empty
+                        <p>No Comments on this product yet.</p>
+                        @endforelse
                     </div>
-                    <div id="comment-container">
-                        {{-- KONTAINER KOMENTAR DISINI NANTI --}}
-                    </div>
+
                 </div>
             </div>
         </div>

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CommentController;
 use App\HTTP\Controllers\ProductController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\UserController;
@@ -119,6 +120,11 @@ Route::get('/random-product/{categoryId}', [ProductController::class, 'randomPro
 Route::get('/products/{category}', [ProductController::class, 'showProductByCategory'])->name('homepage.filteredProduct');
 
 Route::get('/search', [SearchController::class, 'searchProduct'])->name('homepage.searchProduct');
+
+Route::post('/products/{product}/comments', [CommentController::class, 'store'])->name('comment.store');
+Route::get('/comments/{comments}/edit', [CommentController::class, 'edit'])->name('comment.edit');
+Route::put('/comments/{comment}', [CommentController::class, 'update'])->name('comment.update');
+Route::delete('/comments/{comments}', [CommentController::class, 'destory'])->name('comment.destory');
 
 //-------------------------------------------------------------------------------------------
 

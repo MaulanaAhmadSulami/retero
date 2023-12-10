@@ -26,11 +26,10 @@ class ProductController extends Controller
     {
 
         $product = Product::with(['advantages', 'disadvantages'])->find($id);
+        $comments = $product->user_review()->with('user')->orderBy('created_at', 'desc')->get();
 
-
-
-        return view('homepage.productDetail', ['product' => $product]);
-    }
+        return view('homepage.productDetail', ['product' => $product, 'comments' => $comments]);
+    }   
 
     public function moreReview()
     {
