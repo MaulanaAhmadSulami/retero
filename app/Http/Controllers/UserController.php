@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\UserReview;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -74,6 +75,19 @@ class UserController extends Controller
         $user->save();
         
         return redirect()->back()->with('message', $message);
+    }
+
+    public function profile(){
+        if(!Auth::check()){
+            return redirect('/');
+        }
+
+        $user = Auth::user();
+
+        $comments = UserReview::where('user_id', $user->id)->get();
+
+
+        return view('homepage.profile', compact('comments'));
     }
     
 

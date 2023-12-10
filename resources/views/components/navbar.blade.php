@@ -72,7 +72,7 @@
                             Dashboard</a>
                     @endif
                     <li>
-                        <a href="/users"
+                        <a href="/profile"
                             class="block px-4 py-2 mt-2 font-ubuntuMonoBold text-[#FFFFFF] text-[15px] hover:bg-button border-b">Profile</a>
                     </li>
 

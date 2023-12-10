@@ -2,15 +2,8 @@
 @section('title', 'Profile - ' . Auth::user()->name)
 @push('styles')
 <style>
-    #sizeComment{
-        font-size: 9px;
-    }
-    #sizeName{
-        font-size: 10px;
-    }
-    #rounded-image{
-        border-radius: 50%;
-    }
+   
+
 </style>
 @endpush
 
@@ -40,25 +33,22 @@
                 <i class="fa-solid fa-comments mr-2"></i> Recent comments
             </h3>
             <div class="mt-5">
-                <div class="flex justify-center items-center gap-4 mb-4">
-                    <img id="rounded-image" src="{{ Auth::user()->avatar ? asset('storage/' . Auth::user()->avatar) : asset('images/dummyStock.png') }}" class="rounded-full h-10 w-10" alt="">
-                    <div class="flex-none max-w-full">
-                        <h1 id="sizeName" class="font-bold">{{ Auth::user()->name }}</h1>
-                        <p id="sizeComment">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium inventore mollitia odio totam quisquam cumque vero doloremque aut, numquam eveniet, reiciendis consequuntur necessitatibus itaque?</p>
+                @foreach ($comments as $comment)
+                    <div class="flex items-start gap-4 mb-4">
+                        <!-- Avatar -->
+                        <img src="{{ Auth::user()->avatar ? asset('storage/' . Auth::user()->avatar) : asset('images/dummyStock.png') }}" class="rounded-full h-10 w-10 flex-shrink-0" alt="">
+    
+                        <!-- Username and Comment -->
+                        <div>
+                            <h1 class="font-ubuntuMonoBold">{{ Auth::user()->name }}</h1>
+                            <p class="font-ubuntuMonoRegular">{{ $comment->reviewComment }}</p>
+                        </div>
                     </div>
-                </div>
-                <div class="flex justify-center items-center gap-4 mb-4">
-                    <img id="rounded-image" src="{{ Auth::user()->avatar ? asset('storage/' . Auth::user()->avatar) : asset('images/dummyStock.png') }}" class="rounded-full h-10 w-10" alt="">
-                    <div class="flex-none max-w-full">
-                        <h1 id="sizeName" class="font-bold">{{ Auth::user()->name }}</h1>
-                        <p id="sizeComment">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium inventore mollitia odio totam quisquam cumque vero doloremque aut, numquam eveniet, reiciendis consequuntur necessitatibus itaque?</p>
-                    </div>
-                </div>
-            </div>
-            <div id="comment-container">
-                {{-- KONTAINER KOMENTAR DISINI NANTI --}}
+                @endforeach
             </div>
         </div>
     </div>
+    
+    
 </div>
 @endsection

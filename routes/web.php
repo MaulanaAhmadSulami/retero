@@ -68,12 +68,9 @@ Route::get('/adminMenu', function(){
 |
 */
 
-Route::get('/users', function(){
-    return view('homepage.profile');
-})->name('users');
-
-Route::get('/profile', [UserController::class, 'edit'])->name('user.edit');
-Route::post('/profile', [UserController::class, 'updateUser'])->name('user.update');
+Route::get('/profile/edit', [UserController::class, 'edit'])->name('user.edit');
+Route::post('/profile/update', [UserController::class, 'updateUser'])->name('user.update');
+Route::get('/profile', [UserController::class, 'profile'])->name('profile')->middleware('auth');
 
 //-------------------------------------------------------------------------------------------
 
