@@ -81,14 +81,15 @@ class UserController extends Controller
         if(!Auth::check()){
             return redirect('/');
         }
-
+    
         $user = Auth::user();
-
-        $comments = UserReview::where('user_id', $user->id)->get();
-
-
-        return view('homepage.profile', compact('comments'));
+        $comments = UserReview::where('user_id', $user->id)
+                              ->orderBy('created_at', 'desc')
+                              ->get();
+    
+        return view('homepage.profile', compact('user', 'comments'));
     }
+    
 
     public function showProfile($uuid){
         $user = User::where('id', $uuid)->firstOrFail();

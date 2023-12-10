@@ -48,7 +48,7 @@
             <div class="text-left ml-4">
                 <h1 class="font-publicPixel text-[31.25px]">{{ $product->productTitle }}</h1>
                 <span class="font-ubuntuMonoRegular">
-                    <iconify-icon icon="subway:refresh-time" class="text-lg"></iconify-icon> <span class="text-lg">{{
+                    <iconify-icon icon="subway:refresh-time" class="text-lg mt-10"></iconify-icon> <span class="text-lg" data-timestamp="{{ $product->created_at->timestamp }}">{{
                         $product->created_at->diffForHumans() }}</span>
                 </span>
             </div>
