@@ -275,8 +275,9 @@
                         <div class="flex items-center gap-4 mb-4">
                             <img src="{{ $comment->user->avatar ? asset('storage/'.$comment->user->avatar) : asset('images/dummyStock.png') }}"
                                 class="rounded-full h-10 w-10 flex-shrink-0" alt="Profile picture">
+
                             <div class="flex-grow min-w-0">
-                                <h1 class="font-bold">{{ $comment->user->name }}</h1>
+                                <h1 class="font-bold">{{ $comment->user->name }}</h1>                                
                                 <p id="comment-body-{{ $comment->id }}" class="whitespace-normal break-words">
                                     {{ $comment->reviewComment }}
                                 </p>
@@ -295,8 +296,8 @@
                                 </form>
 
                             </div>
-
                             @endif
+
                             @if(Auth::check() && Auth::user()->isAdmin || Auth::id() == $comment->user_id)
                             <form method="POST" action="{{ route('comment.destroy', $comment->id) }}"
                                 class="delete-comment-form">
@@ -306,10 +307,12 @@
                             </form>
                             @endif
                         </div>
+
                         @empty
                         <div class="container border mt-5 p-10 my-10">
                             <p>No Comments on this product yet.</p>
                         </div>
+
                         @endforelse
                     </div>
 
