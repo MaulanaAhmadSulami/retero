@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="icon" type="image/x-icon" href="/images/favicon.jpg">
     <title>@yield('title')</title>
     {{-- Section for javascript logics --}}
     @vite('resources/css/app.css')
     @vite('resources/js/auth.js')
-    @vite('resources/js/editComment.js')
+    @vite('resources/js/comment.js')
     {{-- Section for javascript logics --}}
     @stack('styles')
     @stack('scripts')

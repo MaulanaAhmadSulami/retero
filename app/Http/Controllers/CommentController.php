@@ -31,20 +31,22 @@ class CommentController extends Controller
         return view('comments.edit', compact('comment'));
     }
 
-    public function update(Request $request, $id){
-        $request->validate(['comment' => 'required|min:10|max:1000']);
-        $comment = UserReview::findOrFail($id);
-        $comment->reviewComment = $request->comment;
+    public function update(Request $request, $uuid){
+        $request->validate(['content' => 'required|min:10|max:1000']);
+        $comment = UserReview::where('id', $uuid)->firstOrFail();
+        $comment->reviewComment = $request->content;
         $comment->save();
 
-        return response()->json(['success' => true]);
+        return response()->json(['success' => true, 'newComment' => $comment->reviewComment]);
     }
 
-    public function destory($id){
-        $comment = UserReview::findOrFail($id);
+    public function destroy($uuid){
+        $comment = UserReview::findOrFail($uuid);
+    
         $comment -> delete();
 
-        return redirect()->back()->with('success', 'Comment deleted');
+        return back()->with('success', 'Comment deleted!');
+
     }
    
 }

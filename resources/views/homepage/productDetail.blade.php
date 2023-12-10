@@ -245,16 +245,24 @@
 
                             @if (Auth::id() == $comment->user_id)
                             <div class="flex space-x-2">
-                                <button class="update-comment-btn">Edit</button>
-                                <a href="{{ route('comment.edit', $comment->id) }}" class="">Edit</a>
-                                <form method="POST" action="{{ route('comment.destory', $comment->id) }}">
+                                <button class="edit-comment-btn" data-comment-id="{{ $comment->id }}">Edit</button>
+                                <form class="edit-comment-form hidden" method="POST"
+                                    action="/comments/{{ $comment->id }}" data-comment-id="{{ $comment->id }}">
+                                    @csrf
+                                    @method('PATCH')
+                                    <textarea name="content" class="edit-textarea" cols="40" rows="3" minlength="10"
+                                        maxlength="10000">{{ $comment->reviewComment }}</textarea>
+                                    <button type="submit" id="save-edit-btn-{{ $comment->id }}">Save</button>
+                                </form>
+
+                                <form method="POST" action="{{ route('comment.destroy', $comment->id) }}"
+                                    class="delete-comment-form">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="">Delete</button>
+                                    <button type="submit" class="delete-comment-btn">Delete</button>
                                 </form>
                             </div>
                             @endif
-
                         </div>
                         @empty
                         <p>No Comments on this product yet.</p>

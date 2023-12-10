@@ -20,6 +20,10 @@ class UserReview extends Model
         return $this->belongsTo(Product::class);
     }
 
+    public $incrementing = false;
+    
+    public $keyType = 'string';
+
     protected static function boot(){
         parent::boot();
         static::creating(function ($model){

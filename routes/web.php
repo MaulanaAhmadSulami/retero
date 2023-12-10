@@ -122,9 +122,8 @@ Route::get('/products/{category}', [ProductController::class, 'showProductByCate
 Route::get('/search', [SearchController::class, 'searchProduct'])->name('homepage.searchProduct');
 
 Route::post('/products/{product}/comments', [CommentController::class, 'store'])->name('comment.store');
-Route::get('/comments/{comments}/edit', [CommentController::class, 'edit'])->name('comment.edit');
-Route::put('/comments/{comment}', [CommentController::class, 'update'])->name('comment.update');
-Route::delete('/comments/{comments}', [CommentController::class, 'destory'])->name('comment.destory');
+Route::patch('/comments/{comment}', [CommentController::class, 'update'])->name('comment.update');
+Route::delete('/comments/{comment}', [CommentController::class, 'destroy'])->name('comment.destroy');
 
 //-------------------------------------------------------------------------------------------
 
