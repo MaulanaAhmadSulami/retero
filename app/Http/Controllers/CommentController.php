@@ -45,7 +45,7 @@ class CommentController extends Controller
         
         $user = Auth::user()->id;
 
-        if(Auth::user()->isAdmin || $user->id === $comment->user_id){
+        if(Auth::user()->isAdmin || Auth::id() === $comment->user_id){
             $comment -> delete();
             return back()->with('success', 'Comment deleted!');
         }
