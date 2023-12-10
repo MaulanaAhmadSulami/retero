@@ -196,7 +196,7 @@
             </div>
         </div>
 
-        <div class="container text-center p-10 my-10 bg-[#fbbf24] rounded-md" id="comment-post-container">
+        <div class="container mx-auto p-10 my-10 bg-[#fbbf24] rounded-md text-center" id="comment-post-container">
             <h3 class="text-[25px] font-ubuntuMonoBold">
                 <i class="fa-solid fa-comments mr-2"></i> Post a comment
             </h3>
@@ -228,56 +228,64 @@
             </div>
         </div>
 
-        <div id=all-comments>
-            <div class="justify-center items-center">
-                <div class="container border mt-5 p-10 my-10">
-                    <div class="mt-5">
-                        @forelse ($comments as $comment )
-                        <div class="flex items-center gap-4 mb-4">
-                            <img src="{{ $comment->user->avatar ? asset('storage/'.$comment->user->avatar) : asset('images/dummyStock.png') }}"
-                                class="rounded-full h-10 w-10 flex-shrink-0" alt="Profile picture">
-                            <div class="flex-grow min-w-0">
-                                <h1 class="font-bold truncate">{{ $comment->user->name }}</h1>
-                                <p id="comment-body-{{ $comment->id }}" class="whitespace-normal break-words">
+
+        <div class="container mx-auto p-10 my-10 border rounded-md"" id=" all-comments">
+            <div>
+                <div class="mt-5">
+                    @forelse ($comments as $comment)
+                    <div class="flex items-start justify-between gap-4 mb-4">
+                        <div class="flex items-start gap-2 flex-grow min-w-0">
+                            <a href="{{ route('users.profile', ['uuid' => $comment->user->id ]) }}" class="flex items-center gap-2 flex-shrink-0">
+                                <img src="{{ $comment->user->avatar ? asset('storage/'.$comment->user->avatar) : asset('images/dummyStock.png') }}"
+                                    class="rounded-full h-10 w-10" alt="Profile picture">
+                            </a>
+                            <div class="flex flex-col flex-grow">
+                                <div class="flex items-center">
+                                    <h1 class="font-bold">{{ $comment->user->name }}</h1>
+                                    <p class="text-sm ml-2 font-ubuntuMonoBold" data-timestamp="{{ $comment->created_at->timestamp }}">{{ $comment->created_at->diffForHumans() }}</p>
+                                </div>
+                                <p id="comment-body-{{ $comment->id }}" class="break-words overflow-hidden">
                                     {{ $comment->reviewComment }}
                                 </p>
                             </div>
-
+                        </div>
+                        <div class="flex space-x-2 self-start">
                             @if (Auth::id() == $comment->user_id)
-                            <div class="flex space-x-2">
-                                <button class="edit-comment-btn" data-comment-id="{{ $comment->id }}">Edit</button>
-                                <form class="edit-comment-form hidden" method="POST"
-                                    action="/comments/{{ $comment->id }}" data-comment-id="{{ $comment->id }}">
-                                    @csrf
-                                    @method('PATCH')
-                                    <textarea name="content" class="edit-textarea" cols="40" rows="3" minlength="10"
-                                        maxlength="10000">{{ $comment->reviewComment }}</textarea>
-                                    <button type="submit" id="save-edit-btn-{{ $comment->id }}">Save</button>
-                                </form>
-
-                            </div>
-
+                            <button class="edit-comment-btn bg-button rounded-md py-1 px-1 hover:bg-[#86efac]"
+                                data-comment-id="{{ $comment->id }}">Edit</button>
+                            <form class="edit-comment-form hidden" method="POST" action="/comments/{{ $comment->id }}"
+                                data-comment-id="{{ $comment->id }}">
+                                @csrf
+                                @method('PATCH')
+                                <textarea name="content" class="edit-textarea" cols="40" rows="3" minlength="10"
+                                    maxlength="10000">{{ $comment->reviewComment }}</textarea>
+                                <button type="submit" id="save-edit-btn-{{ $comment->id }}"
+                                    class="bg-button rounded-md py-1 px-1 hover:bg-[#86efac]">Save</button>
+                            </form>
                             @endif
                             @if(Auth::check() && Auth::user()->isAdmin || Auth::id() == $comment->user_id)
                             <form method="POST" action="{{ route('comment.destroy', $comment->id) }}"
                                 class="delete-comment-form">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="delete-comment-btn">Delete</button>
+                                <button type="submit"
+                                    class="delete-comment-btn bg-button rounded-md py-1 px-1 hover:bg-[#ef4444]">Delete</button>
                             </form>
                             @endif
                         </div>
-                        @empty
-                        <div class="container border mt-5 p-10 my-10">
-                            <p>No Comments on this product yet.</p>
-                        </div>
-                        @endforelse
                     </div>
-
+                    @empty
+                    <div class="container border mt-5 p-10 my-10">
+                        <p>No Comments on this product yet.</p>
+                    </div>
+                    @endforelse
                 </div>
             </div>
         </div>
+
+
     </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
 @endsection

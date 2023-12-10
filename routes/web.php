@@ -71,6 +71,7 @@ Route::get('/adminMenu', function(){
 Route::get('/profile/edit', [UserController::class, 'edit'])->name('user.edit');
 Route::post('/profile/update', [UserController::class, 'updateUser'])->name('user.update');
 Route::get('/profile', [UserController::class, 'profile'])->name('profile')->middleware('auth');
+Route::get('/users/profile/{uuid}', [UserController::class, 'showProfile'])->name('users.profile');
 
 //-------------------------------------------------------------------------------------------
 

@@ -89,6 +89,12 @@ class UserController extends Controller
 
         return view('homepage.profile', compact('comments'));
     }
-    
 
+    public function showProfile($uuid){
+        $user = User::where('id', $uuid)->firstOrFail();
+        $comments = UserReview::where('user_id', $uuid)
+        ->orderBy('created_at', 'desc')
+        ->get();
+        return view('homepage.profile', compact('user', 'comments'));
+    }
 }
