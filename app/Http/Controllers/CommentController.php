@@ -42,10 +42,13 @@ class CommentController extends Controller
 
     public function destroy($uuid){
         $comment = UserReview::findOrFail($uuid);
-    
-        $comment -> delete();
+        
+        $user = Auth::user()->id;
 
-        return back()->with('success', 'Comment deleted!');
+        if(Auth::user()->isAdmin || $user->id === $comment->user_id){
+            $comment -> delete();
+            return back()->with('success', 'Comment deleted!');
+        }
 
     }
    

@@ -255,17 +255,22 @@
                                     <button type="submit" id="save-edit-btn-{{ $comment->id }}">Save</button>
                                 </form>
 
-                                <form method="POST" action="{{ route('comment.destroy', $comment->id) }}"
-                                    class="delete-comment-form">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="delete-comment-btn">Delete</button>
-                                </form>
                             </div>
+
+                            @endif
+                            @if(Auth::check() && Auth::user()->isAdmin || Auth::id() == $comment->user_id)
+                            <form method="POST" action="{{ route('comment.destroy', $comment->id) }}"
+                                class="delete-comment-form">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="delete-comment-btn">Delete</button>
+                            </form>
                             @endif
                         </div>
                         @empty
-                        <p>No Comments on this product yet.</p>
+                        <div class="container border mt-5 p-10 my-10">
+                            <p>No Comments on this product yet.</p>
+                        </div>
                         @endforelse
                     </div>
 
