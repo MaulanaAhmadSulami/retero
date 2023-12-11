@@ -17,9 +17,12 @@
                     <img class="w-[15%] mr-5" src="{{ $user->avatar ? asset('storage/' . $user->avatar) : asset('images/dummyStock.png') }}" alt="ProfilePicture" class="w-32 h-32 object-cover rounded-lg mr-4">
                     <div>
                         <h1 class="text-xl font-bold">{{ $user->name }}</h1>
-                        <h1 class="text-sm mb-10" data-timestamp="{{ $user->created_at->timestamp }}"><b>Joined: </b>{{ $user->created_at->diffForHumans()}}</h1>
+                        <div class="mb-5">
+                            <span>Member Since : </span>
+                            <span data-timestamp="{{ $user->created_at->timestamp }}"></span>
+                        </div>
                         @if($user->id == Auth::user()->id)
-                        <a href="{{ route('user.edit') }}" class="bg-button text-white py-2 px-4 rounded-lg flex items-center gap-2 mt-2">
+                        <a href="{{ route('user.edit') }}" class="bg-button py-2 px-2 rounded-lg">
                             <i class="fa-solid fa-gear"></i>
                             <span class="">Settings</span>
                         </a>                            
@@ -42,7 +45,7 @@
                         <div>
                             <div class="flex items-center">
                                 <h1 class="font-ubuntuMonoBold">{{ $user->name }}</h1>
-                                <p class="text-sm text-gray-500 ml-2 font-ubuntuMonoBold" data-timestamp="{{ $comment->created_at->timestamp }}">{{ $comment->created_at->diffForHumans() }}</p>
+                                <p class="text-sm text-gray-500 ml-2 font-ubuntuMonoBold" data-timestamp="{{ $comment->created_at->timestamp }}"></p>
                             </div>
                             <p class="font-ubuntuMonoRegular">{{ $comment->reviewComment }}</p>
                         </div>
