@@ -77,12 +77,12 @@
 
         <div id="login-modal" tabindex="-1" aria-hidden="true"
             class="hidden overflow-y-auto overflow-x-hidden fixed justify-center items-center md:inset-0">
-            <div class="relative p-4 w-full max-w-2xl h-full">
+            <div class="relative p-4 w-full max-w-lg h-full">
                 <!-- Modal content -->
-                <div class="relative border bg-[#fff] rounded-lg justify-flex items-center">
+                <div class="relative border bg-[#fff] rounded-lg justify-flex items-center px-8">
                     <!-- Modal header -->
-                    <div class="flex justify-between items-start p-4 rounded-t dark:border-gray-600">
-                        <img src="{{ asset('images/retero.png') }}" alt="Retero">
+                    <div class="flex justify-between items-start py-6 rounded-t dark:border-gray-600 h-48">
+                        <img class="mx-auto w-72 h-auto" src="{{ asset('images/retero.png') }}" alt="Retero">
                         <button type="button" data-modal-hide="login-modal">
                             <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -97,36 +97,53 @@
                     <div class="p-6">
                         <form method="POST" action="{{ route('auth.login') }}" id="loginForm">
                             @csrf
-                            <div class="mb-8">
+                            <div class="mb-4">
                                 <input type="text" name="email" placeholder="Email" id="email"
-                                    class="bg-form border-b border-b w-full py-2 px-3" value="{{ old('email') }}"
+                                    class="bg-[#f5f5f5] border border-[#c6c6c6] w-full py-2 px-3 rounded-lg h-12" value="{{ old('email') }}"
                                     autocomplete="email" autofocus>
                                 <div id="emailLoginError" class="font-ubuntuMonoBold"></div>
                             </div>
 
-                            <div class="mb-8">
+                            <div class="mb-4">
                                 <input type="password" name="password" placeholder="Password" id="password"
-                                    class="bg-form border-b border-b w-full py-2 px-3">
+                                class="bg-[#f5f5f5] border border-[#c6c6c6] w-full py-2 px-3 rounded-lg h-12">
                                 <div id="passwordLoginError" class="font-ubuntuMonoBold"></div>
                             </div>
-                            <div class="mb-8 flex items-center">
+
+                            {{-- <div class="mb-8 flex items-center">
                                 <input type="checkbox" class="w-4 h-4 border" name="remember" id="remember">
                                 <label for="remember"
                                     class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Remember
                                     me?</label>
-                            </div>
+                            </div> --}}
 
-                            <button id="modal-btn" type="submit"
-                                class="bg-button border 1px py-2 px-4 rounded w-full font-bold font-publicPixel text-[13px]">
+                            <button id="modal-btn" type="submit" class="bg-button border 1px my-6 py-2 px-4 rounded w-full font-bold font-publicPixel text-[13px] h-12">
                                 <p class="hover:text-[#FFFFFF]">Login</p>
                             </button>
-                            <div class="text-center p-6">
-                                <p>
-                                    Don't have an account yet? <button type="button" data-modal-target="regist-modal"
+                            <div class="flex justify-between py-2">
+                                <p >
+                                    <button type="button" data-modal-target="regist-modal"
                                         data-modal-toggle="regist-modal" data-modal-hide="login-modal"> <span
-                                            class="underline text-button font-bold hover:text-[#000000]">Register</span></button>
+                                            class="text-button hover:text-[#000000]">Having Problems?</span>
+                                    </button>
+                                </p>
+                                <p>
+                                    <button type="button" data-modal-target="regist-modal"
+                                        data-modal-toggle="regist-modal" data-modal-hide="login-modal"> <span
+                                            class="text-button hover:text-[#000000]">Register</span>
+                                    </button>
                                 </p>
                             </div>
+
+                            <div class="divider flex py-4 items-center font-ubuntuMonoBold">
+                                <p class="flex-grow border-b border-[#a5a3a3] mx-2"></p>
+                                <p class="text-sm text-[#a5a3a3] mx-2">More Login Methods</p>
+                                <p class="flex-grow border-b border-[#a5a3a3] mx-2"></p>
+                            </div>
+
+                            <a href="#" class="flex items-center mb-6">
+                                <img class="mx-auto w-12 h-12" src="/images/favicon.jpg" alt="logo google">
+                            </a>
                         </form>
                     </div>
                 </div>
@@ -135,12 +152,12 @@
 
         <div id="regist-modal" tabindex="-1" aria-hidden="true"
             class="hidden overflow-y-auto overflow-x-hidden fixed justify-center items-center md:inset-0">
-            <div class="relative p-4 w-full max-w-2xl h-full">
+            <div class="relative p-4 w-full max-w-lg h-full">
                 <!-- Modal content -->
-                <div class="relative border bg-[#fff] rounded-[25px] justify-flex items-center">
+                <div class="relative border bg-[#fff] rounded-lg justify-flex items-center px-8">
                     <!-- Modal header -->
-                    <div class="flex justify-between items-start p-4 rounded-t dark:border-gray-600">
-                        <img src="{{ asset('images/retero.png') }}" alt="Retero">
+                    <div class="flex justify-between items-start py-6 rounded-t dark:border-gray-600 h-48">
+                        <img class="mx-auto w-72 h-auto" src="{{ asset('images/retero.png') }}" alt="Retero">
                         <button type="button" data-modal-hide="regist-modal">
                             <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -155,41 +172,62 @@
                     <div class="p-6">
                         <form method="POST" action="{{ route('auth.register') }}" id="registerForm">
                             @csrf
-                            <div class="mb-8">
+
+                            <div class="mb-4">
                                 <input type="text" placeholder="Username" name="name" id="name"
-                                    value="{{ old('name') }}" class="bg-form border-b w-full py-2 px-3">
+                                    value="{{ old('name') }}" class=" bg-[#f5f5f5] border border-[#c6c6c6] w-full py-2 px-3 rounded-lg h-12">
                                 <div id="nameError" class="font-ubuntuMonoBold text-red-500"></div>
                             </div>
 
-                            <div class="mb-8">
+                            <div class="mb-4">
                                 <input type="email" placeholder="Email" name="email" id="email"
-                                    value="{{ old('email') }}" class="bg-form border-b w-full py-2 px-3">
+                                    value="{{ old('email') }}" class="bg-[#f5f5f5] border border-[#c6c6c6] w-full py-2 px-3 rounded-lg h-12">
                                 <div id="emailError" class="font-ubuntuMonoBold text-red-500"></div>
                             </div>
 
-                            <div class="mb-8">
+                            <div class="mb-4">
                                 <input type="password" placeholder="Password" name="password" id="password" required
-                                    class="bg-form border-b  w-full py-2 px-3">
+                                    class="bg-[#f5f5f5] border border-[#c6c6c6] w-full py-2 px-3 rounded-lg h-12">
                                 <div id="passwordError" class="font-ubuntuMonoBold text-red-500"></div>
                             </div>
+                            
                             <div class="mb-8">
                                 <input type="password" placeholder="Confirm Password" name="password_confirmation"
-                                    id="password_confirmation" required class="bg-form border-b  w-full py-2 px-3">
+                                    id="password_confirmation" required class="bg-[#f5f5f5] border border-[#c6c6c6] w-full py-2 px-3 rounded-lg h-12">
                                 <div id="passwordConfirmationError" class="font-ubuntuMonoBold text-red-500"></div>
                             </div>
 
+                            <div class="mb-4 flex">
+                                <input type="checkbox" class="w-4 h-4 border" name="privacy" id="privacy">
+                                <label for="privacy"
+                                    class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                                    I have read and agree to the <span class="text">Terms of Service</span> and <span>Privacy Policy</span>
+                                </label>
+                            </div>
+
                             <button id="modal-btn" type="submit"
-                                class="bg-button border 1px py-2 px-4 rounded w-full font-bold font-publicPixel text-[13px]">
+                                class="bg-button border 1px py-2 px-4 rounded w-full font-bold font-publicPixel text-[13px] h-12">
                                 <p class="hover:text-[#FFFFFF]">Register</p>
                             </button>
-
-                            <div class="text-center p-6">
+                            
+                            <div class="text-center p-4">
                                 <p>
                                     Already have an account? <button type="button" data-modal-target="login-modal"
                                         data-modal-toggle="login-modal" data-modal-hide="regist-modal"> <span
-                                            class="underline text-button font-bold hover:text-[#000000]">Login</span></button>
+                                            class="text-button font-bold hover:text-[#000000]">Login</span></button>
                                 </p>
                             </div>
+
+                            <div class="divider flex py-4 items-center font-ubuntuMonoBold">
+                                <p class="flex-grow border-b border-[#a5a3a3] mx-2"></p>
+                                <p class="text-sm text-[#a5a3a3] mx-2">More Login Methods</p>
+                                <p class="flex-grow border-b border-[#a5a3a3] mx-2"></p>
+                            </div>
+
+                            <a href="#" class="flex items-center mb-6">
+                                <img class="mx-auto w-12 h-12" src="/images/favicon.jpg" alt="logo google">
+                            </a>
+
                         </form>
                     </div>
                 </div>
