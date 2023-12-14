@@ -21,7 +21,7 @@
                             <span>Member Since : </span>
                             <span data-timestamp="{{ $user->created_at->timestamp }}"></span>
                         </div>
-                        @if($user->id == Auth::user()->id)
+                        @if(Auth::check() && $user->id == Auth::user()->id)
                         <a href="{{ route('user.edit') }}" class="bg-button py-2 px-2 rounded-lg">
                             <i class="fa-solid fa-gear"></i>
                             <span class="">Settings</span>

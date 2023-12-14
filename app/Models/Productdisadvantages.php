@@ -10,6 +10,13 @@ class Productdisadvantages extends Model
 {
     use HasFactory;
 
+    protected $table = 'productdisadvantages';
+
+    protected $fillable = [
+        'product_id',
+        'disadvantageDescription',
+    ];
+
     public function product(){
         return $this->belongsTo(Product::class);
     }

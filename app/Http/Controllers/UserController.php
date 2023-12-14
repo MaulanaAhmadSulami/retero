@@ -93,9 +93,27 @@ class UserController extends Controller
 
     public function showProfile($uuid){
         $user = User::where('id', $uuid)->firstOrFail();
+
+        if(!$user){
+            return abort(404);
+        }
         $comments = UserReview::where('user_id', $uuid)
         ->orderBy('created_at', 'desc')
         ->get();
         return view('homepage.profile', compact('user', 'comments'));
+    }
+
+    public function guestProfile($uuid){
+        $user = User::where('id', $uuid)->first();
+
+        if(!$user){
+            return abort(404);
+        }
+
+        $comments = UserReview::where('user_id', $uuid)
+        ->orderBy('created_at', 'desc')
+        ->get();
+        return view('homepage.profile', compact('user', 'comments'));
+
     }
 }

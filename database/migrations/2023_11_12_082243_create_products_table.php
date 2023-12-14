@@ -20,7 +20,6 @@ return new class extends Migration
             $table->unsignedBigInteger('category_id');
             $table->string('productType');
             $table->longText('productDescription');
-            $table->float('productRating', 3, 2);
             $table->timestamps();
 
             $table->foreign('category_id')->references('id')->on('categories');

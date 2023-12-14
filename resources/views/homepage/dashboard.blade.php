@@ -64,9 +64,6 @@
                             {{ $product->productDescription }}
                         </p>
                         <div class="flex items-center justify-between my-2">
-                            <div class="flex items-center ml-8">
-                                <p class="font-ubuntuMonoRegular font-ubuntuMono text-[25px]"> Rating {{ $product->productRating }}</p>
-                            </div>
                             <div>
                                 <button id="shadow-btn" type="button" class="bg-button border-1 border-gray-300 py-1 px-2">
                                     <a class="font-ubuntuMonoBold text-[20px] tracking-tight" href="{{ route('homepage.productDetail', ['id' => $product->id]) }}"> <span id="stroke"> Lihat ulasan lebih lanjut</span></a>
@@ -76,7 +73,7 @@
                     </div>
 
                     <div class="w-[350px]">
-                        <img id="shadow" class="border rounded-md" src="images/{{ $product->image }}" alt="Product image">
+                        <img id="shadow" class="border rounded-md" src="{{ Storage::disk('public')->exists($product->image) ? asset('storage/' . $product->image) : asset('images/' . $product->image) }}" alt="Product image">
                     </div>
                 </div>
             </div>
@@ -99,7 +96,7 @@
 @if($products -> isNotEmpty())
 <div class="py-8 flex justify-center mt-auto">
     <button id="shadow-btn" type="button" class="bg-button py-2 px-4">
-        <a id="stroke" class="font-publicPixel text-[20px]" href="{{ 'morereview' }}">Lihat Ulasan
+        <a id="stroke" class="font-publicPixel text-[20px]" href="{{ route('homepage.morereview')}}">Lihat Ulasan
             Lainnya</a>
     </button>
 </div>

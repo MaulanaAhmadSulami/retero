@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CommentController;
 use App\HTTP\Controllers\ProductController;
@@ -53,9 +54,14 @@ Route::get('/logout', [AuthController::class, 'logout'])->name('auth.logout');
 */
 
 //use group routing later
-Route::get('/adminMenu', function(){
-    return view('adminMenu');
-})->name('auth.adminHome')->middleware('is_admin');
+Route::middleware(['is_admin'])->group(function () {
+    Route::get('/dashboard', function(){
+        return view('adminMenu');
+    })->name('auth.adminHome');
+
+    Route::get('/create', [AdminController::class, 'getCategories'])->name('admin.create');
+    Route::post('/create', [AdminController::class, 'createPost'])->name('admin.createPost');
+});
 
 //-------------------------------------------------------------------------------------------
 
@@ -70,9 +76,9 @@ Route::get('/adminMenu', function(){
 
 Route::get('/profile/edit', [UserController::class, 'edit'])->name('user.edit');
 Route::post('/profile/update', [UserController::class, 'updateUser'])->name('user.update');
-Route::get('/profile', [UserController::class, 'profile'])->name('profile')->middleware('auth');
+Route::get('/profile', [UserController::class, 'profile'])->name('profile');
 Route::get('/users/profile/{uuid}', [UserController::class, 'showProfile'])->name('users.profile');
-
+Route::get('/guests/profile/{uuid}', [UserController::class, 'guestProfile'])->name('guests.profile');
 //-------------------------------------------------------------------------------------------
 
 
@@ -112,7 +118,7 @@ Route::get('/', [ProductController::class, 'index'])->name('homepage.dashboard')
 Route::get('/detail/{id}', [ProductController::class, 'showProduct'])->name('homepage.productDetail');
 
 
-Route::get('/morereview', [ProductController::class, 'moreReview'])->name('homepage.morereview');
+Route::get('/more', [ProductController::class, 'moreReview'])->name('homepage.morereview');
 Route::get('/random-product/{categoryId}', [ProductController::class, 'randomProduct'])->name('randomProduct');
 
 Route::get('/products/{category}', [ProductController::class, 'showProductByCategory'])->name('homepage.filteredProduct');

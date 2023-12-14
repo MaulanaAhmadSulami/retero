@@ -12,15 +12,18 @@
     @vite('resources/js/auth.js')
     @vite('resources/js/comment.js')
     @vite('resources/js/timestamp.js')
+    {{-- @vite('resources/js/category.js') --}}
+    {{-- @vite('resources/js/merit.js') --}}
     {{-- Section for javascript logics --}}
     @stack('styles')
     @stack('scripts')
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body class="flex flex-col min-h-screen">
     @if(Auth::check())
         <x-navbar/>
-        
     @else
         <x-guest-nav />
     @endif

@@ -17,9 +17,9 @@ class ProductController extends Controller
      */
     public function index()
     {
-
         $products = Product::orderBy('created_at', 'desc')->take(3)->get();
         return view('homepage.dashboard', compact('products'));
+        dd($products);
     }
 
     public function showProduct($id)
@@ -29,14 +29,22 @@ class ProductController extends Controller
         $comments = $product->user_review()->with('user')->orderBy('created_at', 'desc')->get();
 
         return view('homepage.productDetail', ['product' => $product, 'comments' => $comments]);
-    }   
+    }
 
     public function moreReview()
     {
 
-        $products = Product::with('category')->get()->groupBy('productType');
 
-        return view('homepage.morereview', ['products' => $products]);
+        $productTypes = Product::distinct('productType')->pluck('productType');
+
+        $productsByType = [];
+
+        foreach($productTypes as $type){
+            $productsByType[$type] = Product::where('productType', $type)->get();
+            // $productsByType[$type] = Product::where('productType', $type)->get();
+        }
+
+        return view('homepage.morereview', ['productsByType' => $productsByType]);
     }
 
     //randomize
@@ -55,24 +63,6 @@ class ProductController extends Controller
 
 
 
-
-    //one to many - one product has many advantages
-    // public function getAdvantage($id){
-    //     $product = Product::find($id);
-    //     $advantageArray = explode('||', $product->advantage);
-    // }
-
-    // public function storeAdvantage(Request $request){
-    //     $advantageArray = [];
-    //     foreach($request->advantage as $advantage){
-    //         array_push($advantageArray, $advantage);
-    //     }
-    //     $advantageString = implode('||', $advantageArray);
-    //     $product = Product::find($request->id);
-    //     $product->advantage = $advantageString;
-    //     $product->save();
-
-    // }
 
     /**
      * Show the form for creating a new resource.

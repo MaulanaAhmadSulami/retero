@@ -6,10 +6,14 @@
 
 
 @section('content')
-<div class="p-10 flex justify-center items-center text-center h-screen">
-    <div class="flex">
-        <div>
-            <h1 class="font-publicPixel text-[50px] py-4">ADMIN MENU ASKDLASKLDAK</h1>
+<div class="flex min-h-screen">
+    <x-admin-sidebar/>
+
+    <div class="flex-grow p-4 justify-center text-center">
+        <h1 class="text-[25px] font-publicPixel">Retero Statistic</h1>
+
+        <div class="flex justify-center items-center text-center h-full font-publicPixel text-[50px]">
+            <h1>STATISTIC BOS</h1>
         </div>
     </div>
 </div>

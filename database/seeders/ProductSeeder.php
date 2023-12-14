@@ -25,7 +25,6 @@ class ProductSeeder extends Seeder
                 'category_id' => 1,
                 'productType' => 'Monitor',
                 'productDescription' => 'Ini monitor Sakura, The Hisense A6G is the brand’s budget tier Smart TV released in 2021. This 4K ultra HD TV promises to give you four times the resolution of a regular 1080 P HD screen, Dolby Vision HDR plus, HDR 10 sound, as well as voice-activated commands. The TV is perfect for those looking for an extra device to a second room or a first-time smart TV. This Hisense A6G offers 8.3 million pixels, and a full array LED backlight creating a sharper, brighter, more colorful picture. Read to the end of this Hisense A6G review to learn what experts are saying.',
-                'productRating' => 7.5,
             ],
 
             [
@@ -35,7 +34,6 @@ class ProductSeeder extends Seeder
                 'category_id' => 1,
                 'productType' => 'Monitor',
                 'productDescription' => 'Ini monitor Anses, The Hisense A6G is the brand’s budget tier Smart TV released in 2021. This 4K ultra HD TV promises to give you four times the resolution of a regular 1080 P HD screen, Dolby Vision HDR plus, HDR 10 sound, as well as voice-activated commands. The TV is perfect for those looking for an extra device to a second room or a first-time smart TV. This Hisense A6G offers 8.3 million pixels, and a full array LED backlight creating a sharper, brighter, more colorful picture. Read to the end of this Hisense A6G review to learn what experts are saying.',
-                'productRating' => 7.8,
             ],
 
             [
@@ -45,7 +43,6 @@ class ProductSeeder extends Seeder
                 'category_id' => 1,
                 'productType' => 'Monitor',
                 'productDescription' => 'Ini monitor Mase, The Hisense A6G is the brand’s budget tier Smart TV released in 2021. This 4K ultra HD TV promises to give you four times the resolution of a regular 1080 P HD screen, Dolby Vision HDR plus, HDR 10 sound, as well as voice-activated commands. The TV is perfect for those looking for an extra device to a second room or a first-time smart TV. This Hisense A6G offers 8.3 million pixels, and a full array LED backlight creating a sharper, brighter, more colorful picture. Read to the end of this Hisense A6G review to learn what experts are saying.',
-                'productRating' => 7.9,
             ],
             [
 
@@ -54,7 +51,6 @@ class ProductSeeder extends Seeder
                 'category_id' => 1,
                 'productType' => 'Monitor',
                 'productDescription' => 'Ini monitor Samsul, The Hisense A6G is the brand’s budget tier Smart TV released in 2021. This 4K ultra HD TV promises to give you four times the resolution of a regular 1080 P HD screen, Dolby Vision HDR plus, HDR 10 sound, as well as voice-activated commands. The TV is perfect for those looking for an extra device to a second room or a first-time smart TV. This Hisense A6G offers 8.3 million pixels, and a full array LED backlight creating a sharper, brighter, more colorful picture. Read to the end of this Hisense A6G review to learn what experts are saying.',
-                'productRating' => 8.0,
             ],
 
             [
@@ -63,7 +59,6 @@ class ProductSeeder extends Seeder
                 'category_id' => 1,
                 'productType' => 'Laptop',
                 'productDescription' => 'Ini Laptop Pu, Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus necessitatibus eos ipsum provident molestiae possimus ea. Eaque dignissimos vitae, eius autem ducimus perspiciatis id, excepturi nisi totam in praesentium odio.',
-                'productRating' => 8.2,
             ],
 
             [
@@ -72,7 +67,6 @@ class ProductSeeder extends Seeder
                 'category_id' => 1,
                 'productType' => 'Laptop',
                 'productDescription' => 'Ini Laptop ROG, Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus necessitatibus eos ipsum provident molestiae possimus ea. Eaque dignissimos vitae, eius autem ducimus perspiciatis id, excepturi nisi totam in praesentium odio.',
-                'productRating' => 8.5,
             ],
 
             [
@@ -81,7 +75,6 @@ class ProductSeeder extends Seeder
                 'category_id' => 1,
                 'productType' => 'Laptop',
                 'productDescription' => 'Ini Laptop Asus, Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus necessitatibus eos ipsum provident molestiae possimus ea. Eaque dignissimos vitae, eius autem ducimus perspiciatis id, excepturi nisi totam in praesentium odio.',
-                'productRating' => 6.5,
             ],
 
             [
@@ -90,7 +83,6 @@ class ProductSeeder extends Seeder
                 'category_id' => 1,
                 'productType' => 'Laptop',
                 'productDescription' => 'Ini Laptop MSI, Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus necessitatibus eos ipsum provident molestiae possimus ea. Eaque dignissimos vitae, eius autem ducimus perspiciatis id, excepturi nisi totam in praesentium odio.',
-                'productRating' => 8.5,
             ],
 
             [
@@ -99,7 +91,6 @@ class ProductSeeder extends Seeder
                 'category_id' => 1,
                 'productType' => 'VGA',
                 'productDescription' => 'Ini VGA RTX 3090, Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus necessitatibus eos ipsum provident molestiae possimus ea. Eaque dignissimos vitae, eius autem ducimus perspiciatis id, excepturi nisi totam in praesentium odio.',
-                'productRating' => 9.0,
             ],
 
             [
@@ -108,7 +99,6 @@ class ProductSeeder extends Seeder
                 'category_id' => 1,
                 'productType' => 'VGA',
                 'productDescription' => 'Ini VGA RTX 3080, Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus necessitatibus eos ipsum provident molestiae possimus ea. Eaque dignissimos vitae, eius autem ducimus perspiciatis id, excepturi nisi totam in praesentium odio.',
-                'productRating' => 8.5,
             ],
 
             [
@@ -117,7 +107,6 @@ class ProductSeeder extends Seeder
                 'category_id' => 1,
                 'productType' => 'VGA',
                 'productDescription' => 'Ini AMD Radeon RX 6900 XT, Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus necessitatibus eos ipsum provident molestiae possimus ea. Eaque dignissimos vitae, eius autem ducimus perspiciatis id, excepturi nisi totam in praesentium odio.',
-                'productRating' => 8.5,
             ],
 
             [
@@ -126,7 +115,6 @@ class ProductSeeder extends Seeder
                 'category_id' => 1,
                 'productType' => 'VGA',
                 'productDescription' => 'Ini AMD Radeon 6900 XT, Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus necessitatibus eos ipsum provident molestiae possimus ea. Eaque dignissimos vitae, eius autem ducimus perspiciatis id, excepturi nisi totam in praesentium odio.',
-                'productRating' => 8.5,
             ],
 
             [
@@ -135,7 +123,6 @@ class ProductSeeder extends Seeder
                 'category_id' => 2,
                 'productType' => 'Keyboard',
                 'productDescription' => 'Ini keyboard Sades Kunai, Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus necessitatibus eos ipsum provident molestiae possimus ea. Eaque dignissimos vitae, eius autem ducimus perspiciatis id, excepturi nisi totam in praesentium odio.',
-                'productRating' => 8.0,
             ],
 
             [
@@ -144,7 +131,6 @@ class ProductSeeder extends Seeder
                 'category_id' => 2,
                 'productType' => 'Keyboard',
                 'productDescription' => 'Ini keyboard Astro Boy, Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus necessitatibus eos ipsum provident molestiae possimus ea. Eaque dignissimos vitae, eius autem ducimus perspiciatis id, excepturi nisi totam in praesentium odio.',
-                'productRating' => 8.2,
             ],
 
             [
@@ -153,7 +139,6 @@ class ProductSeeder extends Seeder
                 'category_id' => 2,
                 'productType' => 'Keyboard',
                 'productDescription' => 'Ini keyboard Hu Tao, Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus necessitatibus eos ipsum provident molestiae possimus ea. Eaque dignissimos vitae, eius autem ducimus perspiciatis id, excepturi nisi totam in praesentium odio.',
-                'productRating' => 8.2,
             ],
 
             [
@@ -162,7 +147,6 @@ class ProductSeeder extends Seeder
                 'category_id' => 2,
                 'productType' => 'Keyboard',
                 'productDescription' => 'Ini keyboard Kazuha, Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus necessitatibus eos ipsum provident molestiae possimus ea. Eaque dignissimos vitae, eius autem ducimus perspiciatis id, excepturi nisi totam in praesentium odio.',
-                'productRating' => 8.2,
             ],
 
             [
@@ -171,7 +155,6 @@ class ProductSeeder extends Seeder
                 'category_id' => 2,
                 'productType' => 'Headset',
                 'productDescription' => 'Ini Headset HyperX Cloud Stinger, Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus necessitatibus eos ipsum provident molestiae possimus ea. Eaque dignissimos vitae, eius autem ducimus perspiciatis id, excepturi nisi totam in praesentium odio.',
-                'productRating' => 6.0,
             ],
 
             [
@@ -180,7 +163,6 @@ class ProductSeeder extends Seeder
                 'category_id' => 2,
                 'productType' => 'Headset',
                 'productDescription' => 'Ini headset HyperX 10, Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus necessitatibus eos ipsum provident molestiae possimus ea. Eaque dignissimos vitae, eius autem ducimus perspiciatis id, excepturi nisi totam in praesentium odio.',
-                'productRating' => 6.0,
             ],
 
             [
@@ -189,7 +171,6 @@ class ProductSeeder extends Seeder
                 'category_id' => 2,
                 'productType' => 'Headset',
                 'productDescription' => 'Ini headset Razer Kraken, Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus necessitatibus eos ipsum provident molestiae possimus ea. Eaque dignissimos vitae, eius autem ducimus perspiciatis id, excepturi nisi totam in praesentium odio.',
-                'productRating' => 6.0,
             ],
 
             [
@@ -198,7 +179,6 @@ class ProductSeeder extends Seeder
                 'category_id' => 2,
                 'productType' => 'Headset',
                 'productDescription' => 'Ini headset Razer Kraken 2, Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus necessitatibus eos ipsum provident molestiae possimus ea. Eaque dignissimos vitae, eius autem ducimus perspiciatis id, excepturi nisi totam in praesentium odio.',
-                'productRating' => 6.0,
             ],
 
             [
@@ -207,7 +187,6 @@ class ProductSeeder extends Seeder
                 'category_id' => 2,
                 'productType' => 'Mouse',
                 'productDescription' => 'Ini Mouse Logitech G102, Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus necessitatibus eos ipsum provident molestiae possimus ea. Eaque dignissimos vitae, eius autem ducimus perspiciatis id, excepturi nisi totam in praesentium odio.',
-                'productRating' => 7.0,
             ],  
 
             [
@@ -216,7 +195,6 @@ class ProductSeeder extends Seeder
                 'category_id' => 2,
                 'productType' => 'Mouse',
                 'productDescription' => 'Ini Mouse Logicteh G103, Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus necessitatibus eos ipsum provident molestiae possimus ea. Eaque dignissimos vitae, eius autem ducimus perspiciatis id, excepturi nisi totam in praesentium odio.',
-                'productRating' => 7.2,
             ],  
 
             [
@@ -225,7 +203,6 @@ class ProductSeeder extends Seeder
                 'category_id' => 2,
                 'productType' => 'Mouse',
                 'productDescription' => 'Ini Mouse Razer Deathadder, Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus necessitatibus eos ipsum provident molestiae possimus ea. Eaque dignissimos vitae, eius autem ducimus perspiciatis id, excepturi nisi totam in praesentium odio.',
-                'productRating' => 7.2,
             ],  
 
             [
@@ -234,7 +211,6 @@ class ProductSeeder extends Seeder
                 'category_id' => 2,
                 'productType' => 'Mouse',
                 'productDescription' => 'Ini Mouse Genshin Impact Paimon, Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus necessitatibus eos ipsum provident molestiae possimus ea. Eaque dignissimos vitae, eius autem ducimus perspiciatis id, excepturi nisi totam in praesentium odio.',
-                'productRating' => 7.2,
             ],  
 
         ];

@@ -168,7 +168,7 @@
                         <img src="images/furina2.jpg" alt="Team Member 1"
                             class="w-auto h-40 object-cover rounded-md mb-2">
                         <h3 class="text-lg font-bold mb-1">Kaede</h3>
-                        <p>Jungler</p>
+                        <p>Developer</p>
                         <div class="socmed flex gap-2">
                             <a href="#" class="mt-2">
                                 <i class="fa-brands fa-linkedin w-[100%] h-6"></i>

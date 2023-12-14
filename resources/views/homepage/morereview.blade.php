@@ -36,6 +36,22 @@
     #card-shadow {
         box-shadow: 0.2rem 0.3rem 0;
     }
+
+    .max-w-max {
+        max-width: 50%;
+    }
+
+    .swiper-slide {
+        width: 200px;
+    }
+
+    .mySwiper {
+        display: flex;
+        justify-content: center;
+    }
+
+    
+    
 </style>
 @endpush
 
@@ -54,25 +70,57 @@
 <div class="p-10">
     <div class="flex flex-col items-center">
         <div class="w-full max-w-max">
-            @foreach($products as $productType => $productGroup )
-            <h2 class="mb-8 mt-20 flex text-left font-ubuntuMonoBold text-[25px]">{{ $productType}}</h2>
-            
-            <div class="flex flex-row gap-2 justify-center">
-                @foreach ($productGroup as $product )
-                <div id=card-shadow
-                    class="border  shadow-md mr-4 p-4 w-[250px] flex flex-col justify-between">
-                    <img src="images/{{ $product->image }}" alt="Image Unavailable" class="w-full h-32 object-cover">
-                    <div class="mt-2 font-ubuntuMonoBold text-center border-b py-2 mb-4">{{ $product->productTitle }}</div>
-                    <button id="shadow-btn" type="button" class="bg-button flex self-end">
-                        <a href="{{ route('homepage.productDetail', ['id' => $product->id]) }}" id="card-effect" class="font-ubuntuMonoBold px-1">Baca
-                            Ulasan</a>
-                    </button>
+            @foreach($productsByType as $productType => $products)
+                <h2 class="mb-8 mt-20 flex text-left font-ubuntuMonoBold text-[25px]">{{ $productType }}</h2>
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper borer">
+                        @foreach ($products as $product)
+                            <div class="swiper-slide">
+                                <div id=card-shadow class="border  shadow-md 2 p-4 w-[250px] flex flex-col justify-between  ">
+                                    <img src="{{ Storage::disk('public')->exists($product->image) ? asset('storage/' . $product->image) : asset('images/' . $product->image) }}"
+                                        alt="Image Unavailable" class="w-full h-32 object-cover">
+                                    <div class="mt-2 font-ubuntuMonoBold text-center border-b py-2 mb-4">{{
+                                        $product->productTitle }}</div>
+                                    <button id="shadow-btn" type="button" class="bg-button flex self-end">
+                                        <a href="{{ route('homepage.productDetail', ['id' => $product->id]) }}" id="card-effect"
+                                            class="font-ubuntuMonoBold px-1">Baca
+                                            Ulasan</a>
+                                    </button>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                    <div class="mt-10">
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-pagination"></div>
+                    </div>
                 </div>
-                @endforeach
-            </div>
             @endforeach
         </div>
     </div>
-
 </div>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var swipers = document.querySelectorAll('.mySwiper');
+        swipers.forEach(function(swiper) {
+            new Swiper(swiper, {
+                slidesPerView: 4,
+                slidesPerColumn: 2,
+                spaceBetween: 30,
+                loop: true,
+                pagination: {
+                    el: swiper.querySelector('.swiper-pagination'),
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: swiper.querySelector('.swiper-button-next'),
+                    prevEl: swiper.querySelector('.swiper-button-prev'),
+                },
+            });
+        });
+    });
+</script>
 @endsection

@@ -9,6 +9,16 @@ use Illuminate\Support\Str;
 class Product extends Model
 {
     use HasFactory;
+    protected $table = 'products';
+    
+    protected $fillable = [
+        'productTitle',
+        'productDescription',
+        'productType',
+        'category_id',
+        'image',
+    ];
+    
 
     public function show(Product $product)
     {
@@ -23,10 +33,7 @@ class Product extends Model
         return $this->hasMany(Productdisadvantages::class);
     }
 
-    // public function userreview(){
-    //     return $this->hasMany(UserReview::class);
-    // }
-
+    
     public function category(){
         return $this->belongsTo(Category::class);
     }

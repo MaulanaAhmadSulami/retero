@@ -3,7 +3,7 @@
         <div>
             <div class="md:flex md:justify-between ">
                 <img src="{{ asset('images/retero.png') }}" class="w-[250px] mr-3 mt-8" alt="Retero logo" />
-                <div class="grid grid-cols-2 gap-8 sm:gap-8 sm:grid-cols-3 py-2">
+                <div class="grid grid-cols-2 gap-8 sm:gap-8 sm:grid-cols-3 py-4">
                     <div>
                         <h2 class="mb-6 text-[25px] font-ubuntuMonoBold uppercase dark:text-white">Layanan</h2>
                         <ul class="text-gray-500 dark:text-gray-400 font-medium">

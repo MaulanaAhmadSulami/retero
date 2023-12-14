@@ -40,17 +40,17 @@
 <div>
     <div class="grid place-items-center">
         <div class="grid grid-cols-2 items-center text-center">
-            <div id="image-container" class="max-w-md w-full mx-auto">
-                <a href="https://www.amazon.com/dp/B08Z9WT6PQ?tag=gadgetreviewc-20&th=1&geniuslink=true" class="block">
-                    <img id="shadow" src="{{ asset('images/' . $product->image) }}" alt="Product image">
-                </a>
+            <div id="image-container" class="max-w-md w-full mx-auto block mr-10">
+                <img id="shadow" src="{{ Storage::disk('public')->exists($product->image) ? asset('storage/' . $product->image) : asset('images/' . $product->image) }}" alt="Product image">
             </div>
             <div class="text-left ml-4">
                 <h1 class="font-publicPixel text-[31.25px]">{{ $product->productTitle }}</h1>
-                <span class="font-ubuntuMonoRegular">
-                    <iconify-icon icon="subway:refresh-time" class="text-lg mt-10"></iconify-icon> <span class="text-lg" data-timestamp="{{ $product->created_at->timestamp }}">{{
-                        $product->created_at->diffForHumans() }}</span>
-                </span>
+                <div>
+                    <span class="font-ubuntuMonoRegular flex justify-start mt-5 items-center gap-4">
+                        <iconify-icon icon="subway:refresh-time" class="text-lg h-full"></iconify-icon>
+                        <span class="text-lg h-full" data-timestamp="{{ $product->created_at->timestamp }}"></span>
+                    </span>
+                </div>
             </div>
             <div class="max-w-[750px] mt-20 text-left ml-4 tracking-wide">
                 <h1 id="stroke" class="text-[40px] font-publicPixel text-button tracking-widest">Ringkasan</h1>
@@ -273,7 +273,7 @@
                     @forelse ($comments as $comment)
                     <div class="flex items-start justify-between gap-4 mb-4">
                         <div class="flex items-start gap-2 flex-grow min-w-0">
-                            <a href="{{ route('users.profile', ['uuid' => $comment->user->id ]) }}" class="flex items-center gap-2 flex-shrink-0">
+                            <a href="{{ Auth::check() ? route('users.profile', ['uuid' => $comment->user->id]) : route('guests.profile', ['uuid' => $comment->user->id]) }}" class="flex items-center gap-2 flex-shrink-0">
                                 <img src="{{ $comment->user->avatar ? asset('storage/'.$comment->user->avatar) : asset('images/dummyStock.png') }}"
                                     class="rounded-full h-10 w-10" alt="Profile picture">
                             </a>
@@ -313,7 +313,7 @@
                         </div>
                     </div>
                     @empty
-                    <div class="container border mt-5 p-10 my-10">
+                    <div class="container text-center mt-5 p-10 my-10">
                         <p>No Comments on this product yet.</p>
                     </div>
                     @endforelse

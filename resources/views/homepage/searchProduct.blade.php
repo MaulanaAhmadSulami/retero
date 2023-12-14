@@ -59,7 +59,7 @@
         <div id="products-container" class=" grid grid-cols-2 md:grid-cols-3 gap-7 w-1/2 mx-auto">
             @forelse ($products as $product)
             <div id="card-shadow" class="border shadow-md p-4 mb-2 flex flex-col justify-between">
-                <img src="{{ asset('images/' . $product->image) }}" alt="{{ $product->productTitle }}"
+                <img src="{{ Storage::disk('public')->exists($product->image) ? asset('storage/' . $product->image) : asset('images/' . $product->image) }}" alt="{{ $product->productTitle }}"
                     class="w-full h-32 object-cover">
                 <div class="mt-2 font-bold text-center py-2">
                     <span class="border-b-2 border-[#FFC800] text-[21px]">
