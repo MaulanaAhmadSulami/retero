@@ -36,8 +36,10 @@
                     <div>
                         <h2 class="mb-6 text-[25px] font-ubuntuMonoBold dark:text-white">Kontak Kami</h2>
                         <ul class="list-none dark:text-gray-400">
-                            <li class="mb-2">
-                                <span class="font-ubuntuMonoRegular">reteroreview@gmail.com</span>
+                          <li class="mb-2">
+                                <a href="mailto:reteroreview@gmail.com">
+                                    <span class="font-ubuntuMonoRegular">reteroreview@gmail.com</span>
+                                </a>
                             </li>
                             <li class="mb-2">
                                 <span class="font-ubuntuMonoRegular">(+62) 878-9573-2862</span>

@@ -40,8 +40,8 @@
 
 @section('content')
 <div id="background"
-    class="fixed top-0 left-0 w-full h-full flex justify-center items-start text-center text-white font-ubuntuMonoRegular bg-cover bg-no-repeat">
-    <div class="content-container">
+    class="fixed top-0 left-0 w-full h-full min-h-screen flex justify-center items-start text-center text-white font-ubuntuMonoRegular bg-cover bg-no-repeat">
+    <div class="content-container min-h-screen">
         <div class="container mt-10">
             <div class="content">
                 <div class="content-title text-[24px] font-bold">

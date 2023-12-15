@@ -42,7 +42,7 @@
     }
 
     .swiper-slide {
-        width: 200px;
+        width: 500px;
     }
 
     .mySwiper {
@@ -108,7 +108,6 @@
         swipers.forEach(function(swiper) {
             new Swiper(swiper, {
                 slidesPerView: 4,
-                slidesPerColumn: 2,
                 spaceBetween: 30,
                 loop: true,
                 pagination: {
