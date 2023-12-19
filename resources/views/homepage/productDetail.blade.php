@@ -180,20 +180,20 @@
                                 <input type="text" placeholder="Username" name="name" id="name" required
                                     value="{{ old('name') }}"
                                     class=" bg-[#f5f5f5] border border-[#c6c6c6] w-full py-2 px-3 rounded-lg h-12">
-                                <div id="nameError" class="font-ubuntuMonoBold text-red-500"></div>
+                                <div id="nameError" class="font-ubuntuMonoBold"></div>
                             </div>
 
                             <div class="mb-4">
                                 <input type="email" placeholder="Email" name="email" id="email" required
                                     value="{{ old('email') }}"
                                     class="bg-[#f5f5f5] border border-[#c6c6c6] w-full py-2 px-3 rounded-lg h-12">
-                                <div id="emailError" class="font-ubuntuMonoBold text-red-500"></div>
+                                <div id="emailError" class="font-ubuntuMonoBold"></div>
                             </div>
 
                             <div class="mb-4">
                                 <input type="password" placeholder="Password" name="password" id="password" required
                                     class="bg-[#f5f5f5] border border-[#c6c6c6] w-full py-2 px-3 rounded-lg h-12">
-                                <div id="passwordError" class="font-ubuntuMonoBold text-red-500"></div>
+                                <div id="passwordError" class="font-ubuntuMonoBold"></div>
                             </div>
 
                             <div class="mb-8">
@@ -205,7 +205,7 @@
 
                             <div class="mb-4 flex">
                                 <input type="checkbox" class="w-4 h-4 border" name="privacy" id="privacy" required>
-                                <label for="privacy" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                                <label for="privacy" class="ml-2 text-sm font-medium">
                                     I have read and agree to the <span class="text">Terms of Service</span> and
                                     <span>Privacy Policy</span>
                                 </label>
@@ -333,7 +333,7 @@
 
     </div>
 </div>
-TODO: Fix this script later not reading the modal on register button modal
+{{-- TODO: Fix this script later not reading the modal on register button modal --}}
 <script>
     document.addEventListener('DOMContentLoaded', () => {
     const registerForm = document.getElementById('registerForm');

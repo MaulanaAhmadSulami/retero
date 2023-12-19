@@ -46,10 +46,10 @@
                 <div class="w-full p-4 flex flex-col justify-between">
                     <div>
                         <h1 class="text-2xl font-bold">{{ $product->productTitle }}</h1>
-                        <p class="text-lg text-gray-600">{{ $product->productDescription }}</p>
+                        <p class="text-lg line-clamp-3">{{ $product->productDescription }}</p>
                     </div>
                     <div class="flex justify-end">
-                        <button id="button-shadow" type="button" class="bg-button flex self-center my-4  px-2">
+                        <button id="button-shadow" type="button" class="bg-button flex self-center my-4  px-2 mt-10">
                             <a href="{{ route('homepage.productDetail', ['id' => $product->id]) }}" id="card-effect" class="font-ubuntuMonoBold px-1 text-[20px]">Lihat ulasan lebih lanjut</a>
                         </button>
                     </div>
