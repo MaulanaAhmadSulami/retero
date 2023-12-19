@@ -41,7 +41,9 @@
     <div class="grid place-items-center">
         <div class="grid grid-cols-2 items-center text-center">
             <div id="image-container" class="max-w-md w-full mx-auto block mr-10">
-                <img id="shadow" src="{{ Storage::disk('public')->exists($product->image) ? asset('storage/' . $product->image) : asset('images/' . $product->image) }}" alt="Product image">
+                <img id="shadow"
+                    src="{{ Storage::disk('public')->exists($product->image) ? asset('storage/' . $product->image) : asset('images/' . $product->image) }}"
+                    alt="Product image">
             </div>
             <div class="text-left ml-4">
                 <h1 class="font-publicPixel text-[31.25px]">{{ $product->productTitle }}</h1>
@@ -99,14 +101,14 @@
                             @csrf
                             <div class="mb-4">
                                 <input type="text" name="email" placeholder="Email" id="email"
-                                    class="bg-[#f5f5f5] border border-[#c6c6c6] w-full py-2 px-3 rounded-lg h-12" value="{{ old('email') }}"
-                                    autocomplete="email" autofocus>
+                                    class="bg-[#f5f5f5] border border-[#c6c6c6] w-full py-2 px-3 rounded-lg h-12"
+                                    value="{{ old('email') }}" autocomplete="email" autofocus>
                                 <div id="emailLoginError" class="font-ubuntuMonoBold"></div>
                             </div>
 
                             <div class="mb-4">
                                 <input type="password" name="password" placeholder="Password" id="password"
-                                class="bg-[#f5f5f5] border border-[#c6c6c6] w-full py-2 px-3 rounded-lg h-12">
+                                    class="bg-[#f5f5f5] border border-[#c6c6c6] w-full py-2 px-3 rounded-lg h-12">
                                 <div id="passwordLoginError" class="font-ubuntuMonoBold"></div>
                             </div>
 
@@ -117,11 +119,12 @@
                                     me?</label>
                             </div> --}}
 
-                            <button id="modal-btn" type="submit" class="bg-button border 1px my-6 py-2 px-4 rounded w-full font-bold font-publicPixel text-[13px] h-12">
+                            <button id="modal-btn" type="submit"
+                                class="bg-button border 1px my-6 py-2 px-4 rounded w-full font-bold font-publicPixel text-[13px] h-12">
                                 <p class="hover:text-[#FFFFFF]">Login</p>
                             </button>
                             <div class="flex justify-between py-2">
-                                <p >
+                                <p>
                                     <button type="button" data-modal-target="regist-modal"
                                         data-modal-toggle="regist-modal" data-modal-hide="login-modal"> <span
                                             class="text-button hover:text-[#000000]">Having Problems?</span>
@@ -156,7 +159,7 @@
                 <!-- Modal content -->
                 <div class="relative border bg-[#fff] rounded-lg justify-flex items-center px-8">
                     <!-- Modal header -->
-                    <div class="flex justify-between items-start py-6 rounded-t dark:border-gray-600 h-48">
+                    <div class="flex justify-between items-start py-6 rounded-t h-48">
                         <img class="mx-auto w-72 h-auto" src="{{ asset('images/retero.png') }}" alt="Retero">
                         <button type="button" data-modal-hide="regist-modal">
                             <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"
@@ -174,14 +177,16 @@
                             @csrf
 
                             <div class="mb-4">
-                                <input type="text" placeholder="Username" name="name" id="name"
-                                    value="{{ old('name') }}" class=" bg-[#f5f5f5] border border-[#c6c6c6] w-full py-2 px-3 rounded-lg h-12">
+                                <input type="text" placeholder="Username" name="name" id="name" required
+                                    value="{{ old('name') }}"
+                                    class=" bg-[#f5f5f5] border border-[#c6c6c6] w-full py-2 px-3 rounded-lg h-12">
                                 <div id="nameError" class="font-ubuntuMonoBold text-red-500"></div>
                             </div>
 
                             <div class="mb-4">
-                                <input type="email" placeholder="Email" name="email" id="email"
-                                    value="{{ old('email') }}" class="bg-[#f5f5f5] border border-[#c6c6c6] w-full py-2 px-3 rounded-lg h-12">
+                                <input type="email" placeholder="Email" name="email" id="email" required
+                                    value="{{ old('email') }}"
+                                    class="bg-[#f5f5f5] border border-[#c6c6c6] w-full py-2 px-3 rounded-lg h-12">
                                 <div id="emailError" class="font-ubuntuMonoBold text-red-500"></div>
                             </div>
 
@@ -190,26 +195,27 @@
                                     class="bg-[#f5f5f5] border border-[#c6c6c6] w-full py-2 px-3 rounded-lg h-12">
                                 <div id="passwordError" class="font-ubuntuMonoBold text-red-500"></div>
                             </div>
-                            
+
                             <div class="mb-8">
                                 <input type="password" placeholder="Confirm Password" name="password_confirmation"
-                                    id="password_confirmation" required class="bg-[#f5f5f5] border border-[#c6c6c6] w-full py-2 px-3 rounded-lg h-12">
+                                    id="password_confirmation" required
+                                    class="bg-[#f5f5f5] border border-[#c6c6c6] w-full py-2 px-3 rounded-lg h-12">
                                 <div id="passwordConfirmationError" class="font-ubuntuMonoBold text-red-500"></div>
                             </div>
 
                             <div class="mb-4 flex">
-                                <input type="checkbox" class="w-4 h-4 border" name="privacy" id="privacy">
-                                <label for="privacy"
-                                    class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
-                                    I have read and agree to the <span class="text">Terms of Service</span> and <span>Privacy Policy</span>
+                                <input type="checkbox" class="w-4 h-4 border" name="privacy" id="privacy" required>
+                                <label for="privacy" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                                    I have read and agree to the <span class="text">Terms of Service</span> and
+                                    <span>Privacy Policy</span>
                                 </label>
                             </div>
 
-                            <button id="modal-btn" type="submit"
+                            <button id="modal-btn" id="registerBtn" type="submit"
                                 class="bg-button border 1px py-2 px-4 rounded w-full font-bold font-publicPixel text-[13px] h-12">
                                 <p class="hover:text-[#FFFFFF]">Register</p>
                             </button>
-                            
+
                             <div class="text-center p-4">
                                 <p>
                                     Already have an account? <button type="button" data-modal-target="login-modal"
@@ -273,14 +279,17 @@
                     @forelse ($comments as $comment)
                     <div class="flex items-start justify-between gap-4 mb-4">
                         <div class="flex items-start gap-2 flex-grow min-w-0">
-                            <a href="{{ Auth::check() ? route('users.profile', ['uuid' => $comment->user->id]) : route('guests.profile', ['uuid' => $comment->user->id]) }}" class="flex items-center gap-2 flex-shrink-0">
+                            <a href="{{ Auth::check() ? route('users.profile', ['uuid' => $comment->user->id]) : route('guests.profile', ['uuid' => $comment->user->id]) }}"
+                                class="flex items-center gap-2 flex-shrink-0">
                                 <img src="{{ $comment->user->avatar ? asset('storage/'.$comment->user->avatar) : asset('images/dummyStock.png') }}"
                                     class="rounded-full h-10 w-10" alt="Profile picture">
                             </a>
                             <div class="flex flex-col flex-grow">
                                 <div class="flex items-center">
                                     <h1 class="font-bold">{{ $comment->user->name }}</h1>
-                                    <p class="text-sm ml-2 font-ubuntuMonoBold" data-timestamp="{{ $comment->created_at->timestamp }}">{{ $comment->created_at->diffForHumans() }}</p>
+                                    <p class="text-sm ml-2 font-ubuntuMonoBold"
+                                        data-timestamp="{{ $comment->created_at->timestamp }}">{{
+                                        $comment->created_at->diffForHumans() }}</p>
                                 </div>
                                 <p id="comment-body-{{ $comment->id }}" class="break-words overflow-hidden">
                                     {{ $comment->reviewComment }}
@@ -324,6 +333,28 @@
 
     </div>
 </div>
+TODO: Fix this script later not reading the modal on register button modal
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const registerForm = document.getElementById('registerForm');
+    const registerBtn = document.getElementById('registerBtn');
+
+    registerForm.addEventListener('input', () => {
+        let allFilled = true;
+        document.querySelectorAll('#registerForm input[required]').forEach(input => {
+            if (!input.value) {
+                allFilled = false;
+            }
+        });
+
+        registerBtn.disabled = !allFilled;
+        if (allFilled) {
+            registerBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+        }
+    });
+});
+</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+
 @endsection

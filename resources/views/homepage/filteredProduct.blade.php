@@ -41,7 +41,7 @@
             @foreach ($products as $product)
             <div id="card-shadow" class="border shadow-md overflow-hidden flex gap-4">
                 <div class="w-[20%] border-r p-4">
-                    <img class="w-full object-cover" src="{{ asset('images/' . $product->image) }}" alt="Product image">
+                    <img class="w-full object-cover" src="{{ Storage::disk('public')->exists($product->image) ? asset('storage/' . $product->image) : asset('images/' . $product->image) }}" alt="Product image">
                 </div>
                 <div class="w-full p-4 flex flex-col justify-between">
                     <div>

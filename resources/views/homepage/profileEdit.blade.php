@@ -26,7 +26,7 @@
 
         <div class="mb-10">
             <label class="block font-ubuntuMonoBold mb-4" for="avatar">Avatar</label>
-            <img class="w-[13%]" src="{{ Auth::user()->avatar ? asset('storage/' . Auth::user()->avatar) : asset('images/dummyStock.png') }}" alt="Profile Avatar">
+            <img class="w-[13%] rounded-full" src="{{ Auth::user()->avatar ? asset('storage/' . Auth::user()->avatar) : asset('images/dummyStock.png') }}" alt="Profile Avatar">
             <input class="rounded py-2 w-full" id="avatar" type="file" name="avatar" value="{{ Auth::user()->avatar }}">
         </div>
 

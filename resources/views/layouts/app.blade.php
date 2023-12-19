@@ -12,8 +12,7 @@
     @vite('resources/js/auth.js')
     @vite('resources/js/comment.js')
     @vite('resources/js/timestamp.js')
-    {{-- @vite('resources/js/category.js') --}}
-    {{-- @vite('resources/js/merit.js') --}}
+    @vite('resources/js/button.js')
     {{-- Section for javascript logics --}}
     @stack('styles')
     @stack('scripts')
