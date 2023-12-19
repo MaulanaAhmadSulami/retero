@@ -1,5 +1,5 @@
 <div>
-    <footer class="bg-footer border-t-2 dark:bg-button dark:text-[#000] border-t-2">
+    <footer class="bg-footer border-t-2 dark:bg-button dark:text-[#000]">
         <div>
             <div class="md:flex md:justify-between ">
                 <img src="{{ asset('images/retero.png') }}" class="w-[250px] mr-3 mt-8" alt="Retero logo" />
