@@ -9,9 +9,9 @@
             -3px 3px 0 #fff,
             3px 3px 0 #fff;
 
-        /* color:rgb(0, 0, 0); */
+        color:rgb(0, 0, 0);
 
-        /* -webkit-text-stroke-width: 3px; */
+        -webkit-text-stroke-width: 3px;
 
     }
 
@@ -64,6 +64,7 @@
                 Ulasan Lainnya
             </h2>
         </div>
+
     </div>
 </div>
 
@@ -100,7 +101,6 @@
         </div>
     </div>
 </div>
-
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {

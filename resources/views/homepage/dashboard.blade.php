@@ -10,6 +10,12 @@
     3px 3px 0 #fff;
     }
 
+    .text-clamp {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+    }
+
     #shadow {
         box-shadow: 0.6rem 0.6rem 0;
         transition: transform 0.2s, box-shadow 0.2s;
@@ -44,7 +50,7 @@
 <div id="background" class="font-publicPixel bg-cover bg-no-repeat py-4">
     
     <div id="stroke" class="title p-4 border-b-4 bg-button flex justify-center font-bold">
-        <h2 class="text-[20px]">
+        <h2 class="text-[24px]">
             Ulasan Terbaru
         </h2>
     </div>
@@ -55,16 +61,18 @@
             <div class="flex {{ $index % 2 == 1 ? 'flex-row-reverse' : 'mr-20' }} items-center">
                 {{-- left part --}}
                 <div class="{{ $index % 2 == 1 ? 'ml-20' : 'mr-20' }} w-[50%]" >
-                    <div class="card-product-desc items-center">
-                        <h1 class="pb-6">
+                    <div class="card-product-desc items-center py-4">
+                        <h1 class="text-[20px] py-6">
                             {{ $product->productTitle }}
                         </h1>
-                        <p class="font-ubuntuMonoRegular pb-6">
+                        <p class="text-[18px] font-ubuntuMonoRegular py-6 line-clamp-2 ">
                             {{ $product->productDescription }}
                         </p>
-                        <button id="shadow-btn" type="button" class="bg-button border-1 border-gray-300 py-2 px-4">
-                            <a class="font-ubuntuMonoBold text-[20px] tracking-tight" href="{{ route('homepage.productDetail', ['id' => $product->id]) }}"> <span id="stroke"> Lihat ulasan lebih lanjut</span></a>
-                        </button>
+                        <div class="py-8">
+                            <button id="shadow-btn" type="button" class="bg-button border-1 border-gray-300 py-2 px-4">
+                                <a class="font-ubuntuMonoBold text-[20px] tracking-tight" href="{{ route('homepage.productDetail', ['id' => $product->id]) }}"> <span id="stroke"> Lihat ulasan lebih lanjut</span></a>
+                            </button>
+                        </div>
                     </div>
                 </div>
 
