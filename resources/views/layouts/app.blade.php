@@ -9,10 +9,10 @@
     <title>@yield('title')</title>
     {{-- Section for javascript logics --}}
     @vite('resources/css/app.css')
-    @vite('resources/js/auth.js')
     @vite('resources/js/comment.js')
     @vite('resources/js/timestamp.js')
     @vite('resources/js/button.js')
+    @vite('resources/js/auth.js')
     {{-- Section for javascript logics --}}
     @stack('styles')
     @stack('scripts')

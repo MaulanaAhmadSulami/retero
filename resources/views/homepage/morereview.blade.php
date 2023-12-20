@@ -9,9 +9,7 @@
             -3px 3px 0 #fff,
             3px 3px 0 #fff;
 
-        color:rgb(0, 0, 0);
 
-        -webkit-text-stroke-width: 3px;
 
     }
 
@@ -59,7 +57,7 @@
 <div>
     <div id="stroke" class="relative">
 
-        <div class="p-4 bg-button flex justify-center items-center h-32 font-bold font-publicPixel">
+        <div class="p-4 bg-button flex justify-center items-center h-32 font-bold font-publicPixel ">
             <h2 class="text-[35px]">
                 Ulasan Lainnya
             </h2>
