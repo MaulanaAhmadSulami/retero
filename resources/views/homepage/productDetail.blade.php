@@ -7,6 +7,11 @@
         transition: transform 0.2s, box-shadow 0.2s;
     }
 
+    #shadow-comment {
+        box-shadow: 0.25rem 0.25rem 0;
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
     #shadow:hover {
         transform: translate3d(0.25rem, 0.25rem, -0.25rem);
         box-shadow: none;
@@ -38,44 +43,53 @@
 
 @section('content')
 <div>
-    <div class="grid place-items-center">
-        <div class="grid grid-cols-2 items-center text-center">
-            <div id="image-container" class="max-w-md w-full mx-auto block mr-10">
-                <img id="shadow"
-                    src="{{ Storage::disk('public')->exists($product->image) ? asset('storage/' . $product->image) : asset('images/' . $product->image) }}"
-                    alt="Product image">
-            </div>
-            <div class="text-left ml-4">
-                <h1 class="font-publicPixel text-[31.25px]">{{ $product->productTitle }}</h1>
-                <div>
-                    <span class="font-ubuntuMonoRegular flex justify-start mt-5 items-center gap-4">
-                        <iconify-icon icon="subway:refresh-time" class="text-lg h-full"></iconify-icon>
-                        <span class="text-lg h-full" data-timestamp="{{ $product->created_at->timestamp }}"></span>
-                    </span>
+    <div class="mb-10">
+        <div class="w-[50%] py-10 mb-10 p-4 mx-auto">
+            <div class="flex gap-10 items-center text-center">
+                <div id="image-container" class="mx-auto w-[90%]">
+                    <img id="shadow" class="border"
+                        src="{{ Storage::disk('public')->exists($product->image) ? asset('storage/' . $product->image) : asset('images/' . $product->image) }}"
+                        alt="Product image">
+                </div>
+                <div class="text-left p-2">
+                    <h1 class="font-publicPixel text-[28px]">{{ $product->productTitle }}</h1>
+                    <div>
+                        <span class="font-ubuntuMonoRegular flex justify-start items-center gap-4">
+                            <iconify-icon icon="subway:refresh-time" class="text-lg h-full"></iconify-icon>
+                            <span class="text-lg h-full" data-timestamp="{{ $product->created_at->timestamp }}"></span>
+                        </span>
+                    </div>
+                    <p class="font-ubuntuMonoRegular text-[18px] mt-5">
+                        {{ $product->productDescription }}
+                    </p>
                 </div>
             </div>
-            <div class="max-w-[750px] mt-20 text-left ml-4 tracking-wide">
-                <h1 id="stroke" class="text-[40px] font-publicPixel text-button tracking-widest">Ringkasan</h1>
-                <p class="font-ubuntuMonoRegular text-[20px] mt-5">
-                    {{ $product->productDescription }}
-                </p>
-
-                <h1 id="stroke" class="text-[40px] font-publicPixel text-button py-10 tracking-widest">Kelebihan</h1>
-
-                <ul id="listProduct" class="list-inside text-[20px] mt-5">
-                    @foreach ($product->advantages as $advantage )
-                    <li>{{ $advantage->advantageDescription }}</li>
-                    @endforeach
-                </ul>
-
-                <h1 id="stroke" class="text-[40px] font-publicPixel text-button py-10 tracking-widest">Kekurangan</h1>
-                <ul id="listProduct" class="list-inside text-[20px] mt-5">
-                    @foreach ($product->disadvantages as $disadvantage )
-                    <li>{{ $disadvantage->disadvantageDescription }}</li>
-                    @endforeach
-                </ul>
+            <div class="flex">
+                <div class="py-4">
+                    {{-- left section --}}
+                    <div class="">
+                        <h1 id="stroke" class="text-[24px] font-publicPixel text-button py-10 tracking-widest">Kelebihan</h1>
+                        <ul id="listProduct" class="list-inside text-[20px] mt-5">
+                            @foreach ($product->advantages as $advantage )
+                            <li>{{ $advantage->advantageDescription }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+            
+                    {{-- right section --}}
+                    <div class="">
+                        <h1 id="stroke" class="text-[24px] font-publicPixel text-button py-10 tracking-widest">Kekurangan</h1>
+                        <ul id="listProduct" class="list-inside text-[20px] mt-5">
+                            @foreach ($product->disadvantages as $disadvantage )
+                            <li>{{ $disadvantage->disadvantageDescription }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                </div>
             </div>
+
         </div>
+
 
         <div id="login-modal" tabindex="-1" aria-hidden="true"
             class="hidden overflow-y-auto overflow-x-hidden fixed justify-center items-center md:inset-0">
@@ -240,99 +254,127 @@
             </div>
         </div>
 
-        <div class="container mx-auto p-10 my-10 bg-[#fbbf24] rounded-md text-center" id="comment-post-container">
-            <h3 class="text-[25px] font-ubuntuMonoBold">
-                <i class="fa-solid fa-comments mr-2"></i> Post a comment
-            </h3>
+        {{-- container Discussion --}}
+        <div class="container mx-auto px-10 py-6 mb-10 border-t-2 border-[#fbbf24] text-center w-[50%] shadow-md" id="comment-post-container">
+            <div class="container  items-center mx-auto">
 
-            <div class="text-[20px]" id="comment-container">
-                @if(Auth::user())
-                <form action="{{ route('comment.store', $product->id) }}" method="POST">
-                    @csrf
-                    <div id="comment-form" class="container mx-auto p-4">
-                        <textarea name="comment" id="comment_id" cols="40" rows="4" minlength="10" maxlength="1000"
-                            placeholder="You can comment here!"
-                            class="w-full max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl rounded-md p-4 mb-4"></textarea>
-                    </div>
-                    <div class="text-center">
-                        <button type="submit"
-                            class="bg-[#fff] text-black font-semibold py-2 px-4 rounded-md items-center justify-center hover:bg-[#f3f4f6]">
-                            <i class="fa-solid fa-comment"></i> Comment
-                        </button>
-                    </div>
-                </form>
-                @else
-                <p class="p-2">
-                    <button data-modal-target="login-modal" data-modal-toggle="login-modal" type="button"> <span
-                            class="underline font-ubuntuMonoBold">Login</span></button> or <button
-                        data-modal-target="regist-modal" data-modal-toggle="regist-modal" type="button"><span
-                            class="underline font-ubuntuMonoBold">Register</span></button> to post a comment.
-                </p>
-                @endif
-            </div>
-        </div>
+                <h3 class="text-[25px] font-ubuntuMonoBold text-left mx-4">
+                    <i class="fa-solid fa-comments mr-2"></i>
+                    Discussion
+                </h3>
 
-
-        <div class="container mx-auto p-10 my-10 border rounded-md"" id=" all-comments">
-            <div>
-                <div class="mt-5">
-                    @forelse ($comments as $comment)
-                    <div class="flex items-start justify-between gap-4 mb-4">
-                        <div class="flex items-start gap-2 flex-grow min-w-0">
-                            <a href="{{ Auth::check() ? route('users.profile', ['uuid' => $comment->user->id]) : route('guests.profile', ['uuid' => $comment->user->id]) }}"
-                                class="flex items-center gap-2 flex-shrink-0">
-                                <img src="{{ $comment->user->avatar ? asset('storage/'.$comment->user->avatar) : asset('images/dummyStock.png') }}"
-                                    class="rounded-full h-10 w-10" alt="Profile picture">
-                            </a>
-                            <div class="flex flex-col flex-grow">
-                                <div class="flex items-center">
-                                    <h1 class="font-bold">{{ $comment->user->name }}</h1>
-                                    <p class="text-sm ml-2 font-ubuntuMonoBold"
-                                        data-timestamp="{{ $comment->created_at->timestamp }}">{{
-                                        $comment->created_at->diffForHumans() }}</p>
-                                </div>
-                                <p id="comment-body-{{ $comment->id }}" class="break-words overflow-hidden">
-                                    {{ $comment->reviewComment }}
-                                </p>
+                <div class="">
+                    {{-- box post a comment --}}
+                    <div class="my-6 mb-10" id="">
+                        @if(Auth::user())
+                        <form action="{{ route('comment.store', $product->id) }}" method="POST">
+                            @csrf
+                            <div id="shadow-comment" class="border container mx-auto my-4 p-4">
+                                <textarea name="comment" id="comment_id" cols="40" rows="4" minlength="10" maxlength="1000"
+                                    placeholder="You can comment here!"
+                                    class=" w-full max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl">
+                                </textarea>
                             </div>
-                        </div>
-                        <div class="flex space-x-2 self-start">
-                            @if (Auth::id() == $comment->user_id)
-                            <button class="edit-comment-btn bg-button rounded-md py-1 px-1 hover:bg-[#86efac]"
-                                data-comment-id="{{ $comment->id }}">Edit</button>
-                            <form class="edit-comment-form hidden" method="POST" action="/comments/{{ $comment->id }}"
-                                data-comment-id="{{ $comment->id }}">
-                                @csrf
-                                @method('PATCH')
-                                <textarea name="content" class="edit-textarea" cols="40" rows="3" minlength="10"
-                                    maxlength="10000">{{ $comment->reviewComment }}</textarea>
-                                <button type="submit" id="save-edit-btn-{{ $comment->id }}"
-                                    class="bg-button rounded-md py-1 px-1 hover:bg-[#86efac]">Save</button>
-                            </form>
-                            @endif
-                            @if(Auth::check() && Auth::user()->isAdmin || Auth::id() == $comment->user_id)
-                            <form method="POST" action="{{ route('comment.destroy', $comment->id) }}"
-                                class="delete-comment-form">
-                                @csrf
-                                @method('DELETE')
+                            <div class="">
                                 <button type="submit"
-                                    class="delete-comment-btn bg-button rounded-md py-1 px-1 hover:bg-[#ef4444]">Delete</button>
-                            </form>
-                            @endif
-                        </div>
+                                    class="inline-flex py-2.5 px-4 text-sm font-medium text-white focus:ring-4 focus:ring-primary-20 bg-button hover:bg-[#f3f4f6] ">
+                                    post comment
+                                </button>
+                            </div>
+                        </form>
+                        @else
+                        <p class="p-2 border py-10 background-">
+                            <button data-modal-target="login-modal" data-modal-toggle="login-modal" type="button"><span
+                                    class="underline font-ubuntuMonoBold">Login</span></button>
+                                    or 
+                            <button data-modal-target="regist-modal" data-modal-toggle="regist-modal" type="button"><span
+                                    class="underline font-ubuntuMonoBold">Register</span></button> 
+                                    to post a comment.
+                        </p>
+                        @endif
                     </div>
-                    @empty
-                    <div class="container text-center mt-5 p-10 my-10">
-                        <p>No Comments on this product yet.</p>
+
+                    <div class="py-4">
+                        {{-- comment card --}}
+                        @forelse ($comments as $comment)
+                            <div class="flex items-start justify-between gap-4 my-6 border p-4" id="shadow-comment">
+                                <div class="flex flex-col flex-grow items-start gap-2">
+                                    <a href="{{ route('users.profile', ['uuid' => $comment->user->id ]) }}" 
+                                        class="inline-flex items-center gap-2 flex-shrink-0 mr-3 text-sm ">
+    
+                                        {{-- profile picture --}}
+                                        <img 
+                                        class="w-8 h-8 rounded-full"
+                                        src="{{ $comment->user->avatar ? asset('storage/'.$comment->user->avatar) : asset('images/dummyStock.png') }}"
+                                        alt="Profile picture">
+    
+                                        {{-- profile name --}}
+                                        <p class="font-ubuntuMonoBold text-[18px]">
+                                            {{ $comment->user->name }}
+                                        </p>
+    
+                                        {{-- timestamp --}}
+                                        <p class="text-sm ml-2 font-ubuntuMonoRegular" data-timestamp="{{ $comment->created_at->timestamp }}">{{ $comment->created_at->diffForHumans() }}</p>
+                                    </a>
+    
+                                    {{-- body comment --}}
+                                    <div class="flex flex-cols-2 flex-grow justify-between w-[100%]">
+                                        <div class="container-comment">
+                                            <p id="comment-body-{{ $comment->id }}" class="break-words overflow-hidden">
+                                                {{ $comment->reviewComment }}
+                                            </p>
+                                        </div>
+                                        <div class="button-body flex">
+                                            @if (Auth::id() == $comment->user_id)
+                                            <button 
+                                                class="edit-comment-btn bg-button rounded-md py-1 px-4 mx-2 hover:bg-[#86efac]"
+                                                data-comment-id="{{ $comment->id }}">Edit
+                                            </button>
+        
+                                            @endif
+                                            @if(Auth::check() && Auth::user()->isAdmin || Auth::id() == $comment->user_id)
+                                            <form method="POST" action="{{ route('comment.destroy', $comment->id) }}"
+                                                class="delete-comment-form">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit"
+                                                    class="delete-comment-btn bg-button rounded-md py-1 px-2 mx-2 hover:bg-[#ef4444]">Delete</button>
+                                            </form>
+                                            @endif
+                                        </div>
+    
+                                    </div>
+    
+                                    {{-- edit comment --}}
+                                    <div class="container edit-comment mx-10 w-[75%] ">
+                                        <form class="edit-comment-form hidden" method="POST" action="/comments/{{ $comment->id }}"
+                                            data-comment-id="{{ $comment->id }}">
+                                            @csrf
+                                            @method('PATCH')
+                                            <div class="flex flex-col items-end">
+                                                <textarea name="content" class="edit-textarea border rounded-md px-2 " cols="60" rows="3" minlength="10"
+                                                    maxlength="10000">{{ $comment->reviewComment }}
+                                                </textarea>
+                                                <button type="submit" id="save-edit-btn-{{ $comment->id }}"
+                                                    class="bg-button rounded-md py-1 px-4 my-2 hover:bg-[#86efac]"> Save
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>                            
+                            </div>
+                            @empty
+                            <div class="container border mt-5 p-10 my-10">
+                                <p>No Comments on this product yet.</p>
+                            </div>
+                        @endforelse
                     </div>
-                    @endforelse
                 </div>
             </div>
         </div>
-
-
     </div>
 </div>
+
 {{-- TODO: Fix this script later not reading the modal on register button modal --}}
 <script>
     document.addEventListener('DOMContentLoaded', () => {
