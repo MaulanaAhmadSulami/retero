@@ -1,5 +1,5 @@
 <div class="min-h-screen flex flex-row justify-content-around">
-    <div class="flex flex-col w-56 overflow-hidden border-r-2 border-t-2">
+    <div class="flex flex-col w-56 overflow-hidden shadow-2xl border-collapse" style="">
         <div class="py-4 px-4">
             <ul class="flex flex-col">
                 <li>
