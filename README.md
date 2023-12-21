@@ -35,6 +35,9 @@ php artisan db:seed --class=UserSeeder
 
 
 To login with admin
+
 Username : admin
+
 Email : admindua@gmail.com
+
 password : admin1234
