@@ -3,7 +3,7 @@ This website was made with my companions Onel and Ilyas and with love.
 
 Developers :
 
-Kaede [Fullstack Developer]
+Kaede (Maulana) [Fullstack Developer]
 
 Kornelia [UI & UX Designer, Frontend Developer]
 
