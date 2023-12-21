@@ -69,7 +69,7 @@
                             {{ $product->productDescription }}
                         </p>
                         <div class="py-8">
-                            <button id="shadow-btn" type="button" class="bg-button border-1 border-gray-300 py-2 px-4">
+                            <button id="shadow-btn" type="button" class="bg-button border-1 py-2 px-4">
                                 <a class="font-ubuntuMonoBold text-[20px] tracking-tight" href="{{ route('homepage.productDetail', ['id' => $product->id]) }}"> <span id="stroke"> Lihat ulasan lebih lanjut</span></a>
                             </button>
                         </div>

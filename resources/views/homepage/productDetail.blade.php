@@ -38,6 +38,17 @@
         transform: translate3d(0.25rem, 0.25rem, -0.25rem);
         box-shadow: none;
     }
+
+    #text-clamp {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+    }
+
+    #comment_id::placeholder {
+       text-align: center;
+       font-size: 25px;
+    }
 </style>
 @endpush
 
@@ -45,9 +56,9 @@
 <div>
     <div class="mb-10">
         <div class="w-[50%] py-10 mb-10 p-4 mx-auto">
-            <div class="flex gap-10 items-center text-center">
-                <div id="image-container" class="mx-auto w-[90%]">
-                    <img id="shadow" class="border"
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10  text-center">
+                <div id="image-container" class="mx-auto ">
+                    <img id="shadow" class="border p-4"
                         src="{{ Storage::disk('public')->exists($product->image) ? asset('storage/' . $product->image) : asset('images/' . $product->image) }}"
                         alt="Product image">
                 </div>
@@ -68,17 +79,19 @@
                 <div class="py-4">
                     {{-- left section --}}
                     <div class="">
-                        <h1 id="stroke" class="text-[24px] font-publicPixel text-button py-10 tracking-widest">Kelebihan</h1>
+                        <h1 id="stroke" class="text-[24px] font-publicPixel text-button py-10 tracking-widest">Kelebihan
+                        </h1>
                         <ul id="listProduct" class="list-inside text-[20px] mt-5">
                             @foreach ($product->advantages as $advantage )
                             <li>{{ $advantage->advantageDescription }}</li>
                             @endforeach
                         </ul>
                     </div>
-            
+
                     {{-- right section --}}
                     <div class="">
-                        <h1 id="stroke" class="text-[24px] font-publicPixel text-button py-10 tracking-widest">Kekurangan</h1>
+                        <h1 id="stroke" class="text-[24px] font-publicPixel text-button py-10 tracking-widest">
+                            Kekurangan</h1>
                         <ul id="listProduct" class="list-inside text-[20px] mt-5">
                             @foreach ($product->disadvantages as $disadvantage )
                             <li>{{ $disadvantage->disadvantageDescription }}</li>
@@ -255,30 +268,30 @@
         </div>
 
         {{-- container Discussion --}}
-        <div class="container mx-auto px-10 py-6 mb-10 border-t-2 border-[#fbbf24] text-center w-[50%] shadow-md" id="comment-post-container">
+        <div class="container mx-auto px-10 py-6 mb-10 border-t-2 border-[#fbbf24] text-center w-[50%] shadow-md"
+            id="comment-post-container">
             <div class="container  items-center mx-auto">
 
-                <h3 class="text-[25px] font-ubuntuMonoBold text-left mx-4">
+                <h3 class="text-[25px] font-ubuntuMonoBold text-center mx-4">
                     <i class="fa-solid fa-comments mr-2"></i>
                     Discussion
                 </h3>
 
                 <div class="">
                     {{-- box post a comment --}}
-                    <div class="my-6 mb-10" id="">
+                    <div class="my-6 mb-10">
                         @if(Auth::user())
                         <form action="{{ route('comment.store', $product->id) }}" method="POST">
                             @csrf
                             <div id="shadow-comment" class="border container mx-auto my-4 p-4">
-                                <textarea name="comment" id="comment_id" cols="40" rows="4" minlength="10" maxlength="1000"
-                                    placeholder="You can comment here!"
-                                    class=" w-full max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl">
-                                </textarea>
+                                <textarea name="comment" id="comment_id" cols="40" rows="4" minlength="10"
+                                    maxlength="1000" placeholder="You can comment here!"
+                                    class="w-full max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl"></textarea>
                             </div>
-                            <div class="">
+                            <div>
                                 <button type="submit"
-                                    class="inline-flex py-2.5 px-4 text-sm font-medium text-white focus:ring-4 focus:ring-primary-20 bg-button hover:bg-[#f3f4f6] ">
-                                    post comment
+                                    class="inline-flex py-2.5 px-4 text-sm font-ubuntuMonoRegular bg-button hover:bg-[#f3f4f6] ">
+                                    Post Comment
                                 </button>
                             </div>
                         </form>
@@ -286,10 +299,10 @@
                         <p class="p-2 border py-10 background-">
                             <button data-modal-target="login-modal" data-modal-toggle="login-modal" type="button"><span
                                     class="underline font-ubuntuMonoBold">Login</span></button>
-                                    or 
-                            <button data-modal-target="regist-modal" data-modal-toggle="regist-modal" type="button"><span
-                                    class="underline font-ubuntuMonoBold">Register</span></button> 
-                                    to post a comment.
+                            or
+                            <button data-modal-target="regist-modal" data-modal-toggle="regist-modal"
+                                type="button"><span class="underline font-ubuntuMonoBold">Register</span></button>
+                            to post a comment.
                         </p>
                         @endif
                     </div>
@@ -297,76 +310,78 @@
                     <div class="py-4">
                         {{-- comment card --}}
                         @forelse ($comments as $comment)
-                            <div class="flex items-start justify-between gap-4 my-6 border p-4" id="shadow-comment">
-                                <div class="flex flex-col flex-grow items-start gap-2">
-                                    <a href="{{ route('users.profile', ['uuid' => $comment->user->id ]) }}" 
-                                        class="inline-flex items-center gap-2 flex-shrink-0 mr-3 text-sm ">
-    
-                                        {{-- profile picture --}}
-                                        <img 
-                                        class="w-8 h-8 rounded-full"
+                        <div class="flex items-start justify-between gap-4 my-6 border p-4" id="shadow-comment">
+                            <div class="flex flex-col flex-grow items-start gap-2">
+                                <a href="{{ route('users.profile', ['uuid' => $comment->user->id ]) }}"
+                                    class="inline-flex items-center gap-2 flex-shrink-0 mr-3 text-sm ">
+
+                                    {{-- profile picture --}}
+                                    <img class="w-8 h-8 rounded-full"
                                         src="{{ $comment->user->avatar ? asset('storage/'.$comment->user->avatar) : asset('images/dummyStock.png') }}"
                                         alt="Profile picture">
-    
-                                        {{-- profile name --}}
-                                        <p class="font-ubuntuMonoBold text-[18px]">
-                                            {{ $comment->user->name }}
+
+                                    {{-- profile name --}}
+                                    <p class="font-ubuntuMonoBold text-[18px]">
+                                        {{ $comment->user->name }}
+                                    </p>
+
+                                    {{-- timestamp --}}
+                                    <p class="text-sm ml-2 font-ubuntuMonoRegular"
+                                        data-timestamp="{{ $comment->created_at->timestamp }}">{{
+                                        $comment->created_at->diffForHumans() }}</p>
+                                </a>
+
+                                {{-- body comment --}}
+                                <div class="flex flex-cols-2 flex-grow justify-between w-[100%]">
+                                    <div class="container-comment">
+                                        <p id="comment-body-{{ $comment->id }}" class="break-words overflow-hidden">
+                                            {{ $comment->reviewComment }}
                                         </p>
-    
-                                        {{-- timestamp --}}
-                                        <p class="text-sm ml-2 font-ubuntuMonoRegular" data-timestamp="{{ $comment->created_at->timestamp }}">{{ $comment->created_at->diffForHumans() }}</p>
-                                    </a>
-    
-                                    {{-- body comment --}}
-                                    <div class="flex flex-cols-2 flex-grow justify-between w-[100%]">
-                                        <div class="container-comment">
-                                            <p id="comment-body-{{ $comment->id }}" class="break-words overflow-hidden">
-                                                {{ $comment->reviewComment }}
-                                            </p>
-                                        </div>
-                                        <div class="button-body flex">
-                                            @if (Auth::id() == $comment->user_id)
-                                            <button 
-                                                class="edit-comment-btn bg-button rounded-md py-1 px-4 mx-2 hover:bg-[#86efac]"
-                                                data-comment-id="{{ $comment->id }}">Edit
-                                            </button>
-        
-                                            @endif
-                                            @if(Auth::check() && Auth::user()->isAdmin || Auth::id() == $comment->user_id)
-                                            <form method="POST" action="{{ route('comment.destroy', $comment->id) }}"
-                                                class="delete-comment-form">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="submit"
-                                                    class="delete-comment-btn bg-button rounded-md py-1 px-2 mx-2 hover:bg-[#ef4444]">Delete</button>
-                                            </form>
-                                            @endif
-                                        </div>
-    
                                     </div>
-    
-                                    {{-- edit comment --}}
-                                    <div class="container edit-comment mx-10 w-[75%] ">
-                                        <form class="edit-comment-form hidden" method="POST" action="/comments/{{ $comment->id }}"
-                                            data-comment-id="{{ $comment->id }}">
+                                    <div class="button-body flex">
+                                        @if (Auth::id() == $comment->user_id)
+                                        <button
+                                            class="edit-comment-btn bg-button rounded-md py-1 px-4 mx-2 hover:bg-[#86efac]"
+                                            data-comment-id="{{ $comment->id }}">Edit
+                                        </button>
+
+                                        @endif
+                                        @if(Auth::check() && Auth::user()->isAdmin || Auth::id() == $comment->user_id)
+                                        <form method="POST" action="{{ route('comment.destroy', $comment->id) }}"
+                                            class="delete-comment-form">
                                             @csrf
-                                            @method('PATCH')
-                                            <div class="flex flex-col items-end">
-                                                <textarea name="content" class="edit-textarea border rounded-md px-2 " cols="60" rows="3" minlength="10"
-                                                    maxlength="10000">{{ $comment->reviewComment }}
-                                                </textarea>
-                                                <button type="submit" id="save-edit-btn-{{ $comment->id }}"
-                                                    class="bg-button rounded-md py-1 px-4 my-2 hover:bg-[#86efac]"> Save
-                                                </button>
-                                            </div>
+                                            @method('DELETE')
+                                            <button type="submit"
+                                                class="delete-comment-btn bg-button rounded-md py-1 px-2 mx-2 hover:bg-[#ef4444]">Delete</button>
                                         </form>
+                                        @endif
                                     </div>
-                                </div>                            
+
+                                </div>
+
+                                {{-- edit comment --}}
+                                <div class="container edit-comment mx-10 w-[75%] ">
+                                    <form class="edit-comment-form hidden" method="POST"
+                                        action="/comments/{{ $comment->id }}" data-comment-id="{{ $comment->id }}">
+                                        @csrf
+                                        @method('PATCH')
+                                        <div class="flex flex-col items-end">
+                                            <textarea name="content"
+                                                class="edit-textarea border rounded-md px-2 flex items-start" cols="100"
+                                                rows="3" minlength="10" maxlength="10000">{{ $comment->reviewComment }}
+                                                </textarea>
+                                            <button type="submit" id="save-edit-btn-{{ $comment->id }}"
+                                                class="bg-button rounded-md py-1 px-4 my-2 hover:bg-[#86efac]"> Save
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
-                            @empty
-                            <div class="container border mt-5 p-10 my-10">
-                                <p>No Comments on this product yet.</p>
-                            </div>
+                        </div>
+                        @empty
+                        <div class="container border mt-5 p-10 my-10">
+                            <p>No Comments on this product yet.</p>
+                        </div>
                         @endforelse
                     </div>
                 </div>

@@ -8,6 +8,15 @@
     3px -3px 0 #fff,
     -3px 3px 0 #fff,
     3px 3px 0 #fff;
+
+        text-shadow:
+            -3px -3px 0 #fff,
+            3px -3px 0 #fff,
+            -3px 3px 0 #fff,
+            3px 3px 0 #fff;
+
+
+
     }
 
     #shadow-btn {
@@ -51,10 +60,14 @@
 
 @section('content')
 <div>
-    <div id="stroke" class="title p-4 border-b-4 bg-button flex justify-center font-bold font-publicPixel">
-        <h2 class="text-[24px]">
-            Ulasan Lainnya
-        </h2>
+    <div id="stroke" class="relative">
+
+        <div class="p-4 bg-button flex justify-center items-center h-32 font-bold font-publicPixel ">
+            <h2 class="text-[35px]">
+                Ulasan Lainnya
+            </h2>
+        </div>
+
     </div>
 </div>
 
