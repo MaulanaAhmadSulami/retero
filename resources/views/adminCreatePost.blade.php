@@ -1,7 +1,17 @@
 @extends('layouts.app')
 @section('title', 'Retero - Create Post')
 @push('styles')
+    <style>
+         #shadow-btn {
+        box-shadow: 0.5rem 0.5rem 0;
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
 
+    #shadow-btn:hover {
+        transform: translate3d(0.25rem, 0.25rem, -0.25rem);
+        box-shadow: none;
+    }
+    </style>
 @endpush
 
 @section('content')
@@ -81,7 +91,7 @@
                 </div>
 
                 <div>
-                    <button type="submit" class="py-1 px-2 bg-button rounded-lg font-ubuntuMonoBold">Create the post</button>
+                    <button id="shadow-btn" type="submit" class="py-2 px-4 bg-button rounded-lg text-[px] font-ubuntuMonoBold">Create the post</button>
                 </div>
             </form>
         </div>

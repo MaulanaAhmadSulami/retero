@@ -3,11 +3,11 @@
 @push('styles')
 <style>
     #stroke {
-    text-shadow:
-    -3px -3px 0 #fff,
-    3px -3px 0 #fff,
-    -3px 3px 0 #fff,
-    3px 3px 0 #fff;
+        text-shadow:
+            -3px -3px 0 #fff,
+            3px -3px 0 #fff,
+            -3px 3px 0 #fff,
+            3px 3px 0 #fff;
 
         text-shadow:
             -3px -3px 0 #fff,
@@ -45,16 +45,47 @@
         max-width: 50%;
     }
 
-    .swiper-slide {
-        width: 500px;
-    }
-        
     .swiper {
         width: 60rem;
         height: 23rem;
         margin: 0 auto;
+        position: relative;
     }
 
+    .swiper-button-next,
+    .swiper-button-prev {
+        position: absolute;
+        display: inline-block;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .swiper-button-next {
+        right: 10px;
+    }
+
+    .swiper-button-prev {
+        left: 10px;
+    }
+
+    .swiper-button-next:hover,
+    .swiper-button-prev:hover {
+        background-color: rgb(155, 155, 155);
+        border-radius: 50%;
+        padding: 30px;
+        width: 30px;
+        height: 30px;
+        transition-duration: 0.4s;  
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0.8;
+    }
+
+
+    .swiper-slide {
+        width: 500px;
+    }
 </style>
 @endpush
 
@@ -77,7 +108,8 @@
         @foreach($productsByType as $productType => $products)
 
         {{-- ini aku opacity in 0% karena aku bingung kasih gap vertikal dari grid ke grid --}}
-        <h2 class="text-left w-[63%] mx-auto font-ubuntuMonoBold text-[25px]" style="opacity: 0%">{{ $productType }}</h2>
+        <h2 class="text-left w-[63%] mx-auto font-ubuntuMonoBold text-[25px]" style="opacity: 0%">{{ $productType }}
+        </h2>
 
         <div class="container-section border-t-2 border-[#fbbf24] py-6 w-[65%] mx-auto shadow-md">
             <div class="swiper mySwiper md:grid-cols-3 mx-auto ">
@@ -87,18 +119,18 @@
                     @foreach ($products as $product)
                     <div class="swiper-slide pb-12 pl-6">
                         <div id=card-shadow class="border p-4 mb-2 flex flex-col h-full">
-    
+
                             {{-- image container --}}
                             <img src="{{ Storage::disk('public')->exists($product->image) ? asset('storage/' . $product->image) : asset('images/' . $product->image) }}"
                                 alt="Image Unavailable" class="w-full h-32 object-cover">
-                            
+
                             {{-- product title --}}
                             <div class="flex-grow mt-2 font-bold text-center py-2">
                                 <span class="border-b-2 border-[#FFC800] text-[21px]">
                                     {{ $product->productTitle }}
                                 </span>
                             </div>
-    
+
                             <button id="shadow-btn" type="button" class="bg-button flex self-center my-4  px-2">
                                 <a href="{{ route('homepage.productDetail', ['id' => $product->id]) }}" id="card-effect"
                                     class="font-ubuntuMonoBold px-1">
@@ -107,11 +139,11 @@
                         </div>
                     </div>
                     @endforeach
-    
+
                 </div>
-    
+
                 {{-- swiper --}}
-                <div class="swipper mt-10">
+                <div class="swipper">
                     <div class="swiper-button-next"></div>
                     <div class="swiper-button-prev"></div>
                     <div class="swiper-pagination"></div>

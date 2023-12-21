@@ -391,7 +391,7 @@
 </div>
 
 {{-- TODO: Fix this script later not reading the modal on register button modal --}}
-<script>
+{{-- <script>
     document.addEventListener('DOMContentLoaded', () => {
     const registerForm = document.getElementById('registerForm');
     const registerBtn = document.getElementById('registerBtn');
@@ -410,7 +410,7 @@
         }
     });
 });
-</script>
+</script> --}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
 

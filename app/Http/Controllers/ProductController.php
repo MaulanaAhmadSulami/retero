@@ -19,7 +19,7 @@ class ProductController extends Controller
     {
         $products = Product::orderBy('created_at', 'desc')->take(3)->get();
         return view('homepage.dashboard', compact('products'));
-        dd($products);
+        // dd($products);
     }
 
     public function showProduct($id)
@@ -34,14 +34,12 @@ class ProductController extends Controller
     public function moreReview()
     {
 
-
         $productTypes = Product::distinct('productType')->pluck('productType');
 
         $productsByType = [];
 
         foreach($productTypes as $type){
             $productsByType[$type] = Product::where('productType', $type)->get();
-            // $productsByType[$type] = Product::where('productType', $type)->get();
         }
 
         return view('homepage.morereview', ['productsByType' => $productsByType]);

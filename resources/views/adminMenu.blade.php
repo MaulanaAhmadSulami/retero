@@ -13,7 +13,7 @@
         <h1 class="text-[25px] font-publicPixel">Retero Statistic</h1>
 
         <div class="flex justify-center items-center text-center h-full font-publicPixel text-[50px]">
-            <h1>STATISTIC BOS</h1>
+            <h1>STATISTIC PLACEHOLDER</h1>
         </div>
     </div>
 </div>

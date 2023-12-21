@@ -29,6 +29,7 @@ class DatabaseSeeder extends Seeder
                 ProductdisadvantagesSeeder::class,
                 UserReviewSeeder::class,
                 CategorySeeder::class,
+                UserSeeder::class,
             ]
         );
     }
